@@ -2,27 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0397b803-78f2-4c3e-9f35-aa14b30ebfc6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reagent-firebase.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/dev/main/core.cljs" afterPath="$PROJECT_DIR$/public/dev/main/core.cljs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/core.cljs" afterPath="$PROJECT_DIR$/src/main/core.cljs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/dev/main/core.js.map" afterPath="$PROJECT_DIR$/public/dev/main/core.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/dev/main/core.js" afterPath="$PROJECT_DIR$/public/dev/main/core.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/dev/firebase/session.cljs" afterPath="$PROJECT_DIR$/public/dev/firebase/session.cljs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/session.cljs" afterPath="$PROJECT_DIR$/src/main/session.cljs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/dev/firebase/session.js.map" afterPath="$PROJECT_DIR$/public/dev/firebase/session.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/dev/firebase/session.js" afterPath="$PROJECT_DIR$/public/dev/firebase/session.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="reagent-firebase.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="0397b803-78f2-4c3e-9f35-aa14b30ebfc6" time="1419145125946" ignored="false" />
-    <file path="/core.cljs" changelist="0397b803-78f2-4c3e-9f35-aa14b30ebfc6" time="1419145152946" ignored="false" />
-    <file path="/session.cljs" changelist="0397b803-78f2-4c3e-9f35-aa14b30ebfc6" time="1419145372644" ignored="false" />
+    <file path="/core.cljs" changelist="0397b803-78f2-4c3e-9f35-aa14b30ebfc6" time="1419146333850" ignored="false" />
+    <file path="/session.cljs" changelist="0397b803-78f2-4c3e-9f35-aa14b30ebfc6" time="1419146005223" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,10 +75,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="core.cljs" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="core.cljs" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/core.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="43" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
+            <state line="17" column="30" selection-start="670" selection-end="670" vertical-scroll-proportion="0.37117904">
               <folding />
             </state>
           </provider>
@@ -93,16 +87,7 @@
       <file leaf-file-name="session.cljs" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/session.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="18" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="146" selection-end="146" vertical-scroll-proportion="0.252809">
+            <state line="9" column="5" selection-start="157" selection-end="157" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -126,9 +111,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/core.cljs" />
-        <option value="$PROJECT_DIR$/src/main/session.cljs" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/session.cljs" />
+        <option value="$PROJECT_DIR$/src/main/core.cljs" />
       </list>
     </option>
   </component>
@@ -410,23 +395,23 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/core.cljs">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="43" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
+        <state line="2" column="92" selection-start="37" selection-end="37" vertical-scroll-proportion="0.042134833">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/session.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="18" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0">
+        <state line="9" column="5" selection-start="157" selection-end="157" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/main/core.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="146" selection-end="146" vertical-scroll-proportion="0.252809">
+        <state line="17" column="30" selection-start="670" selection-end="670" vertical-scroll-proportion="0.37117904">
           <folding />
         </state>
       </provider>

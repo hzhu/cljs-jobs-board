@@ -7,16 +7,17 @@
 ;; State
 (def app-state (atom {}))
 
+(defn printAtom []
+  (println "::::::::::ATOM::::::::::")
+  (println "::::::::::::::::::::::::")
+  (println (get-in @app-state ""))
+  (println "::::::::::::::::::::::::")
+  (println "::::::::::::::::::::::::"))
+
 ;; ----------
 ;; Helper Functions
 (defn global-state [k & [default]]
   (get @app-state k default))
-
-(println "::::::::::ATOM::::::::::")
-(println "::::::::::::::::::::::::")
-(println (get-in @app-state ""))
-(println "::::::::::::::::::::::::")
-(println "::::::::::::::::::::::::")
 
 (defn global-put! [k v]
   (swap! app-state assoc k v))

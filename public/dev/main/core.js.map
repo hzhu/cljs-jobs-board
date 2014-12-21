@@ -1,12 +1,13 @@
 {"version":3,
  "file":"/Users/henry/Code/reagent-firebase/public/dev/main/core.js",
  "sources":["core.cljs"],
- "lineCount":23,
+ "lineCount":24,
  "mappings":
- ";AAAA;;;;;;;;;;AAKA,sBAAA,8BAAA,pDAAMA,0CAAWC,MAAMC,IACrB,AAAMA,OAAG,+BAAA,2CAAA,1EAACC,kJAAwB,AAAA,AAAIF;AACtC,aAAA,NAAKC,cAAW,qBAAA,VAAKE,UACH,mDAAA,5CAACC,uGAAqB,yDAAA,zDAAC,AAACC,+BAAQ,AAAMF;;;AAI1D,wBAAA,gCAAA,AAAA,0FAAA,sDAAA,2CAAA,qDAAA,OAAA,4DAAA,+DAAA,WAAAG,iBAAA,tcAAMC,8CAAaC,MAAMP,iTAEPO,iGACK,qCAAAF,9BAACP,8CAAYE;;;AAGpC,qBAAA,qBAAA,1CAAMQ,0CACL,8DAAA,AAAA,0FAAA,mDAAA,mFAAA,iDAAA,qBAAA,mFAAA,mDAAA,mFAAA,8CAAA,iIAAA,mFAAA,8CAAA,mBAAA,53BAAMR,KAAG,KAAAS,SAAA,ymBAKqB,wCAAA,xCAACC,mVACFJ,sBAAY,wCAAA,xCAACI,oGAAuBV;;AAMlE,wCAAA,xCAACW,2HAA0BH,2BAAU,wBAAA,xBAAiBI",
+ ";AAAA;;;;;;;;;;AAQA,sBAAA,8BAAA,pDAAMA,0CAAWC,MAAMC,IACrB,AAAMA,OAAG,+BAAA,2CAAA,1EAACC,kJAAwB,AAAA,AAAIF;AACtC,MAAA,NAAKC,cAAW,qBAAA,VAAKE,UACH,mDAAA,5CAACC,uGAAqB,yDAAA,zDAAC,AAACC,+BAAQ,AAAMF;;AACxD,OAACG;;AAIH,wBAAA,gCAAA,AAAA,0FAAA,sDAAA,2CAAA,qDAAA,OAAA,4DAAA,+DAAA,WAAAC,iBAAA,tcAAMC,8CAAaC,MAAMR,iTAEPQ,iGACK,qCAAAF,9BAACR,8CAAYE;;;AAGpC,qBAAA,qBAAA,1CAAMS,0CACL,qEAAA,AAAA,0FAAA,mDAAA,mFAAA,iDAAA,qBAAA,mFAAA,mDAAA,mFAAA,8CAAA,iIAAA,mFAAA,8CAAA,mBAAA,n4BAAMT,KAAG,KAAAU,SAAA,gnBAKqB,wCAAA,xCAACC,mVACFJ,sBAAY,wCAAA,xCAACI,oGAAuBX;;AAMlE,wCAAA,xCAACY,2HAA0BH,2BAAU,wBAAA,xBAAiBI",
  "names":
  ["main.core/on-change", "event", "fb", "cljs.core/clj->js",
   "snapshot", "firebase.session/global-put!", "cljs.core/js->clj",
-  "p1__5231#", "main.core/input-field", "value", "main.core/app-view",
-  "js/Firebase", "firebase.session/global-state",
-  "reagent.core/render-component", "js/document"]}
+  "firebase.session/printAtom", "p1__5288#", "main.core/input-field",
+  "value", "main.core/app-view", "js/Firebase",
+  "firebase.session/global-state", "reagent.core/render-component",
+  "js/document"]}
