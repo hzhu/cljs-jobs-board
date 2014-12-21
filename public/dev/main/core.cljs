@@ -1,23 +1,34 @@
 (ns main.core
-  (:require [reagent.core :as reagent :refer [atom]]))
+  (:require [reagent.core :as reagent :refer [atom]]
+            [firebase.session :as session :refer [global-state global-put!]]
+            [ajax.core :as ajax]))
 
-(enable-console-print!)
-(println "doop")
+(defn on-change [event fb] 
+  (.set fb (clj->js {:text-from-app (-> event .-target .-value)}))
+  (.on fb "value" (fn [snapshot] 
+                    (global-put! :my-text ((js->clj (.val snapshot)) "text-from-app")))))
 
 
-;-----------------------------------
 
-(defn atom-input [value]
+(defn input-field [value fb]
   [:input {:type "text"
-           :value @value ;@value is the atom. It's defined and set in shared-state component?
-           :on-change #(reset! value (-> % .-target .-value))}])
+           :value value
+           :on-change #(on-change % fb)}])
 
-(defn shared-state []
-  (let [val (atom "foo")]
-    (fn []
+
+(defn app-view []
+	(let [fb (js/Firebase. "https://jobs-board.firebaseio.com/")] 
+   		[:div
+     	[:h2 "Home PAge!"]
+      
       [:div
-       [:p "The value is now: " @val]
-       [:p "Change it here: " [atom-input val]]])))
+      [:p "The value is now: " (global-state :my-text)]
+      [:p "Change it here: " [input-field (global-state :my-text) fb]]]
+  	 ])
+ )
 
 
-(reagent/render-component [shared-state] (.getElementById js/document "app"))
+
+(reagent/render-component [app-view] (.getElementById js/document "app"))
+
+

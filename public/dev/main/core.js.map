@@ -1,12 +1,12 @@
 {"version":3,
- "file":
- "/Users/henry/Code/reagent-starter-project/public/dev/main/core.js",
+ "file":"/Users/henry/Code/reagent-firebase/public/dev/main/core.js",
  "sources":["core.cljs"],
- "lineCount":19,
+ "lineCount":23,
  "mappings":
- ";AAAA;;;;;AAGA,AAACA;AACD,4BAAA,5BAACC;AAKD,uBAAA,4BAAA,AAAA,0FAAA,sDAAA,2CAAA,qDAAA,OAAA,sDAAA,AAAAC,iCAAA,+DAAA,WAAAC,iBAAA,5dAAMC,4CAAYC,8UAECA,kGACI,OAACC,gCAAOD,MAAM,AAAA,AAAAF;;;AAErC,yBAAA,yBAAA,lDAAMI,kDACJ,6CAAA,zCAAMC,MAAI,4BAAA,5BAACC,mCACT;oBAAA,AAAA,0FAAA,mDAAA,mFAAA,8CAAA,qBAAA,AAAAP,uCAAA,mFAAA,8CAAA,mBAAA,jKAE6BM,oPACFJ,qBAAWI;;;;AAG1C,wCAAA,xCAACE,2HAA0BH,+BAAc,wBAAA,xBAAiBI",
+ ";AAAA;;;;;;;;;;AAKA,sBAAA,8BAAA,pDAAMA,0CAAWC,MAAMC,IACrB,AAAMA,OAAG,+BAAA,2CAAA,1EAACC,kJAAwB,AAAA,AAAIF;AACtC,aAAA,NAAKC,cAAW,qBAAA,VAAKE,UACH,mDAAA,5CAACC,uGAAqB,yDAAA,zDAAC,AAACC,+BAAQ,AAAMF;;;AAI1D,wBAAA,gCAAA,AAAA,0FAAA,sDAAA,2CAAA,qDAAA,OAAA,4DAAA,+DAAA,WAAAG,iBAAA,tcAAMC,8CAAaC,MAAMP,iTAEPO,iGACK,qCAAAF,9BAACP,8CAAYE;;;AAGpC,qBAAA,qBAAA,1CAAMQ,0CACL,8DAAA,AAAA,0FAAA,mDAAA,mFAAA,iDAAA,qBAAA,mFAAA,mDAAA,mFAAA,8CAAA,iIAAA,mFAAA,8CAAA,mBAAA,53BAAMR,KAAG,KAAAS,SAAA,ymBAKqB,wCAAA,xCAACC,mVACFJ,sBAAY,wCAAA,xCAACI,oGAAuBV;;AAMlE,wCAAA,xCAACW,2HAA0BH,2BAAU,wBAAA,xBAAiBI",
  "names":
- ["cljs.core/enable-console-print!", "cljs.core/println",
-  "cljs.core/deref", "p1__6733#", "main.core/atom-input", "value",
-  "cljs.core/reset!", "main.core/shared-state", "val",
-  "reagent.core/atom", "reagent.core/render-component", "js/document"]}
+ ["main.core/on-change", "event", "fb", "cljs.core/clj->js",
+  "snapshot", "firebase.session/global-put!", "cljs.core/js->clj",
+  "p1__5231#", "main.core/input-field", "value", "main.core/app-view",
+  "js/Firebase", "firebase.session/global-state",
+  "reagent.core/render-component", "js/document"]}

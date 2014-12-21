@@ -1,0 +1,13 @@
+{"version":3,
+ "file":
+ "/Users/henry/Code/reagent-firebase/public/dev/firebase/session.js",
+ "sources":["session.cljs"],
+ "lineCount":33,
+ "mappings":
+ ";AAAA;;;;;AAKA,AAAKA,6BAAU,4BAAA,5BAACC;AAIhB;;;gCAAA,hCAAMI;yCAANH,SAAA,AAAA,IAAAC,YAAAD,uBAAA,AAAAE,wBAAAD,UAAA,IAAA,MAAA,9FAAoBG,uCAAKC,uDACvB,+BAAA,AAAAC,xBAACC,kDAAKT,4BAAUM,EAAEC;;6BADAD;IAApBJ;EAAAA;0CAAAA,FAAoBI;;;IAAAA;IAApBJ;gCAAAA,FAAoBI;;;;;;AAGpB,oCAAA,gCAAA,pEAAMI,+DAAaJ,EAAEK,GACnB,OAACC,+BAAMZ,2BAAUa,gBAAMP,EAAEK;;AAE3B,mCAAA,iCAAA,pEAAMG,6DAAYC,EAAET,EAAEK,GACpB,OAACC,+BAAMG,EAAEF,gBAAMP,EAAEK",
+ "names":
+ ["firebase.session/app-state", "reagent.core/atom", "p__5227",
+  "vec__5229", "cljs.core/nth", "firebase.session/global-state", "k",
+  "default", "cljs.core/deref", "cljs.core/get",
+  "firebase.session/global-put!", "v", "cljs.core/swap!",
+  "cljs.core/assoc", "firebase.session/local-put!", "a"]}

@@ -1,6 +1,6 @@
-reagent-starter-project + Firebase
+reagent-project + Firebase
 =======================
-
+Trying Firebase.
 
 ```
 ./lein cljsbuild auto dev
