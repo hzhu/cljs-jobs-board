@@ -1,0 +1,12 @@
+{"version":3,
+ "file":
+ "/Users/henry/Code/reagent-starter-project/public/dev/example.js",
+ "sources":["core.cljs"],
+ "lineCount":17,
+ "mappings":
+ ";AAEA;;;;;AAGA,qBAAA,4BAAA,AAAA,0FAAA,sDAAA,2CAAA,qDAAA,OAAA,sDAAA,AAAAA,iCAAA,+DAAA,WAAAC,iBAAA,1dAAMC,0CAAYC,8UAECA,kGACI,OAACC,gCAAOD,MAAM,AAAA,AAAAF;;;AAErC,uBAAA,yBAAA,hDAAMI,gDACJ,6CAAA,zCAAMC,MAAI,4BAAA,5BAACC,mCACT;oBAAA,AAAA,0FAAA,mDAAA,mFAAA,8CAAA,qBAAA,AAAAP,uCAAA,mFAAA,8CAAA,mBAAA,jKAE6BM,oPACFJ,mBAAWI;;;;AAG1C,wCAAA,xCAACE,2HAA0BC,yBAAU,wBAAA,xBAAiBC",
+ "names":
+ ["cljs.core/deref", "p1__6718#", "example/atom-input", "value",
+  "cljs.core/reset!", "example/shared-state", "val",
+  "reagent.core/atom", "reagent.core/render-component",
+  "example/app-view", "js/document"]}
