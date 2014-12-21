@@ -2,12 +2,13 @@
  "file":
  "/Users/henry/Code/reagent-firebase/public/dev/firebase/session.js",
  "sources":["session.cljs"],
- "lineCount":33,
+ "lineCount":39,
  "mappings":
- ";AAAA;;;;;AAKA,AAAKA,6BAAU,4BAAA,5BAACC;AAIhB;;;gCAAA,hCAAMI;yCAANH,SAAA,AAAA,IAAAC,YAAAD,uBAAA,AAAAE,wBAAAD,UAAA,IAAA,MAAA,9FAAoBG,uCAAKC,uDACvB,+BAAA,AAAAC,xBAACC,kDAAKT,4BAAUM,EAAEC;;6BADAD;IAApBJ;EAAAA;0CAAAA,FAAoBI;;;IAAAA;IAApBJ;gCAAAA,FAAoBI;;;;;;AAGpB,oCAAA,gCAAA,pEAAMI,+DAAaJ,EAAEK,GACnB,OAACC,+BAAMZ,2BAAUa,gBAAMP,EAAEK;;AAE3B,mCAAA,iCAAA,pEAAMG,6DAAYC,EAAET,EAAEK,GACpB,OAACC,+BAAMG,EAAEF,gBAAMP,EAAEK",
+ ";AAAA;;;;;AAGA,AAACA;AAID,AAAKC,6BAAU,4BAAA,5BAACC;AAIhB;;;gCAAA,hCAAMI;yCAANH,SAAA,AAAA,IAAAC,YAAAD,uBAAA,AAAAE,wBAAAD,UAAA,IAAA,MAAA,9FAAoBG,uCAAKC,uDACvB,+BAAA,AAAAC,xBAACC,kDAAKT,4BAAUM,EAAEC;;6BADAD;IAApBJ;EAAAA;0CAAAA,FAAoBI;;;IAAAA;IAApBJ;gCAAAA,FAAoBI;;;;;;AAGpB,4BAAA,5BAACI;AACD,4BAAA,5BAACA;AACD,AAACA,4BAAQ,2BAAA,AAAAF,sDAAA,jFAACG,qDAAQX;AAClB,4BAAA,5BAACU;AACD,4BAAA,5BAACA;AAED,oCAAA,gCAAA,pEAAME,+DAAaN,EAAEO,GACnB,OAACC,+BAAMd,2BAAUe,gBAAMT,EAAEO;;AAE3B,mCAAA,iCAAA,pEAAMG,6DAAYC,EAAEX,EAAEO,GACpB,OAACC,+BAAMG,EAAEF,gBAAMT,EAAEO",
  "names":
- ["firebase.session/app-state", "reagent.core/atom", "p__5227",
-  "vec__5229", "cljs.core/nth", "firebase.session/global-state", "k",
-  "default", "cljs.core/deref", "cljs.core/get",
+ ["cljs.core/enable-console-print!", "firebase.session/app-state",
+  "reagent.core/atom", "p__5270", "vec__5272", "cljs.core/nth",
+  "firebase.session/global-state", "k", "default", "cljs.core/deref",
+  "cljs.core/get", "cljs.core/println", "cljs.core/get-in",
   "firebase.session/global-put!", "v", "cljs.core/swap!",
   "cljs.core/assoc", "firebase.session/local-put!", "a"]}
