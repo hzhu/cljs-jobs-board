@@ -38,7 +38,10 @@
   )
 
 (defn submit []
-  [:a {:href "#"} "submit"])
+  (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
+    [:a {:href "#" :on-click #(session/send2fb fb)} "submit"]
+    )
+  )
 
 
 (defn app-view []

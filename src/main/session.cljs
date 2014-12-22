@@ -5,19 +5,29 @@
 
 ;; ----------
 ;; State
-(def app-state (atom {"post" { :hostel_name ""
-                               :job_description ""
-                               :location ""
-                               :email ""
-                               :website ""
+(def app-state (atom {"post" { :hostelname "Pacific Tradewinds"
+                               :jobdescription "Doooooper. Cleaner."
+                               :location "San Franciaaweosme"
+                               :email "ptdubs@gmail.com"
+                               :website "www.pwt.com"
                               }}))
 
 (defn printAtom []
   (println "::::::::::ATOM::::::::::")
   (println "::::::::::::::::::::::::")
-  (println (get-in @app-state ""))
+  (println (get-in @app-state ["post"]))
   (println "::::::::::::::::::::::::")
   (println "::::::::::::::::::::::::"))
+
+(println (get-in @app-state ["post"]))
+
+
+(defn send2fb [fb]
+  (def postMap (get-in @app-state ["post"]))
+  (.push fb (clj->js postMap))
+)
+
+
 
 ;; ----------
 ;; Helper Functions
