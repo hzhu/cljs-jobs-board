@@ -2,14 +2,14 @@
  "file":
  "/Users/henry/Code/reagent-firebase/public/dev/firebase/session.js",
  "sources":["session.cljs"],
- "lineCount":40,
+ "lineCount":42,
  "mappings":
- ";AAAA;;;;;AAGA,AAACA;AAID,AAAKC,6BAAU,4BAAA,5BAACC;AAEhB,6BAAA,sBAAA,nDAAMC,mDACJ,4BAAA,5BAACC;AACD,4BAAA,5BAACA;AACD,AAACA,4BAAQ,2BAAA,AAAAC,sDAAA,jFAACC,qDAAQL;AAClB,4BAAA,5BAACG;AACD,mCAAA,5BAACA;;AAIH;;;gCAAA,hCAAMM;yCAANH,SAAA,AAAA,IAAAC,YAAAD,uBAAA,AAAAE,wBAAAD,UAAA,IAAA,MAAA,9FAAoBG,uCAAKC,uDACvB,+BAAA,AAAAP,xBAACQ,kDAAKZ,4BAAUU,EAAEC;;6BADAD;IAApBJ;EAAAA;0CAAAA,FAAoBI;;;IAAAA;IAApBJ;gCAAAA,FAAoBI;;;;;;AAGpB,oCAAA,gCAAA,pEAAMG,+DAAaH,EAAEI,GACnB,OAACC,+BAAMf,2BAAUgB,gBAAMN,EAAEI;;AAE3B,mCAAA,iCAAA,pEAAMG,6DAAYC,EAAER,EAAEI,GACpB,OAACC,+BAAMG,EAAEF,gBAAMN,EAAEI",
+ ";AAAA;;;;;AAGA,AAACA;AAID,AAAKC,6BAAU,4BAAA,5BAACC;AAEhB,6BAAA,sBAAA,nDAAMC,mDACJ,4BAAA,5BAACC;AACD,4BAAA,5BAACA;AACD,AAACA,4BAAQ,2BAAA,AAAAC,sDAAA,jFAACC,qDAAQL;AAClB,4BAAA,5BAACG;AACD,mCAAA,5BAACA;;AAIH;;;gCAAA,hCAAMM;yCAANH,SAAA,AAAA,IAAAC,YAAAD,uBAAA,AAAAE,wBAAAD,UAAA,IAAA,MAAA,9FAAoBG,uCAAKC,uDACvB,+BAAA,AAAAP,xBAACQ,kDAAKZ,4BAAUU,EAAEC;;6BADAD;IAApBJ;EAAAA;0CAAAA,FAAoBI;;;IAAAA;IAApBJ;gCAAAA,FAAoBI;;;;;;AAGpB,oCAAA,gCAAA,pEAAMG,+DAAaH,EAAEI,GACnB,4BAAA,5BAACX;AACD,AAACA,4BAAQO;AACT,OAACK,+BAAMf,2BAAUgB,gBAAMN,EAAEI;;AAE3B,mCAAA,iCAAA,pEAAMG,6DAAYC,EAAER,EAAEI,GACpB,OAACC,+BAAMG,EAAEF,gBAAMN,EAAEI",
  "names":
  ["cljs.core/enable-console-print!", "firebase.session/app-state",
   "reagent.core/atom", "firebase.session/printAtom",
   "cljs.core/println", "cljs.core/deref", "cljs.core/get-in",
-  "p__5282", "vec__5284", "cljs.core/nth",
+  "p__5289", "vec__5291", "cljs.core/nth",
   "firebase.session/global-state", "k", "default", "cljs.core/get",
   "firebase.session/global-put!", "v", "cljs.core/swap!",
   "cljs.core/assoc", "firebase.session/local-put!", "a"]}

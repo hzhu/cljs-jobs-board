@@ -12,4 +12,5 @@ goog.addDependency("../reagent/core.js", ['reagent.core'], ['reagent.impl.util',
 goog.addDependency("../firebase/session.js", ['firebase.session'], ['reagent.core', 'cljs.core']);
 goog.addDependency("../cljs/reader.js", ['cljs.reader'], ['goog.string', 'cljs.core']);
 goog.addDependency("../ajax/core.js", ['ajax.core'], ['goog.net.XhrManager', 'goog.net.XhrIo', 'goog.Uri.QueryData', 'goog.Uri', 'cljs.core', 'goog.net.EventType', 'goog.structs', 'goog.json.Serializer', 'clojure.string', 'cljs.reader', 'goog.events', 'goog.net.ErrorCode']);
-goog.addDependency("../main/core.js", ['main.core'], ['ajax.core', 'firebase.session', 'reagent.core', 'cljs.core']);
+goog.addDependency("../main/post.js", ['main.post'], ['ajax.core', 'reagent.core', 'cljs.core']);
+goog.addDependency("../main/core.js", ['main.core'], ['ajax.core', 'firebase.session', 'reagent.core', 'cljs.core', 'main.post']);

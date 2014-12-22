@@ -1,15 +1,22 @@
 (ns main.core
   (:require [reagent.core :as reagent :refer [atom]]
             [firebase.session :as session :refer [global-state global-put!]]
+            [main.post :as post]
             [ajax.core :as ajax]))
+
 
 
 ; lots of weird shit happening here. Figure it out.
 ; Your input value is getting saved to Firebase & Atom at the same time. Hm
 (defn on-change [event fb]
+  (println "snapshotsnapshotsnapshitsn:")
+  (println fb)
+  (println "snapshotsnapshotsnapshitsn:")
   (.set fb (clj->js {:text-from-app (-> event .-target .-value)})) ;save value to Firebase
-  (.on fb "value" (fn [snapshot] 
+  (.on fb "value" (fn [snapshot]
+
                     (global-put! :my-text ((js->clj (.val snapshot)) "text-from-app"))))
+                     ; the first param being passed into global-put! is :my-text. Looks like it will be the name of the atom.
   (session/printAtom)
  )
 

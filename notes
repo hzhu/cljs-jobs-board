@@ -1,0 +1,14 @@
+jobs 
+	{ :job {
+		 	:hostel_name "Pacific Tradewinds Hostel"
+		 	:job_title "Cleaner"
+		 	:location "San Francisco, CA"
+		 	:website "http://ptdubs.com"
+		 	:overview "Overview shrtuff paragraph. Clean toilets."
+		 	:job_description "details etc etc. You get free fud ;)"
+		 	:email "ptdubs@gmail.com"
+		 	:how_to_apply "Send us an email! OR call us at XXX-XXX-XXXX"
+		 	:posted_date "DEC 19"
+      :count 123
+	 }
+ }
