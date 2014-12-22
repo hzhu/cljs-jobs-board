@@ -1,5 +1,5 @@
-jobs 
-	{ :job {
+job-posts
+	{ :job-123 {
 		 	:hostel_name "Pacific Tradewinds Hostel"
 		 	:job_title "Cleaner"
 		 	:location "San Francisco, CA"
@@ -9,6 +9,6 @@ jobs
 		 	:email "ptdubs@gmail.com"
 		 	:how_to_apply "Send us an email! OR call us at XXX-XXX-XXXX"
 		 	:posted_date "DEC 19"
-      :count 123
+            :count 123
 	 }
  }

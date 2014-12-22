@@ -2,24 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0397b803-78f2-4c3e-9f35-aa14b30ebfc6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/dev/.js.map" afterPath="$PROJECT_DIR$/public/dev/.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/dev/app.js" afterPath="$PROJECT_DIR$/public/dev/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/dev/main/core.cljs" afterPath="$PROJECT_DIR$/public/dev/main/core.cljs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/core.cljs" afterPath="$PROJECT_DIR$/src/main/core.cljs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/dev/main/core.js.map" afterPath="$PROJECT_DIR$/public/dev/main/core.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/dev/main/core.js" afterPath="$PROJECT_DIR$/public/dev/main/core.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/dev/firebase/session.cljs" afterPath="$PROJECT_DIR$/public/dev/firebase/session.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/session.cljs" afterPath="$PROJECT_DIR$/src/main/session.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/dev/firebase/session.js.map" afterPath="$PROJECT_DIR$/public/dev/firebase/session.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/dev/firebase/session.js" afterPath="$PROJECT_DIR$/public/dev/firebase/session.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notes" afterPath="$PROJECT_DIR$/notes" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="reagent-firebase.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="0397b803-78f2-4c3e-9f35-aa14b30ebfc6" time="1419145125946" ignored="false" />
-    <file path="/core.cljs" changelist="0397b803-78f2-4c3e-9f35-aa14b30ebfc6" time="1419228415257" ignored="false" />
+    <file path="/core.cljs" changelist="0397b803-78f2-4c3e-9f35-aa14b30ebfc6" time="1419235527635" ignored="false" />
     <file path="/session.cljs" changelist="0397b803-78f2-4c3e-9f35-aa14b30ebfc6" time="1419224417995" ignored="false" />
     <file path="/post.cljs" changelist="0397b803-78f2-4c3e-9f35-aa14b30ebfc6" time="1419229097502" ignored="false" />
+    <file path="/notes" changelist="0397b803-78f2-4c3e-9f35-aa14b30ebfc6" time="1419229778706" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,19 +74,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="core.cljs" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="core.cljs" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/core.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="47" selection-start="211" selection-end="211" vertical-scroll-proportion="-2.4">
+            <state line="51" column="25" selection-start="1693" selection-end="1693" vertical-scroll-proportion="0.689911">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="post.cljs" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="post.cljs" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/post.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="26" selection-start="126" selection-end="126" vertical-scroll-proportion="0.084269665">
+            <state line="6" column="43" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -99,7 +95,7 @@
       <file leaf-file-name="notes" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notes">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="7" column="73" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -135,15 +131,16 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/session.cljs" />
         <option value="$PROJECT_DIR$/src/main/data.cljs" />
-        <option value="$PROJECT_DIR$/src/main/core.cljs" />
         <option value="$PROJECT_DIR$/src/main/post.cljs" />
+        <option value="$PROJECT_DIR$/notes" />
+        <option value="$PROJECT_DIR$/src/main/core.cljs" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="477" />
-    <option name="y" value="80" />
-    <option name="width" value="1055" />
+    <option name="x" value="300" />
+    <option name="y" value="47" />
+    <option name="width" value="1129" />
     <option name="height" value="860" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -343,8 +340,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="477" y="80" width="1055" height="860" extended-state="0" />
-    <editor active="false" />
+    <frame x="300" y="47" width="1129" height="860" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -363,7 +360,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33994055" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18651892" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -427,24 +424,14 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="92" selection-start="37" selection-end="37" vertical-scroll-proportion="0.042134833">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/core.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="47" selection-start="211" selection-end="211" vertical-scroll-proportion="-2.4">
           <folding />
         </state>
       </provider>
@@ -458,7 +445,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/post.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="26" selection-start="126" selection-end="126" vertical-scroll-proportion="0.084269665">
+        <state line="6" column="43" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="73" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/core.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="25" selection-start="1693" selection-end="1693" vertical-scroll-proportion="0.689911">
           <folding />
         </state>
       </provider>

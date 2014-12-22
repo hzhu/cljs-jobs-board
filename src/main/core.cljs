@@ -9,9 +9,7 @@
 ; lots of weird shit happening here. Figure it out.
 ; Your input value is getting saved to Firebase & Atom at the same time. Hm
 (defn on-change [event fb]
-  (println "snapshotsnapshotsnapshitsn:")
-  (println fb)
-  (println "snapshotsnapshotsnapshitsn:")
+
   (.set fb (clj->js {:text-from-app (-> event .-target .-value)})) ;save value to Firebase
   (.on fb "value" (fn [snapshot]
 
@@ -22,9 +20,25 @@
 
 
 (defn input-field [value fb] ;basically the entire logic of the input
-  [:input {:type "text"
-           :value value
-           :on-change #(on-change % fb)}])
+  [:div
+    [:input {:type "text"
+            :value value
+            :on-change #(on-change % fb)}]
+    ]
+)
+
+(defn fireBasePlayground []
+  [:div
+    [:input.hostel_name     {:type "text" :placeholder "Hostel Name"}]
+    [:input.job_description {:type "text" :placeholder "Job description"}]
+    [:input.location        {:type "text" :placeholder "Location"}]
+    [:input.email           {:type "text" :placeholder "Email"}]
+    [:input.website         {:type "text" :placeholder "website"}]
+   ]
+  )
+
+(defn submit []
+  [:a {:href "#"} "submit"])
 
 
 (defn app-view []
@@ -35,8 +49,13 @@
       [:div
       [:p "The value is now: " (global-state :my-text)]
       [:p "Change it here: " [input-field (global-state :my-text) fb]]] ;call input-field with two parameters.
+      [fireBasePlayground]
+      [submit]
   	 ])
  )
+
+; POST -> FIREBASE
+
 
 
 
