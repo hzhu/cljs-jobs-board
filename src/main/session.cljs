@@ -5,7 +5,12 @@
 
 ;; ----------
 ;; State
-(def app-state (atom {}))
+(def app-state (atom {"post" { :hostel_name ""
+                               :job_description ""
+                               :location ""
+                               :email ""
+                               :website ""
+                              }}))
 
 (defn printAtom []
   (println "::::::::::ATOM::::::::::")
