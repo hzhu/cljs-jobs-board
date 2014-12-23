@@ -28,8 +28,9 @@
 )
 
 (defn handle-input-update [event]
-    (println (.-value (.-target event)))
-    (println (.-className (.-target event)))
+    (let [value     (aget event "target" "value")
+          classNAme (aget event "target" "className")]
+          (session/setter className value))
   )
 
 (defn fireBasePlayground []
