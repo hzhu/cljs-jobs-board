@@ -29,7 +29,7 @@
 
 (defn handle-input-update [event]
     (let [value     (aget event "target" "value")
-          classNAme (aget event "target" "className")]
+          className (aget event "target" "className")]
           (session/setter className value))
   )
 

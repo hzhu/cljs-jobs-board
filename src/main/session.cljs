@@ -26,11 +26,10 @@
 )
 
 (defn setter [name value]
-  (println name)
-  (println value)
-  (println "---SETTER---1:")
-  ;(println (get-in @app-state ["post" name]))
-;  (!swap app-state assoc-in ["post" name] value)
+  (println "name:" name)
+  (println "value:" value)
+  (swap! app-state assoc-in ["post" name] value)
+  (printAtom)
   (println "---SETTER---2")
   )
 
