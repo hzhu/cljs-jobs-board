@@ -1,6 +1,7 @@
 (ns main.core
   (:require [reagent.core :as reagent :refer [atom]]
-            [firebase.session :as session :refer [global-state global-put!]]
+            [firebase.session :as session]
+            [secretary.core :as secretary :refer-macros [defroute]]
             [main.post :as post]
             [ajax.core :as ajax]))
 
