@@ -27,13 +27,15 @@
     ]
 )
 
+
+
 (defn fireBasePlayground []
   [:div
-    [:input.hostel_name     {:type "text" :placeholder "Hostel Name"}]
-    [:input.job_description {:type "text" :placeholder "Job description"}]
-    [:input.location        {:type "text" :placeholder "Location"}]
-    [:input.email           {:type "text" :placeholder "Email"}]
-    [:input.website         {:type "text" :placeholder "website"}]
+    [:input.hostel_name     {:type "text" :placeholder "Hostel Name" :on-change #(session/setter (.-className (.-target %)) (.-value (.-target %)))}]
+    [:input.job_description {:type "text" :on-change #(println "b") :placeholder "Job description"}]
+    [:input.location        {:type "text" :on-change #(println "c") :placeholder "Location"}]
+    [:input.email           {:type "text" :on-change #(println "d") :placeholder "Email"}]
+    [:input.website         {:type "text" :on-change #(println "e") :placeholder "website"}]
    ]
   )
 

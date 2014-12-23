@@ -5,11 +5,11 @@
 
 ;; ----------
 ;; State
-(def app-state (atom {"post" { :hostelname "Pacific Tradewinds"
-                               :jobdescription "Doooooper. Cleaner."
-                               :location "San Franciaaweosme"
-                               :email "ptdubs@gmail.com"
-                               :website "www.pwt.com"
+(def app-state (atom {"post" { "hostel_name" "oooods"
+                               "job_description" "bbDoooooper. Cleaner."
+                               "location" "San Franciaaweosme"
+                               "email" "ptdubs@gmail.com"
+                               "website" "ww:)jjw.pwbbbt.com"
                               }}))
 
 (defn printAtom []
@@ -19,13 +19,21 @@
   (println "::::::::::::::::::::::::")
   (println "::::::::::::::::::::::::"))
 
-(println (get-in @app-state ["post"]))
-
 
 (defn send2fb [fb]
   (def postMap (get-in @app-state ["post"]))
   (.push fb (clj->js postMap))
 )
+
+(defn setter [name value]
+  (println name)
+  (println value)
+  (println "---SETTER---1:")
+  ;(println (get-in @app-state ["post" name]))
+;  (!swap app-state assoc-in ["post" name] value)
+  (println "---SETTER---2")
+  )
+
 
 
 
