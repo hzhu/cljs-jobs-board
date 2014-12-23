@@ -3,13 +3,11 @@
 
 (enable-console-print!)
 
-;; ----------
-;; State
-(def app-state (atom {"post" { "hostel_name" "oooods"
-                               "job_description" "bbDoooooper. Cleaner."
+(def app-state (atom {"post" { "hostel_name" "Some Hostel"
+                               "job_description" "Receptionist. Cleaner."
                                "location" "San Franciaaweosme"
                                "email" "ptdubs@gmail.com"
-                               "website" "ww:)jjw.pwbbbt.com"
+                               "website" "www.ahostel.com"
                               }}))
 
 (defn printAtom []
@@ -19,32 +17,14 @@
   (println "::::::::::::::::::::::::")
   (println "::::::::::::::::::::::::"))
 
-
-(defn send2fb [fb]
+;HELPER FUNCTIONS
+;Send Job Post to Firebase
+(defn post2fb [fb]
   (def postMap (get-in @app-state ["post"]))
   (.push fb (clj->js postMap))
 )
 
 (defn setter [name value]
-  (println "name:" name)
-  (println "value:" value)
   (swap! app-state assoc-in ["post" name] value)
-  (printAtom)
-  (println "---SETTER---2")
-  )
+  (printAtom))
 
-
-
-
-;; ----------
-;; Helper Functions
-(defn global-state [k & [default]]
-  (get @app-state k default))
-
-(defn global-put! [k v] ;swaps the atom with k
-  (println "this is K. The new item swapped into the atom.")
-  (println k)
-  (swap! app-state assoc k v))
-
-(defn local-put! [a k v]
-  (swap! a assoc k v))
