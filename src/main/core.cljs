@@ -25,12 +25,14 @@
 
 
     [:a.routes {:on-click #(println "go home")} "HOME PAGE"]
+    ; :on-click #(dispatch "/")
   ])
 
 (defn home-view []
   [:div.home
    [:h1 "WELCOME TO THE JOBS BOARD"]
    [:a.routes {:on-click #(println "go make new post")} "POST A NEW JOB"]])
+   ; :on-click #(dispatch "/new/job")
 
 
 
