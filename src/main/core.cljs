@@ -41,19 +41,16 @@
 (defn home-view []
   [:div.home
    [:h1 "WELCOME TO THE JOBS BOARD"]
-   [:a.routes {:on-click #(println "go make new post")} "POST A NEW JOB"]])
-   ; :on-click #(dispatch "/new/job")
+   [:a.routes {:on-click #(secretary/dispatch! "/new/job")} "POST A NEW JOB"]
+   (defroute "/new/job" {}
+     (reset! current-view new-post-view))
+
+   ])
 
 
 
 
-(defn app-view []
-   [:div
-    [new-post-view]
-    [home-view]])
-
-
-(reset! current-view new-post-view)
+(reset! current-view home-view)
 
 (defn app-view []
   (@current-view))
