@@ -1,6 +1,6 @@
 (ns main.core
   (:require [reagent.core :as reagent :refer [atom]]
-            [firebase.session :as session]
+            [main.data :as data]
             [secretary.core :as secretary :refer-macros [defroute]]
             [main.post :as post]
             [ajax.core :as ajax]))
@@ -14,7 +14,7 @@
   (defn handle-input-update [event]
     (let [value     (aget event "target" "value")
           className (aget event "target" "className")]
-      (session/setter className value)))
+      (data/setter className value)))
 
   [:div
     [:input.hostel_name     {:type "text" :placeholder "Hostel Name"     :on-change #(handle-input-update %) }]
@@ -24,7 +24,7 @@
     [:input.website         {:type "text" :placeholder "website"         :on-change #(handle-input-update %)}]
 
     (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
-      [:a {:href "#" :on-click #(session/post2fb fb)} "submit"])
+      [:a {:href "#" :on-click #(data/post2fb fb)} "submit"])
 
 
     [:a.routes {:on-click #(secretary/dispatch! "/")} "HOME PAGE"]
