@@ -7,6 +7,9 @@
 
 
 
+(def current-view (atom nil))
+(println (get-in @current-view ""))
+
 (defn new-post-view []
   (defn handle-input-update [event]
     (let [value     (aget event "target" "value")
@@ -24,8 +27,15 @@
       [:a {:href "#" :on-click #(session/post2fb fb)} "submit"])
 
 
-    [:a.routes {:on-click #(println "go home")} "HOME PAGE"]
-    ; :on-click #(dispatch "/")
+    [:a.routes {:on-click #(secretary/dispatch! "/")} "HOME PAGE"]
+
+    (defroute "/" {}
+      (reset! current-view home-view))
+      (println "*************************")
+      (println (get-in @current-view ""))
+      (println "*************************")
+
+      ; :on-click #(dispatch "/")
   ])
 
 (defn home-view []
@@ -41,6 +51,12 @@
    [:div
     [new-post-view]
     [home-view]])
+
+
+(reset! current-view new-post-view)
+
+(defn app-view []
+  (@current-view))
 
 (reagent/render-component [app-view] (.getElementById js/document "app"))
 
