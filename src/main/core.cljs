@@ -52,8 +52,10 @@
 
 (reset! current-view home-view)
 
+(data/set-view! new-post-view)
+
 (defn app-view []
-  (@current-view))
+  (data/boom))
 
 (reagent/render-component [app-view] (.getElementById js/document "app"))
 

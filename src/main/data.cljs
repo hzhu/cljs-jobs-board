@@ -12,11 +12,16 @@
 
 (def current-view (atom nil))
 
-(defn get-view []
+(defn boom []
+  (println @current-view)
+  @current-view)
+
+
+(defn get-view! []
   (get-in @current-view "")
   )
 
-(defn set-view [view]
+(defn set-view! [view]
   (reset! current-view view)
   (println "view has been set to something else"))
 
