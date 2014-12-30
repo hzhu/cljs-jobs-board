@@ -8,7 +8,8 @@
                                "location" "San Franciaaweosme"
                                "email" "ptdubs@gmail.com"
                                "website" "www.ahostel.com"
-                              }}))
+                              },
+                      "jobs-list" {}}))
 
 (def current-view (atom nil))
 
@@ -24,7 +25,7 @@
 (defn printAtom []
   (println "::::::::::ATOM::::::::::")
   (println "::::::::::::::::::::::::")
-  (println (get-in @app-state ["post"]))
+  (println (get-in @app-state ["jobs-list"]))
   (println "::::::::::::::::::::::::")
   (println "::::::::::::::::::::::::"))
 
@@ -38,4 +39,10 @@
 (defn setter [name value]
   (swap! app-state assoc-in ["post" name] value)
   (printAtom))
+
+
+(defn set-list! [value]
+  (swap! app-state assoc-in ["jobs-list"] value)
+  (printAtom))
+
 

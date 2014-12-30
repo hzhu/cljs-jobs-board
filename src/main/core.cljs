@@ -47,6 +47,10 @@
 
    ])
 
+(let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
+  (.on fb "value" #(.log js/console (.val %)))
+  (.on fb "value" #(data/set-list! (.val %)))
+  )
 
 
 
