@@ -37,12 +37,17 @@
 )
 
 (defn setter [name value]
-  (swap! app-state assoc-in ["post" name] value)
-  (printAtom))
+  (swap! app-state assoc-in ["post" name] value))
 
 
 (defn set-list! [value]
+   ;(println "list of jobs set in the atom")
   (swap! app-state assoc-in ["jobs-list"] value)
-  (printAtom))
+   ;(printAtom)
+  )
+
+(defn get-list! []
+  (get-in @app-state ["jobs-list"])
+)
 
 

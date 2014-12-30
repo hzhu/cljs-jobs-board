@@ -8,7 +8,7 @@
 
 
 (def current-view (atom nil))
-(println (get-in @current-view ""))
+;(println (get-in @current-view ""))
 
 (defn new-post-view []
   (defn handle-input-update [event]
@@ -38,19 +38,59 @@
       ; :on-click #(dispatch "/")
   ])
 
-(defn home-view []
-  [:div.home
-   [:h1 "WELCOME TO THE JOBS BOARD"]
-   [:a.routes {:on-click #(secretary/dispatch! "/new/job")} "POST A NEW JOB"]
-   (defroute "/new/job" {}
-     (reset! current-view new-post-view))
-
-   ])
-
 (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
   (.on fb "value" #(.log js/console (.val %)))
-  (.on fb "value" #(data/set-list! (.val %)))
+  (.on fb "value" #(data/set-list! (.val %)
+                       ;(defn someFunc []
+                         (println (data/get-list!));)
+                       ;(.setTimeout js/window someFunc 1)
+                     ))
+
+
+
+
+  ;above has timing issue. below good. must refactor
+
+;  (defn someFunc []
+;    (println (data/get-list!)))
+;  (.setTimeout js/window someFunc 5000)
+
+
   )
+
+
+
+
+(defn home-view []
+  ;(println (data/get-list!))
+
+  (def numbers [2 3 5 7 3 4])
+  ; square in shorthand notation
+  (def square (fn [x] [:div x]))
+  ; returns (4 9 25 49)
+
+
+  [:div.home
+
+
+    [:div
+      (map square numbers)
+    ]
+
+
+
+
+
+    [:h1 "WELCOME TO THE JOBS BOARD"]
+    [:a.routes {:on-click #(secretary/dispatch! "/new/job")} "POST A NEW JOB"]
+    (defroute "/new/job" {}
+      (reset! current-view new-post-view))
+
+
+  ])
+
+
+
 
 
 
@@ -60,5 +100,6 @@
   (@current-view))
 
 (reagent/render-component [app-view] (.getElementById js/document "app"))
+
 
 
