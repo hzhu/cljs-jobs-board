@@ -39,30 +39,25 @@
   ])
 
 (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
-  (.on fb "value" #(.log js/console (.val %)))
-  (.on fb "value" #(data/set-list! (.val %)
+  (.on fb "value" #(.log js/console (js->clj (.val %))))
+  (.on fb "value" #(data/set-list! (js->clj (.val %))
                        ;(defn someFunc []
-                         (println (data/get-list!));)
+                       ;  (println (data/get-list!));)
                        ;(.setTimeout js/window someFunc 1)
                      ))
-
-
-
-
-  ;above has timing issue. below good. must refactor
-
-;  (defn someFunc []
-;    (println (data/get-list!)))
-;  (.setTimeout js/window someFunc 5000)
-
-
   )
 
 
 
 
+
+
 (defn home-view []
-  ;(println (data/get-list!))
+
+  (defn someFunc []
+    (println (data/get-list!)))
+  (.setTimeout js/window someFunc 500)
+
 
   (def numbers [2 3 5 7 3 4])
   ; square in shorthand notation
