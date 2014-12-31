@@ -39,7 +39,7 @@
   ])
 
 (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
-  (.on fb "value" #(.log js/console (js->clj (.val %))))
+  (.on fb "value" #(.log js/console (.val %)))
   (.on fb "value" #(data/set-list! (js->clj (.val %))
                        ;(defn someFunc []
                        ;  (println (data/get-list!));)
@@ -61,7 +61,11 @@
 
   (def numbers [2 3 5 7 3 4])
   ; square in shorthand notation
-  (def square (fn [x] [:div x]))
+  (def square (fn [[_ hostelData]]
+              (println hostelData)
+              [:div
+                (map (fn [[_ val]] [:div  val]) hostelData)
+              ]))
   ; returns (4 9 25 49)
 
 
@@ -69,7 +73,7 @@
 
 
     [:div
-      (map square numbers)
+      (map square (data/get-list!))
     ]
 
 
