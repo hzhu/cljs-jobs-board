@@ -45,38 +45,30 @@
                      ))
   )
 
+(defn job-view []
+  [:div "JOB POST VIEW IS HEREEE!"
+    ])
+
 
 (defn home-view []
 
   (def list-info (fn [[_ hostelData]]
                 [:a.list-item {:href "#"}
-                  [:div {:style {"border" "1px solid #000" "margin-top" "10px"}}
+                  [:div
                     (hostelData "hostel_name") [:br]
                     (hostelData "job_title")
                   ]]))
 
-
   [:div.home
-
-
     [:div
       (map list-info (data/get-list!))
     ]
-
-
-
-
 
     [:h1 "WELCOME TO THE JOBS BOARD"]
     [:a.routes {:on-click #(secretary/dispatch! "/new/job")} "POST A NEW JOB"]
     (defroute "/new/job" {}
       (reset! current-view new-post-view))
   ])
-
-
-
-
-
 
 (reset! current-view home-view)
 
