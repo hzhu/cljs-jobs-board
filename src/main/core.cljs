@@ -41,6 +41,9 @@
     ; i get the atom here. All of it. Why make a network call to fb.. hehe
     [:a {:on-click #(data/printAtom)} "PRINT SHTUFF"]
 
+    ;todo: get data from atom
+    ;render html shizzle here
+
     ])
 
 
