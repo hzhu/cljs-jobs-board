@@ -38,7 +38,6 @@
 (defn job-view []
   [:div "JOB POST VIEW IS HEREEE!"
     [:a.routes {:on-click #(secretary/dispatch! "/")} "HOME PAGE"]
-    ; i get the atom here. All of it. Why make a network call to fb.. hehe
     [:a {:on-click #(data/printAtom)} "PRINT SHTUFF"]
 
     (let [boobs "12344"]
@@ -55,21 +54,14 @@
 (defn home-view []
 
   (def list-info (fn [[uid hostelData]]
-                ;(println uid)
+    (defn set-post-atom [uid]
+      (let [x (data/clicked-job uid)]))
 
-                (defn set-post-atom [uid]
-                  (let [x (data/clicked-job uid)]
-;                    (println "******************")
-;                    (println x)
-;                    (println "****************")
-                    )
-                )
-
-                [:a.list-item {:href "#" :data-attr uid :on-click #((secretary/dispatch! "/jobs/someid")(set-post-atom uid))}
-                  [:div
-                    (hostelData "hostel_name") [:br]
-                    (hostelData "job_title")
-                  ]]))
+    [:a.list-item {:href "#" :data-attr uid :on-click #((secretary/dispatch! "/jobs/someid")(set-post-atom uid))}
+      [:div
+        (hostelData "hostel_name") [:br]
+        (hostelData "job_title")
+      ]]))
 
   [:div.home
     [:div
@@ -90,7 +82,7 @@
 
 
 
-;routes and what view to render
+;Routes and what view to render
 (defroute "/jobs/someid" {}
   (reset! current-view job-view))
 

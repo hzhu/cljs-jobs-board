@@ -42,9 +42,7 @@
 
 
 (defn set-list! [value]
-   ;(println "list of jobs set in the atom")
-  (swap! app-state assoc-in ["jobs-list"] value)
-  )
+  (swap! app-state assoc-in ["jobs-list"] value))
 
 (defn get-list! []
   (get-in @app-state ["jobs-list"])
@@ -57,7 +55,6 @@
     (printAtom)))
 
 (defn get-clicked-job []
-  (get-in @app-state ["clicked-job"])
-  )
+  (get-in @app-state ["clicked-job"]))
 
 
