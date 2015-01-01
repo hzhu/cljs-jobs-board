@@ -47,8 +47,17 @@
 (defn home-view []
 
   (def list-info (fn [[uid hostelData]]
-                (println uid)
-                [:a.list-item {:href "#" :on-click #(secretary/dispatch! "/jobs/someid")}
+                ;(println uid)
+
+                (defn set-post-atom [uid]
+                  (let [x (data/clicked-job uid)]
+;                    (println "******************")
+;                    (println x)
+;                    (println "****************")
+                    )
+                )
+
+                [:a.list-item {:href "#" :data-attr uid :on-click #((secretary/dispatch! "/jobs/someid")(set-post-atom uid))}
                   [:div
                     (hostelData "hostel_name") [:br]
                     (hostelData "job_title")
