@@ -43,7 +43,6 @@
 (defn set-list! [value]
    ;(println "list of jobs set in the atom")
   (swap! app-state assoc-in ["jobs-list"] value)
-   ;(printAtom)
   )
 
 (defn get-list! []

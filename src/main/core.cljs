@@ -39,11 +39,8 @@
   ])
 
 (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
-  (.on fb "value" #(.log js/console (.val %)))
+  ;(.on fb "value" #(.log js/console (.val %)))
   (.on fb "value" #(data/set-list! (js->clj (.val %))
-                       ;(defn someFunc []
-                       ;  (println (data/get-list!));)
-                       ;(.setTimeout js/window someFunc 1)
                      ))
   )
 
@@ -54,19 +51,12 @@
 
 (defn home-view []
 
-  (defn someFunc []
-    (println (data/get-list!)))
-  (.setTimeout js/window someFunc 500)
-
-
-  (def numbers [2 3 5 7 3 4])
-  ; square in shorthand notation
   (def square (fn [[_ hostelData]]
-              (println hostelData)
+              (println hostelData) ; heres each hostel map;
               [:div
-                (map (fn [[_ val]] [:div  val]) hostelData)
+                (map (fn [[_ val]]
+                       [:div  val]) hostelData)
               ]))
-  ; returns (4 9 25 49)
 
 
   [:div.home
@@ -84,8 +74,6 @@
     [:a.routes {:on-click #(secretary/dispatch! "/new/job")} "POST A NEW JOB"]
     (defroute "/new/job" {}
       (reset! current-view new-post-view))
-
-
   ])
 
 
