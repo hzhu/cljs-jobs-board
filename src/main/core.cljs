@@ -45,17 +45,14 @@
   )
 
 
-
-
-
-
 (defn home-view []
 
   (def square (fn [[_ hostelData]]
-              (println hostelData) ; heres each hostel map;
+              (println (hostelData "email"))
               [:div
-                (map (fn [[_ val]]
-                       [:div  val]) hostelData)
+               (hostelData "hostel_name")
+                ;(map (fn []
+                ;  [:div (hostelData "email")] ) hostelData)
               ]))
 
 
