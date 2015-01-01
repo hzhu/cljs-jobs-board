@@ -30,11 +30,6 @@
 
     [:a.routes {:on-click #(secretary/dispatch! "/")} "HOME PAGE"]
 
-    (defroute "/" {}
-      (reset! current-view home-view))
-      (println "*************************")
-      (println (get-in @current-view ""))
-      (println "*************************")
 
       ; :on-click #(dispatch "/")
   ])
@@ -47,17 +42,20 @@
 
 (defn job-view []
   [:div "JOB POST VIEW IS HEREEE!"
+
     ])
 
 
 (defn home-view []
 
   (def list-info (fn [[_ hostelData]]
-                [:a.list-item {:href "#"}
+                [:a.list-item {:href "#" :on-click #(secretary/dispatch! "/jobs/someid")}
                   [:div
                     (hostelData "hostel_name") [:br]
                     (hostelData "job_title")
                   ]]))
+
+
 
   [:div.home
     [:div
@@ -66,8 +64,6 @@
 
     [:h1 "WELCOME TO THE JOBS BOARD"]
     [:a.routes {:on-click #(secretary/dispatch! "/new/job")} "POST A NEW JOB"]
-    (defroute "/new/job" {}
-      (reset! current-view new-post-view))
   ])
 
 (reset! current-view home-view)
@@ -78,4 +74,15 @@
 (reagent/render-component [app-view] (.getElementById js/document "app"))
 
 
+
+
+;routes and what view to render
+(defroute "/jobs/someid" {}
+  (reset! current-view job-view))
+
+(defroute "/new/job" {}
+  (reset! current-view new-post-view))
+
+(defroute "/" {}
+  (reset! current-view home-view))
 
