@@ -27,12 +27,7 @@
     (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
       [:a {:href "#" :on-click #(data/post2fb fb)} "submit"])
 
-
-    [:a.routes {:on-click #(secretary/dispatch! "/")} "HOME PAGE"]
-
-
-      ; :on-click #(dispatch "/")
-  ])
+    [:a.routes {:on-click #(secretary/dispatch! "/")} "HOME PAGE"]])
 
 (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
   ;(.on fb "value" #(.log js/console (.val %)))
@@ -42,20 +37,22 @@
 
 (defn job-view []
   [:div "JOB POST VIEW IS HEREEE!"
+    [:a.routes {:on-click #(secretary/dispatch! "/")} "HOME PAGE"]
+    ; i get the atom here. All of it. Why make a network call to fb.. hehe
+    [:a {:on-click #(data/printAtom)} "PRINT SHTUFF"]
 
     ])
 
 
 (defn home-view []
 
-  (def list-info (fn [[_ hostelData]]
+  (def list-info (fn [[uid hostelData]]
+                (println uid)
                 [:a.list-item {:href "#" :on-click #(secretary/dispatch! "/jobs/someid")}
                   [:div
                     (hostelData "hostel_name") [:br]
                     (hostelData "job_title")
                   ]]))
-
-
 
   [:div.home
     [:div

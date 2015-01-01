@@ -10,6 +10,7 @@
                                "email" "ptdubs@gmail.com"
                                "website" "www.sfhostel.com"
                               },
+                      "clicked-job" {},
                       "jobs-list" {}}))
 
 (def current-view (atom nil))
@@ -31,7 +32,6 @@
   (println "::::::::::::::::::::::::"))
 
 ;HELPER FUNCTIONS
-;Send Job Post to Firebase
 (defn post2fb [fb]
   (def postMap (get-in @app-state ["post"]))
   (.push fb (clj->js postMap))
