@@ -41,10 +41,15 @@
     ; i get the atom here. All of it. Why make a network call to fb.. hehe
     [:a {:on-click #(data/printAtom)} "PRINT SHTUFF"]
 
+    (let [boobs "12344"]
+      [:div boobs])
+
     ;todo: get data from atom
     ;render html shizzle here
-
-    ])
+    (let [theAtom (data/get-clicked-job)]
+      [:div#boobs (theAtom "email")]
+      )
+  ])
 
 
 (defn home-view []

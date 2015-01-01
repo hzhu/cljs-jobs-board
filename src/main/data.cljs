@@ -50,17 +50,14 @@
   (get-in @app-state ["jobs-list"])
 )
 
+; Set "clicked-job" atom when a job listing is clicked.
 (defn clicked-job [uid]
-  (println (get-in @app-state ["jobs-list" uid]))
-  ;grabbed itz. now set it clicked-job? actually why not just render this?
-  ;can't because the click handler is on the home-view. I need it in an atom, which renders the post view
-
-
-  ;(println (get-in @app-state ["jobs-list"] uid))
   (let [data (get-in @app-state ["jobs-list" uid])]
     (swap! app-state assoc-in ["clicked-job"] data)
-    (printAtom)
-    )
+    (printAtom)))
+
+(defn get-clicked-job []
+  (get-in @app-state ["clicked-job"])
   )
 
 
