@@ -17,7 +17,8 @@
       (data/setter className value)))
 
   [:div
-    [:input.hostel_name     {:type "text" :placeholder "Hostel Name"     :on-change #(handle-input-update %) }]
+    [:input.hostel_name     {:type "text" :placeholder "Hostel Name"     :on-change #(handle-input-update %)}]
+    [:input.job_title       {:type "text" :placeholder "Job title"       :on-change #(handle-input-update %)}]
     [:input.job_description {:type "text" :placeholder "Job description" :on-change #(handle-input-update %)}]
     [:input.location        {:type "text" :placeholder "Location"        :on-change #(handle-input-update %)}]
     [:input.email           {:type "text" :placeholder "Email"           :on-change #(handle-input-update %)}]
@@ -47,20 +48,18 @@
 
 (defn home-view []
 
-  (def square (fn [[_ hostelData]]
-              (println (hostelData "email"))
-              [:div
-               (hostelData "hostel_name")
-                ;(map (fn []
-                ;  [:div (hostelData "email")] ) hostelData)
-              ]))
+  (def list-info (fn [[_ hostelData]]
+                [:div
+                  (hostelData "hostel_name") [:br]
+                  (hostelData "job_title")
+                ]))
 
 
   [:div.home
 
 
     [:div
-      (map square (data/get-list!))
+      (map list-info (data/get-list!))
     ]
 
 

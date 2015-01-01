@@ -4,10 +4,11 @@
 (enable-console-print!)
 
 (def app-state (atom {"post" { "hostel_name" "Pacific Tradewinds Backpackers"
-                               "job_description" "Receptionist. Cleaner."
+                               "job_title" "Front Desk Receptionist"
+                               "job_description" "As a front desk receptionist at the Tradewinds hostel you will be responsible for everything in the hostel! From checking in guests to doing laundry to cooking staff meals. It's an amazing place to connect with guests!"
                                "location" "San Franciaaweosme"
                                "email" "ptdubs@gmail.com"
-                               "website" "www.ahostel.com"
+                               "website" "www.sfhostel.com"
                               },
                       "jobs-list" {}}))
 
