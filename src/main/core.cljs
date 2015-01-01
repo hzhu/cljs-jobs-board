@@ -49,10 +49,11 @@
 (defn home-view []
 
   (def list-info (fn [[_ hostelData]]
-                [:div
-                  (hostelData "hostel_name") [:br]
-                  (hostelData "job_title")
-                ]))
+                [:a.list-item {:href "#"}
+                  [:div {:style {"border" "1px solid #000" "margin-top" "10px"}}
+                    (hostelData "hostel_name") [:br]
+                    (hostelData "job_title")
+                  ]]))
 
 
   [:div.home
