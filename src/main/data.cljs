@@ -52,7 +52,7 @@
 (defn clicked-job [uid]
   (let [data (get-in @app-state ["jobs-list" uid])]
     (swap! app-state assoc-in ["clicked-job"] data)
-    (printAtom)))
+  ))
 
 (defn get-clicked-job []
   (get-in @app-state ["clicked-job"]))

@@ -55,14 +55,26 @@
        [:div (theAtom "hostel_name")]
        [:div (theAtom "job_title")]
        [:div (theAtom "job_description")]
-       (.getElementById js/document "app")
-       [:div#job-description        (.write (.getElementById js/document "job-description") "<b>SEXY</b>")        ]
+       [:div#tester]
+
+      ; Why does this print twice? ps this doesn't load slow enough to find tester
+      (println (.getElementById js/document "tester"))
+
+      (defn print-this []
+        (.insertAdjacentHTML (.getElementById js/document "tester") "afterBegin" (theAtom "job_description"))
+        (println (theAtom "job_description"))
+        )
+
+      (.setTimeout js/window print-this 5)
+
        [:div (theAtom "location")]
        [:div (theAtom "email")]
        [:div (theAtom "website")]]
-      )]
+      )
+    ]
 
   )
+
 
 
 (defn home-view []
