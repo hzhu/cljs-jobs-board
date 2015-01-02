@@ -17,12 +17,12 @@
       (data/setter className value)))
 
   [:div
-    [:input.hostel_name     {:type "text" :placeholder "Hostel Name"     :on-change #(handle-input-update %)}]
-    [:input.job_title       {:type "text" :placeholder "Job title"       :on-change #(handle-input-update %)}]
-    [:input.job_description {:type "text" :placeholder "Job description" :on-change #(handle-input-update %)}]
-    [:input.location        {:type "text" :placeholder "Location"        :on-change #(handle-input-update %)}]
-    [:input.email           {:type "text" :placeholder "Email"           :on-change #(handle-input-update %)}]
-    [:input.website         {:type "text" :placeholder "website"         :on-change #(handle-input-update %)}]
+    [:input.hostel_name     {:type "text"     :placeholder "Hostel Name"     :on-change #(handle-input-update %)}]
+    [:input.job_title       {:type "text"     :placeholder "Job title"       :on-change #(handle-input-update %)}]
+    [:input.job_description {:type "textarea" :placeholder "Job description" :on-change #(handle-input-update %)}]
+    [:input.location        {:type "text"     :placeholder "Location"        :on-change #(handle-input-update %)}]
+    [:input.email           {:type "text"     :placeholder "Email"           :on-change #(handle-input-update %)}]
+    [:input.website         {:type "text"     :placeholder "website"         :on-change #(handle-input-update %)}]
 
     (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
       [:a {:href "#" :on-click #(data/post2fb fb)} "submit"])
@@ -31,28 +31,29 @@
 
 (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
   ;(.on fb "value" #(.log js/console (.val %)))
-  (.on fb "value" #(data/set-list! (js->clj (.val %))
-                     ))
-  )
+  (.on fb "value" #(data/set-list! (js->clj (.val %)))))
 
 (defn job-view []
   [:div "JOB POST VIEW IS HEREEE!"
     [:a.routes {:on-click #(secretary/dispatch! "/")} "HOME PAGE"]
     [:a {:on-click #(data/printAtom)} "PRINT SHTUFF"]
 
-    (let [boobs "12344"]
-      [:div boobs])
-
     ;todo: get data from atom
     ;render html shizzle here
     (let [theAtom (data/get-clicked-job)]
-      [:div#boobs (theAtom "email")]
-      )
-  ])
+      [:div.container
+       [:div (theAtom "hostel_name")]
+       [:div (theAtom "job_title")]
+       [:div (theAtom "job_description")]
+       [:div (theAtom "location")]
+       [:div (theAtom "email")]
+       [:div (theAtom "website")]]
+
+
+      )])
 
 
 (defn home-view []
-
   (def list-info (fn [[uid hostelData]]
     (defn set-post-atom [uid]
       (let [x (data/clicked-job uid)]))
