@@ -55,6 +55,8 @@
        [:div (theAtom "hostel_name")]
        [:div (theAtom "job_title")]
        [:div (theAtom "job_description")]
+       (.getElementById js/document "app")
+       [:div#job-description        (.write (.getElementById js/document "job-description") "<b>SEXY</b>")        ]
        [:div (theAtom "location")]
        [:div (theAtom "email")]
        [:div (theAtom "website")]]
