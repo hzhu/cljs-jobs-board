@@ -5,6 +5,7 @@
                  [org.clojure/clojurescript "0.0-2280"]
                  [reagent "0.4.2"]
                  [secretary "1.2.1"]
+                 [hickory "0.5.4"]
                  [cljs-ajax "0.2.6"]]
 
   :plugins [[lein-environ "0.5.0"]
