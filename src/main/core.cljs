@@ -16,13 +16,23 @@
           className (aget event "target" "className")]
       (data/setter className value)))
 
+  (defn handle-contenteditable-update [event]
+    (let [value     (aget event "target" "innerHTML")
+          className (aget event "target" "className")]
+       (data/setter className value))
+
+    (data/printAtom)
+    )
+
   [:div
     [:input.hostel_name     {:type "text"     :placeholder "Hostel Name"     :on-change #(handle-input-update %)}]
     [:input.job_title       {:type "text"     :placeholder "Job title"       :on-change #(handle-input-update %)}]
-    [:input.job_description {:type "textarea" :placeholder "Job description" :on-change #(handle-input-update %)}]
     [:input.location        {:type "text"     :placeholder "Location"        :on-change #(handle-input-update %)}]
     [:input.email           {:type "text"     :placeholder "Email"           :on-change #(handle-input-update %)}]
     [:input.website         {:type "text"     :placeholder "website"         :on-change #(handle-input-update %)}]
+    [:div.job_description   {:contentEditable true
+                             :placeholder "Job description"
+                             :on-blur #(handle-contenteditable-update %)}]
 
     (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
       [:a {:href "#" :on-click #(data/post2fb fb)} "submit"])
@@ -48,9 +58,9 @@
        [:div (theAtom "location")]
        [:div (theAtom "email")]
        [:div (theAtom "website")]]
+      )]
 
-
-      )])
+  )
 
 
 (defn home-view []

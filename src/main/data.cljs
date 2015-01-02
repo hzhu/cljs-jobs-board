@@ -27,7 +27,7 @@
 (defn printAtom []
   (println "::::::::::ATOM::::::::::")
   (println "::::::::::::::::::::::::")
-  (println (get-in @app-state ["clicked-job"]))
+  (println (get-in @app-state ["post"]))
   (println "::::::::::::::::::::::::")
   (println "::::::::::::::::::::::::"))
 
