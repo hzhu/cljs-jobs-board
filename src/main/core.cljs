@@ -15,15 +15,15 @@
   (goog.events/listen h EventType/NAVIGATE #(secretary/dispatch! (.-token %)))
   (doto h (.setEnabled true)))
 
-;grab collection from fb and set-list!
+;; grab collection from fb and set-list!
 (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
   (.on fb "value" #(data/set-list! (js->clj (.val %)))))
 
-;helper, parse html into hiccup
+;; helper, parse html into hiccup
 (defn to-html [content]
   (as-hiccup (parse content)))
 
-;VIEWS
+;; VIEWS
 (defn new-post-view []
   (defn handle-input-update [event]
     (let [value     (aget event "target" "value")
@@ -54,18 +54,19 @@
   ])
 
 (defn job-view []
-   (let [theAtom (data/get-clicked-job)]
-     [:div#job-view "JOB POST VIEW IS HEREEE!"
-       [:div (theAtom "hostel_name") (println "test 1")
-         [:div (theAtom "job_title")]
-         [:div (to-html (theAtom "job_description"))]
-         [:div (theAtom "location")]
-         [:div (theAtom "email")]
-         [:div (theAtom "website")]
-         [:a.routes {:href "#/"} "home page"]
-       ]
-     ]
-   ))
+  [:div#job-view "JOB POST VIEW IS HEREEE!"
+    [:div "something"]
+    (let [theAtom (data/get-clicked-job)]
+      [:div
+        [:div (theAtom "hostel_name")]
+        [:div (theAtom "job_title")]
+        [:div (to-html (theAtom "job_description"))]
+        [:div (theAtom "location")]
+        [:div (theAtom "email")]
+        [:div (theAtom "website")]])
+    [:a.routes {:href "#/"} "home page"]
+  ]
+)
 
 (defn home-view-item [data]
   (let [[uid hostelData] data
@@ -90,7 +91,7 @@
     [:a.routes {:href "#/new/job"} "POST A NEW JOB"]
   ])
 
-;Routes and what view to render
+;; Routes and what view to render
 (defroute "/jobs/:id" [uid]
   (println "HELLO WORLD")
   (println "id is" uid)
