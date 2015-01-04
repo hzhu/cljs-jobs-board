@@ -49,9 +49,10 @@
     [:a.routes {:href "#/"} "home page"]
   ])
 
-(defn job-view []
+(defn job-view [uid]
   [:div#job-view "JOB POST VIEW IS HEREEE!"
     [:div "something"]
+
     (let [theAtom (data/get-clicked-job)]
       [:div
         [:div (theAtom "hostel_name")]
@@ -90,7 +91,7 @@
 
 (defroute "/jobs/:uid" [uid]
   (data/clicked-job uid)
-  (data/set-view! job-view))
+  (data/set-view! #(job-view uid)))
 
 (defroute "/new/job" {}
   (println "setting view to /new/job")
