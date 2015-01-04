@@ -61,13 +61,9 @@
         [:div (theAtom "hostel_name")]
         [:div (theAtom "job_title")]
 
-;        [:div (as-hiccup (parse (theAtom "job_description")) )]
-;        (println (as-hiccup (parse (theAtom "job_description"))))
+         ;(println (map as-hiccup (parse-fragment "<h1>HELLO WORLD!</h1>")))
 
-         (println (as-hiccup (parse "<h1>HELLO WORLD!</h1>")))
-
-
-        ;[:div (as-hiccup (parse "<h1>HELLO WORLD!</h1>"))]
+         ;[:div#tester (map as-hiccup (parse-fragment (theAtom "job_description")))]
 
 
         [:div (theAtom "location")]
@@ -91,16 +87,17 @@
 
 (defn home-view []
   [:div.home
-    [:div
-      (map home-view-item (data/get-list!))
-    ]
+   [:h1 "WELCOME TO THE JOBS BOARD"]
 
-    [:h1 "WELCOME TO THE JOBS BOARD"]
-    ;[:a.routes {:on-click #(secretary/dispatch! "/new/job")} "POST A NEW JOB"]
-    [:a.routes {:href "#/new/job"} "POST A NEW JOB"]
-  ])
+   ;[:a.routes {:on-click #(secretary/dispatch! "/new/job")} "POST A NEW JOB"]
+   [:a.routes {:href "#/new/job"} "POST A NEW JOB"]
 
-;; Routes and what view to render
+   [:div (map home-view-item (data/get-list!))]])
+
+;; Routes and what view to
+
+(secretary/set-config! :prefix "#")
+
 (defroute "/jobs/:uid" [uid]
   (println "HELLO WORLD")
   (println "id is" uid)
@@ -115,8 +112,6 @@
 (defroute "/" {}
   (println "setting view to /..")
   (data/set-view! home-view))
-
-(secretary/set-config! :prefix "#")
 
 (defn app-view []
   (@data/current-view))
