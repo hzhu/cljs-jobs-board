@@ -61,6 +61,8 @@
         [:div (theAtom "hostel_name")]
         [:div (theAtom "job_title")]
         [:div (to-html (theAtom "job_description"))]
+        ; Blows up because of the line above. Not a problem of Reagent or ordering.
+        ; React vomits here for some reason... Most likely because of Hickory. But why?
         [:div (theAtom "location")]
         [:div (theAtom "email")]
         [:div (theAtom "website")]])
