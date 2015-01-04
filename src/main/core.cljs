@@ -10,10 +10,6 @@
   (:import goog.History)
   )
 
-;; Quick and dirty history configuration.
-(let [h (History.)]
-  (goog.events/listen h EventType/NAVIGATE #(secretary/dispatch! (.-token %)))
-  (doto h (.setEnabled true)))
 
 ;; grab collection from fb and set-list!
 (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
@@ -60,12 +56,8 @@
       [:div
         [:div (theAtom "hostel_name")]
         [:div (theAtom "job_title")]
-
-         ;(println (map as-hiccup (parse-fragment "<h1>HELLO WORLD!</h1>")))
-
-         ;[:div#tester (map as-hiccup (parse-fragment (theAtom "job_description")))]
-
-
+        ;(println (map as-hiccup (parse-fragment "<h1>HELLO WORLD!</h1>")))
+        [:div#job-description (map as-hiccup (parse-fragment (theAtom "job_description")))]
         [:div (theAtom "location")]
         [:div (theAtom "email")]
         [:div (theAtom "website")]])
@@ -89,19 +81,14 @@
   [:div.home
    [:h1 "WELCOME TO THE JOBS BOARD"]
 
-   ;[:a.routes {:on-click #(secretary/dispatch! "/new/job")} "POST A NEW JOB"]
    [:a.routes {:href "#/new/job"} "POST A NEW JOB"]
 
    [:div (map home-view-item (data/get-list!))]])
 
 ;; Routes and what view to
-
 (secretary/set-config! :prefix "#")
 
 (defroute "/jobs/:uid" [uid]
-  (println "HELLO WORLD")
-  (println "id is" uid)
-  (println (str "setting view to /jobs/" uid))
   (data/clicked-job uid)
   (data/set-view! job-view))
 
@@ -118,5 +105,13 @@
 
 (secretary/dispatch! "/")
 (reagent/render-component [app-view] (.getElementById js/document "app"))
+
+
+;; Quick and dirty history configuration.
+(let [h (History.)]
+  (goog.events/listen h EventType/NAVIGATE #(secretary/dispatch! (.-token %)))
+  (doto h (.setEnabled true)))
+
+
 
 
