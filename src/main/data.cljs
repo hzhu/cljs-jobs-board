@@ -20,8 +20,8 @@
 
 (defn set-view! [view]
   (reset! current-view view)
-  (println view)
-  (println "view has been set to something else -"))
+  ;(println "view has been set to something else -")
+)
 
 
 (defn printAtom []

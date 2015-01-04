@@ -1,7 +1,7 @@
 (ns main.core
   (:require [reagent.core :as reagent :refer [atom]]
             [main.data :as data]
-            [hickory.core :refer [as-hiccup parse]]
+            [hickory.core :refer [as-hiccup parse parse-fragment]]
             [secretary.core :as secretary :include-macros true :refer [defroute]]
             [main.post :as post]
             [goog.events :as events]
@@ -60,9 +60,16 @@
       [:div
         [:div (theAtom "hostel_name")]
         [:div (theAtom "job_title")]
-        [:div (to-html (theAtom "job_description"))]
-        ; Blows up because of the line above. Not a problem of Reagent or ordering.
-        ; React vomits here for some reason... Most likely because of Hickory. But why?
+
+;        [:div (as-hiccup (parse (theAtom "job_description")) )]
+;        (println (as-hiccup (parse (theAtom "job_description"))))
+
+         (println (as-hiccup (parse "<h1>HELLO WORLD!</h1>")))
+
+
+        ;[:div (as-hiccup (parse "<h1>HELLO WORLD!</h1>"))]
+
+
         [:div (theAtom "location")]
         [:div (theAtom "email")]
         [:div (theAtom "website")]])
@@ -94,11 +101,11 @@
   ])
 
 ;; Routes and what view to render
-(defroute "/jobs/:id" [uid]
+(defroute "/jobs/:uid" [uid]
   (println "HELLO WORLD")
   (println "id is" uid)
   (println (str "setting view to /jobs/" uid))
-  (data/clicked-job "-Jeg6RtaRRpd3ft9323p")
+  (data/clicked-job uid)
   (data/set-view! job-view))
 
 (defroute "/new/job" {}
