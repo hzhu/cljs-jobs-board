@@ -27,34 +27,29 @@
 (defn printAtom []
   (println "::::::::::ATOM::::::::::")
   (println "::::::::::::::::::::::::")
-  (println (get-in @app-state ["post"]))
+  (println @app-state)
   (println "::::::::::::::::::::::::")
   (println "::::::::::::::::::::::::"))
 
 ;HELPER FUNCTIONS
-(defn post2fb [fb]
-  (def postMap (get-in @app-state ["post"]))
-  (.push fb (clj->js postMap))
-)
 
+;; Update atom as user enters values for new job posting
 (defn setter [name value]
   (swap! app-state assoc-in ["post" name] value))
 
+;; Submit new job (stored in atom) to Firebase
+(defn post2fb [fb]
+  (def postMap (get-in @app-state ["post"]))
+  (.push fb (clj->js postMap)))
 
+;; Stick entire Firebase into atom
 (defn set-list! [value]
   (swap! app-state assoc-in ["jobs-list"] value))
 
+;; To render list of all jobs available
 (defn get-list! []
-  (get-in @app-state ["jobs-list"])
-)
+  (get-in @app-state ["jobs-list"]))
 
-; Set "clicked-job" atom when a job listing is clicked.
+;; To render individual job post
 (defn clicked-job [uid]
-  (let [data (get-in @app-state ["jobs-list" uid])]
-    (swap! app-state assoc-in ["clicked-job"] data)
-  ))
-
-(defn get-clicked-job []
-  (get-in @app-state ["clicked-job"]))
-
-
+  (get-in @app-state ["jobs-list" uid]))

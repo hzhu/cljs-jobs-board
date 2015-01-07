@@ -51,17 +51,15 @@
 
 (defn job-view [uid]
   [:div#job-view "JOB POST VIEW IS HEREEE!"
-    [:div "something"]
-
-    (let [theAtom (data/get-clicked-job)]
+    (let [job (data/clicked-job uid)]
       [:div
-        [:div (theAtom "hostel_name")]
-        [:div (theAtom "job_title")]
+        [:div (job "hostel_name")]
+        [:div (job "job_title")]
         ;(println (map as-hiccup (parse-fragment "<h1>HELLO WORLD!</h1>")))
-        [:div#job-description (map as-hiccup (parse-fragment (theAtom "job_description")))]
-        [:div (theAtom "location")]
-        [:div (theAtom "email")]
-        [:div (theAtom "website")]])
+        [:div#job-description (map as-hiccup (parse-fragment (job "job_description")))]
+        [:div (job "location")]
+        [:div (job "email")]
+        [:div (job "website")]])
     [:a.routes {:href "#/"} "home page"]
   ]
 )
@@ -102,11 +100,14 @@
   (data/set-view! home-view))
 
 (defn app-view []
-  (@data/current-view))
+  [:div
+    [:h1 {:on-click #(data/printAtom)} "show atom"]
+    (@data/current-view)
+   ]
+ )
 
 (secretary/dispatch! "/")
 (reagent/render-component [app-view] (.getElementById js/document "app"))
-
 
 ;; Quick and dirty history configuration.
 (let [h (History.)]
