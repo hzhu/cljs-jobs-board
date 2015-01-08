@@ -51,7 +51,7 @@
 
 (defn job-view [uid]
   [:div#job-view "JOB POST VIEW IS HEREEE!"
-    (let [job (data/clicked-job uid)]
+    (let [job (data/clicked-job uid)] ;; This blows up when page is reloaded. Why?
       [:div
         [:div (job "hostel_name")]
         [:div (job "job_title")]
@@ -84,6 +84,7 @@
 
    [:div (map home-view-item (data/get-list!))]])
 
+;; ---------------------------------------------------------------------------------------
 ;; ROUTING ------------------------------------------------------------------------------
 (secretary/set-config! :prefix "#")
 
