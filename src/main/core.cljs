@@ -84,7 +84,7 @@
 
    [:div (map home-view-item (data/get-list!))]])
 
-;; Routes and what view to
+;; ROUTING ------------------------------------------------------------------------------
 (secretary/set-config! :prefix "#")
 
 (defroute "/jobs/:uid" [uid]
@@ -99,6 +99,16 @@
   (println "setting view to /..")
   (data/set-view! home-view))
 
+(doto (History.)
+  (events/listen
+    EventType/NAVIGATE
+    (fn [event]
+      (secretary/dispatch! (.-token event))))
+  (.setEnabled true))
+
+;; END OF ROUTING ------------------------------------------------------------------------
+;; ---------------------------------------------------------------------------------------
+
 (defn app-view []
   [:div
     [:h1 {:on-click #(data/printAtom)} "show atom"]
@@ -106,13 +116,8 @@
    ]
  )
 
-(secretary/dispatch! "/")
 (reagent/render-component [app-view] (.getElementById js/document "app"))
 
-;; Quick and dirty history configuration.
-(let [h (History.)]
-  (goog.events/listen h EventType/NAVIGATE #(secretary/dispatch! (.-token %)))
-  (doto h (.setEnabled true)))
 
 
 
