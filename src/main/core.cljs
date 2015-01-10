@@ -51,15 +51,29 @@
 
 (defn job-view [uid]
   [:div#job-view "JOB POST VIEW IS HEREEE!"
-    (let [job (data/clicked-job uid)] ;; This blows up when page is reloaded. Why?
-      [:div
+
+   (if (empty? (data/get-list!))
+     (println "i am true")
+     (let [job (data/clicked-job uid)] ;; This blows up when page is reloaded. Why?
+       [:div
         [:div (job "hostel_name")]
         [:div (job "job_title")]
         ;(println (map as-hiccup (parse-fragment "<h1>HELLO WORLD!</h1>")))
         [:div#job-description (map as-hiccup (parse-fragment (job "job_description")))]
         [:div (job "location")]
         [:div (job "email")]
-        [:div (job "website")]])
+        [:div (job "website")]]))
+;
+;     (println "zzzzz")
+;     (println (empty? (data/get-list!)))
+
+
+
+
+
+
+
+
     [:a.routes {:href "#/"} "home page"]
   ]
 )
