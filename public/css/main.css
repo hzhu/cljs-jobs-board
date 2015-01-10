@@ -189,3 +189,7 @@ td, th {
   width: 500px;
   border: 1px solid blue;
 }
+
+body {
+  font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+}
