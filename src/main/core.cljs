@@ -7,9 +7,7 @@
             [goog.events :as events]
             [goog.history.EventType :as EventType]
             [ajax.core :as ajax])
-  (:import goog.History)
-  )
-
+  (:import goog.History))
 
 ;; grab collection from fb and set-list!
 (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
@@ -61,7 +59,7 @@
 )
 
 (defn render-jobs-list [uid]
-  (let [job (data/clicked-job uid)] ;; This blows up when page is reloaded. Why?
+  (let [job (data/clicked-job uid)]
     [:div
      [:div (job "hostel_name")]
      [:div (job "job_title")]
@@ -75,7 +73,6 @@
   (let [[uid hostelData] data
         target (str "/jobs/" uid)]
 
-    ;[:a.list-item {:href (str "#" target) :data-attr uid :on-click #(secretary/dispatch! target)}
     [:a {:href (str "#" target)}
      [:div
       (hostelData "hostel_name")

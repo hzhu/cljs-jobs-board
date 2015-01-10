@@ -13,7 +13,9 @@
                       "clicked-job" {},
                       "jobs-list" {}}))
 
-(def current-view (atom {"jobs-list" {}}))
+(def current-view (atom {}))
+
+
 
 (defn get-view []
   @current-view)
