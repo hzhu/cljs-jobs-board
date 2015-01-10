@@ -53,30 +53,23 @@
   [:div#job-view "JOB POST VIEW IS HEREEE!"
 
    (if (empty? (data/get-list!))
-     (println "i am true")
-     (let [job (data/clicked-job uid)] ;; This blows up when page is reloaded. Why?
-       [:div
-        [:div (job "hostel_name")]
-        [:div (job "job_title")]
-        ;(println (map as-hiccup (parse-fragment "<h1>HELLO WORLD!</h1>")))
-        [:div#job-description (map as-hiccup (parse-fragment (job "job_description")))]
-        [:div (job "location")]
-        [:div (job "email")]
-        [:div (job "website")]]))
-;
-;     (println "zzzzz")
-;     (println (empty? (data/get-list!)))
-
-
-
-
-
-
-
+     (println "True. Atom is empty. Do not start rendering.")
+     (render-jobs-list uid))
 
     [:a.routes {:href "#/"} "home page"]
   ]
 )
+
+(defn render-jobs-list [uid]
+  (let [job (data/clicked-job uid)] ;; This blows up when page is reloaded. Why?
+    [:div
+     [:div (job "hostel_name")]
+     [:div (job "job_title")]
+     ;(println (map as-hiccup (parse-fragment "<h1>HELLO WORLD!</h1>")))
+     [:div#job-description (map as-hiccup (parse-fragment (job "job_description")))]
+     [:div (job "location")]
+     [:div (job "email")]
+     [:div (job "website")]]))
 
 (defn home-view-item [data]
   (let [[uid hostelData] data
