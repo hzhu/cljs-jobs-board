@@ -42,18 +42,7 @@
                              :on-blur #(handle-contenteditable-update %)}]
 
     (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
-      [:a {:href "#" :on-click #(data/post2fb fb)} "submit"]
-
-      ; var createdDate = new Firebase('https://somedomain.firebaseIO.com/post/createDate');
-      ; createdDate.set(Firebase.ServerValue.TIMESTAMP);
-
-
-      ;(println (.-ServerValue js/Firebase))
-      )
-
-
-
-
+      [:a {:href "#" :on-click #(data/post2fb fb)} "submit"])
 
     [:a.routes {:href "#/"} "home page"]
   ])

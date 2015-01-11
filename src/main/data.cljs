@@ -9,6 +9,7 @@
                                "location" "San Franciaaweosme"
                                "email" "ptdubs@gmail.com"
                                "website" "www.sfhostel.com"
+                               "create_date" (.-TIMESTAMP (.-ServerValue js/Firebase))
                               },
                       "clicked-job" {},
                       "jobs-list" {}}))
