@@ -31,6 +31,7 @@
   (println "::::::::::ATOM::::::::::")
   (println "::::::::::::::::::::::::")
   (println @app-state)
+  (get-date-posted)
   (println "::::::::::::::::::::::::")
   (println "::::::::::::::::::::::::"))
 
@@ -56,3 +57,12 @@
 ;; To render individual job post
 (defn clicked-job [uid]
   (get-in @app-state ["jobs-list" uid]))
+
+;; Get date
+(defn get-date-posted [uid]
+  (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings/-JfNV4FWeHacsWEGevio/create_date")]
+    (.on fb "value" #(println (.val %)))
+  )
+)
+
+
