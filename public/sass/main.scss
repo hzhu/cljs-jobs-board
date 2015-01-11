@@ -1,42 +1,12 @@
 @import "normalize";
+@import "home";
+@import "common";
 
 body {
   font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
   background-color: #FFF;
 }
 
-.job_description {
-  margin-top: 50px;
-  height: 200px;
-  width: 500px;
-  border: 1px solid blue;
-}
-
-
-
-ul {
-  width: 90%;
-  margin: 5px auto;
-  padding: 0;
-
-  li {
-    padding: 10px 0;
-    list-style: none;
-
-    a {
-      text-decoration: none;
-    }
-  }
-  .name {
-    margin-right: 10px;
-    font-weight: bold;
-  }
-
-  .title {
-
-  }
-
-  .date {
-    float: right;
-  }
+.hidden {
+  display: none;
 }
