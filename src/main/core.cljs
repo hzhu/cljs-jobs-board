@@ -42,12 +42,31 @@
                              :on-blur #(handle-contenteditable-update %)}]
 
     (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
-      [:a {:href "#" :on-click #(data/post2fb fb)} "submit"])
+      [:a {:href "#" :on-click #(data/post2fb fb)} "submit"]
+
+      ; var createdDate = new Firebase('https://somedomain.firebaseIO.com/post/createDate');
+      ; createdDate.set(Firebase.ServerValue.TIMESTAMP);
+
+
+      ;(println (.-ServerValue js/Firebase))
+      )
+
+
+
+
 
     [:a.routes {:href "#/"} "home page"]
   ])
 
 (defn job-view [uid]
+
+  (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings/-Jf2PhXvQMs4eomrxRQe/createDate")]
+    (.set fb (.-TIMESTAMP (.-ServerValue js/Firebase))
+      #(println "Time recorded"))
+    )
+
+
+
   [:div#job-view "JOB POST VIEW IS HEREEE!"
 
    (if (empty? (data/get-list!))
@@ -72,13 +91,11 @@
 (defn home-view-item [data]
   (let [[uid hostelData] data
         target (str "/jobs/" uid)]
-
-    [:a {:href (str "#" target)}
-     [:div
-      (hostelData "hostel_name")
-      [:br ]
-      (hostelData "job_title")
-      ]]))
+    [:li
+      [:a {:href (str "#" target)}
+        [:span (hostelData "hostel_name")]
+        [:span (hostelData "job_title")]]]
+ ))
 
 (defn home-view []
   [:div.home
@@ -86,7 +103,7 @@
 
    [:a.routes {:href "#/new/job"} "POST A NEW JOB"]
 
-   [:div (map home-view-item (data/get-list!))]])
+   [:ul (map home-view-item (data/get-list!))]])
 
 ;; ---------------------------------------------------------------------------------------
 ;; ROUTING ------------------------------------------------------------------------------
@@ -114,6 +131,8 @@
 ;; END OF ROUTING ------------------------------------------------------------------------
 ;; ---------------------------------------------------------------------------------------
 
+
+;; RENDER VIEW
 (defn app-view []
   [:div
     [:h1 {:on-click #(data/printAtom)} "show atom"]
