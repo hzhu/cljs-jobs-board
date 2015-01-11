@@ -48,14 +48,6 @@
   ])
 
 (defn job-view [uid]
-
-  (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings/-Jf2PhXvQMs4eomrxRQe/createDate")]
-    (.set fb (.-TIMESTAMP (.-ServerValue js/Firebase))
-      #(println "Time recorded"))
-    )
-
-
-
   [:div#job-view "JOB POST VIEW IS HEREEE!"
 
    (if (empty? (data/get-list!))
