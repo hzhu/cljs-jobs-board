@@ -184,8 +184,6 @@ td, th {
 }
 
 ul {
-  width: 90%;
-  margin: 5px auto;
   padding: 0;
 }
 ul li {
@@ -204,6 +202,7 @@ ul .date {
   float: right;
 }
 
+/* Responsive General Sass Mixing function */
 body {
   font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
   background-color: #FFF;
@@ -211,4 +210,20 @@ body {
 
 .hidden {
   display: none;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+#job-description {
+  border: 1px solid orange;
+  padding: 5px 0;
+}
+
+.job_description {
+  margin-top: 15px;
+  border: 1px solid orange;
+  height: 150px;
 }

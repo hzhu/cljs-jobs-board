@@ -1,0 +1,15 @@
+/* Responsive General Sass Mixing function */
+@mixin chosenDevice($device) {
+  @if $device == mobile {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+
+
+  @if $device == largeDesktop {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}

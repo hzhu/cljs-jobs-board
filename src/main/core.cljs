@@ -125,7 +125,7 @@
 
 ;; RENDER VIEW
 (defn app-view []
-  [:div
+  [:div.container
     [:h1.hidden {:on-click #(data/printAtom)} "show atom"]
     (@data/current-view)
    ]
