@@ -69,15 +69,24 @@
      [:div (job "email")]
      [:div (job "website")]]))
 
+(defn make-date [epoch]
+  (subs (.toDateString (js/Date. epoch)) 4 10))
+
 (defn home-view-item [data]
   (let [[uid hostelData] data
         target (str "/jobs/" uid)]
     [:li
       [:a {:href (str "#" target)}
         [:span (hostelData "hostel_name")]
-        [:span (js/Date (hostelData "create_date"))]
-        [:span (hostelData "job_title")]]]
+        [:span (hostelData "job_title")]
+        [:span (make-date (hostelData "create_date"))]]]
  ))
+
+
+
+(println (subs "Wed Dec 29 1969" 4 10))
+
+
 
 (defn home-view []
   [:div.home
