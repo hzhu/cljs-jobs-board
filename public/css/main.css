@@ -183,6 +183,11 @@ td, th {
   padding: 0;
 }
 
+body {
+  font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+  background-color: #FFF;
+}
+
 .job_description {
   margin-top: 50px;
   height: 200px;
@@ -190,6 +195,22 @@ td, th {
   border: 1px solid blue;
 }
 
-body {
-  font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+ul {
+  width: 90%;
+  margin: 5px auto;
+  padding: 0;
+}
+ul li {
+  padding: 10px 0;
+  list-style: none;
+}
+ul li a {
+  text-decoration: none;
+}
+ul .name {
+  margin-right: 10px;
+  font-weight: bold;
+}
+ul .date {
+  float: right;
 }
