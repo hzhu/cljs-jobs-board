@@ -52,8 +52,15 @@
     (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
       [:a {:href "#" :on-click #(data/post2fb fb)} "submit"])
 
+    [:a.routes {:href "#/preview"} "preview"]
     [:a.routes {:href "#/"} "home page"]
   ])
+
+;; Preview Job
+(defn preview-view []
+  [:div "PREVIEW VIEW"]
+  )
+
 
 (defn job-view [uid]
   [:div#job-view
@@ -114,6 +121,11 @@
 (defroute "/new/job" {}
   (println "setting view to /new/job")
   (data/set-view! new-post-view))
+
+(defroute "/preview" {}
+  (println "preview clicked")
+  (data/set-view! preview-view)
+  )
 
 (defroute "/" {}
   (println "setting view to /..")
