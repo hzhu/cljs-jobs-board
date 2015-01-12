@@ -32,6 +32,15 @@
     (println "blurred out of job description")
     )
 
+  (defn execute! [event]       ; try using this keyword.
+
+    (println (aget event "target" "dataset" "role"))
+    (.preventDefault event) ;; works!
+    (let [cmd (aget event "target" "dataset" "role")]
+      (.execCommand js/document cmd false null))
+
+    )
+
   [:div
     [:input.hostel_name     {:type "text"     :placeholder "Hostel Name"     :on-change #(handle-input-update %)}]
     [:input.job_title       {:type "text"     :placeholder "Job title"       :on-change #(handle-input-update %)}]
@@ -39,10 +48,10 @@
     [:input.email           {:type "text"     :placeholder "Email"           :on-change #(handle-input-update %)}]
     [:input.website         {:type "text"     :placeholder "website"         :on-change #(handle-input-update %)}]
     [:div.text-control
-      [:a {:href "#" :data-role "bold"                } "Bold"]
-      [:a {:href "#" :data-role "italic"              } "Italics"]
-      [:a {:href "#" :data-role "insertOrderedList"   } "Ordered List"]
-      [:a {:href "#" :data-role "insertUnorderedList" } "Unordered List"]]
+      [:a {:href "#" :on-click #(execute! %) :data-role "bold"                } "Bold"]
+      [:a {:href "#" :on-click #(execute! %) :data-role "italic"              } "Italics"]
+      [:a {:href "#" :on-click #(execute! %) :data-role "insertOrderedList"   } "Ordered List"]
+      [:a {:href "#" :on-click #(execute! %) :data-role "insertUnorderedList" } "Unordered List"]]
     [:div.job_description   {:contentEditable true
                              :placeholder "Job description"
                              :on-blur #(handle-contenteditable-update %)}]
