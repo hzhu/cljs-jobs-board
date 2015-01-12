@@ -245,6 +245,9 @@ body {
   text-decoration: none;
   color: #57ad68;
 }
+.job-view .website:hover {
+  text-decoration: underline;
+}
 .job-view .name, .job-view .location, .job-view .website {
   font-weight: bold;
   margin-bottom: 5px;

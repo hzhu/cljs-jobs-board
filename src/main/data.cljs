@@ -11,6 +11,7 @@
                                "website" "www.sfhostel.com"
                                "how" "To apply simply send an email to me@example.com"
                                "create_date" (.-TIMESTAMP (.-ServerValue js/Firebase))
+                               "sponsored" false
                               },
                       "clicked-job" {},
                       "jobs-list" {}}))

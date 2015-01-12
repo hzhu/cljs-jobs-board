@@ -82,9 +82,7 @@
      [:div.apply
         [:h3 "APPLY FOR THIS HOSTEL JOB"]
         [:p.how (job "how")]
-
-        ]
-     [:div.email (job "email")]]))
+        ]]))
 
 (defn home-view-item [data]
   (let [[uid hostelData] data
