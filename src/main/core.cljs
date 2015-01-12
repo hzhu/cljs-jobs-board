@@ -37,6 +37,11 @@
     [:input.location        {:type "text"     :placeholder "Location"        :on-change #(handle-input-update %)}]
     [:input.email           {:type "text"     :placeholder "Email"           :on-change #(handle-input-update %)}]
     [:input.website         {:type "text"     :placeholder "website"         :on-change #(handle-input-update %)}]
+    [:div.text-control
+     [:a {:data-role "bold"                } "Bold"]
+     [:a {:data-role "italic"              } "Italics"]
+     [:a {:data-role "insertOrderedList"   } "Ordered List"]
+     [:a {:data-role "insertUnorderedList" } "Unordered List"]]
     [:div.job_description   {:contentEditable true
                              :placeholder "Job description"
                              :on-blur #(handle-contenteditable-update %)}]
@@ -83,11 +88,6 @@
  ))
 
 
-
-(println (subs "Wed Dec 29 1969" 4 10))
-
-
-
 (defn home-view []
   [:div.home
    [:h1 "WELCOME TO THE JOBS BOARD"]
@@ -126,13 +126,23 @@
 ;; RENDER VIEW
 (defn app-view []
   [:div.container
-    [:h1.hidden {:on-click #(data/printAtom)} "show atom"]
+    [:h1 {:on-click #(data/printAtom)} "show atom"]
     (@data/current-view)
    ]
  )
 
 (reagent/render-component [app-view] (.getElementById js/document "app"))
 
+
+;(let [els (.querySelectorAll js/document ".text-control a")]
+;  (println (type els))
+;
+;;  (.call forEach prototype js/Array. els #(println %))
+;  (.call forEach prototype js/Array els #(println %))
+;
+;
+;
+;  )
 
 
 

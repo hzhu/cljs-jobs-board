@@ -31,6 +31,7 @@
   (println "::::::::::ATOM::::::::::")
   (println "::::::::::::::::::::::::")
   (println @app-state)
+  ;(.execCommand js/document "italic" false null)
   (println "::::::::::::::::::::::::")
   (println "::::::::::::::::::::::::"))
 
