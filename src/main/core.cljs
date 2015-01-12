@@ -56,7 +56,7 @@
   ])
 
 (defn job-view [uid]
-  [:div#job-view "JOB POST VIEW IS HEREEE!"
+  [:div#job-view
     [:a.routes {:href "#/"} "Back to all jobs"]
 
     (if (empty? (data/get-list!))
@@ -78,8 +78,12 @@
 
 
      [:div#job-description (map as-hiccup (parse-fragment (job "job_description")))]
-     [:div.how (job "how")]
 
+     [:div.apply
+        [:h3 "APPLY FOR THIS HOSTEL JOB"]
+        [:p.how (job "how")]
+
+        ]
      [:div.email (job "email")]]))
 
 (defn home-view-item [data]
@@ -132,7 +136,7 @@
 ;; RENDER VIEW
 (defn app-view []
   [:div.container
-    [:h1 {:on-click #(data/printAtom)} "show atom"]
+    [:h1.hidden {:on-click #(data/printAtom)} "show atom"]
     (@data/current-view)
    ]
  )

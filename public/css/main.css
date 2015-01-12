@@ -221,7 +221,8 @@ body {
 
 #job-description {
   border-top: 1px solid #e8e8e8;
-  padding: 5px 0;
+  padding: 30px 0;
+  margin-top: 30px;
 }
 
 .job_description {
@@ -246,4 +247,13 @@ body {
 }
 .job-view .name, .job-view .location, .job-view .website {
   font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.apply {
+  background-color: #efefef;
+  padding: 15px 20px;
+}
+.apply h3, .apply p {
+  margin: 5px 0;
 }
