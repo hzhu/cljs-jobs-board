@@ -9,6 +9,7 @@
                                "location" "San Franciaaweosme"
                                "email" "ptdubs@gmail.com"
                                "website" "www.sfhostel.com"
+                               "how" "To apply simply send an email to me@example.com"
                                "create_date" (.-TIMESTAMP (.-ServerValue js/Firebase))
                               },
                       "clicked-job" {},
@@ -30,7 +31,7 @@
 (defn printAtom []
   (println "::::::::::ATOM::::::::::")
   (println "::::::::::::::::::::::::")
-  (println @app-state)
+  (println @app-state ["post"])
   ;(.execCommand js/document "italic" false null)
   (println "::::::::::::::::::::::::")
   (println "::::::::::::::::::::::::"))

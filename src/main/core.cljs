@@ -22,6 +22,7 @@
   (defn handle-input-update [event]
     (let [value     (aget event "target" "value")
           className (aget event "target" "className")]
+      (data/printAtom)
       (data/setter className value)))
 
   (defn handle-contenteditable-update [event]
@@ -38,16 +39,15 @@
     [:input.email           {:type "text"     :placeholder "Email"           :on-change #(handle-input-update %)}]
     [:input.website         {:type "text"     :placeholder "website"         :on-change #(handle-input-update %)}]
     [:div.text-control
-
-     ;document.execCommand(cmd, false, null);
-
-     [:a {:href "#" :data-role "bold"                } "Bold"]
-     [:a {:href "#" :data-role "italic"              } "Italics"]
-     [:a {:href "#" :data-role "insertOrderedList"   } "Ordered List"]
-     [:a {:href "#" :data-role "insertUnorderedList" } "Unordered List"]]
+      [:a {:href "#" :data-role "bold"                } "Bold"]
+      [:a {:href "#" :data-role "italic"              } "Italics"]
+      [:a {:href "#" :data-role "insertOrderedList"   } "Ordered List"]
+      [:a {:href "#" :data-role "insertUnorderedList" } "Unordered List"]]
     [:div.job_description   {:contentEditable true
                              :placeholder "Job description"
                              :on-blur #(handle-contenteditable-update %)}]
+
+    [:input.how {:type "text" :on-change #(handle-input-update %)}]
 
     (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
       [:a {:href "#" :on-click #(data/post2fb fb)} "submit"])
@@ -78,6 +78,8 @@
 
 
      [:div#job-description (map as-hiccup (parse-fragment (job "job_description")))]
+     [:div.how (job "how")]
+
      [:div.email (job "email")]]))
 
 (defn home-view-item [data]
@@ -113,6 +115,7 @@
 
 (defroute "/" {}
   (println "setting view to /..")
+  ;; think about clearing post atom here.
   (data/set-view! home-view))
 
 (doto (History.)
@@ -129,7 +132,7 @@
 ;; RENDER VIEW
 (defn app-view []
   [:div.container
-    [:h1.hidden {:on-click #(data/printAtom)} "show atom"]
+    [:h1 {:on-click #(data/printAtom)} "show atom"]
     (@data/current-view)
    ]
  )
