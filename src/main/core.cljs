@@ -57,28 +57,28 @@
 
 (defn job-view [uid]
   [:div#job-view "JOB POST VIEW IS HEREEE!"
+    [:a.routes {:href "#/"} "Back to all jobs"]
 
-   (if (empty? (data/get-list!))
-     (println "True. Atom is empty. Do not start rendering.")
-     (render-jobs-list uid))
-
-    [:a.routes {:href "#/"} "home page"]
-  ]
-)
-
-(defn render-jobs-list [uid]
-  (let [job (data/clicked-job uid)]
-    [:div
-     [:div (job "hostel_name")]
-     [:div (job "job_title")]
-     ;(println (map as-hiccup (parse-fragment "<h1>HELLO WORLD!</h1>")))
-     [:div#job-description (map as-hiccup (parse-fragment (job "job_description")))]
-     [:div (job "location")]
-     [:div (job "email")]
-     [:div (job "website")]]))
+    (if (empty? (data/get-list!))
+      (println "True. Atom is empty. Do not start rendering.")
+      (render-jobs-list uid))])
 
 (defn make-date [epoch]
   (subs (.toDateString (js/Date. epoch)) 4 10))
+
+(defn render-jobs-list [uid]
+  (let [job (data/clicked-job uid)]
+    [:div.job-view
+     [:div.title (job "job_title")]
+     [:div.date "POSTED " (make-date (job "create_date"))]
+     [:div.name (job "hostel_name")]
+     [:div.location (job "location")]
+     [:a.website {:href (job "website")} (job "website")]
+
+
+
+     [:div#job-description (map as-hiccup (parse-fragment (job "job_description")))]
+     [:div.email (job "email")]]))
 
 (defn home-view-item [data]
   (let [[uid hostelData] data
@@ -129,24 +129,12 @@
 ;; RENDER VIEW
 (defn app-view []
   [:div.container
-    [:h1 {:on-click #(data/printAtom)} "show atom"]
+    [:h1.hidden {:on-click #(data/printAtom)} "show atom"]
     (@data/current-view)
    ]
  )
 
 (reagent/render-component [app-view] (.getElementById js/document "app"))
-
-
-;(let [els (.querySelectorAll js/document ".text-control a")]
-;  (println (type els))
-;
-;;  (.call forEach prototype js/Array. els #(println %))
-;  (.call forEach prototype js/Array els #(println %))
-;
-;
-;
-;  )
-
 
 
 

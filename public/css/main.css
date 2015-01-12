@@ -206,24 +206,44 @@ ul .date {
 body {
   font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
   background-color: #FFF;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .hidden {
   display: none;
+  visibility: hidden;
 }
 
 .container {
-  width: 85%;
+  width: 75%;
   margin: 0 auto;
 }
 
 #job-description {
-  border: 1px solid orange;
+  border-top: 1px solid #e8e8e8;
   padding: 5px 0;
 }
 
 .job_description {
   margin-top: 15px;
   border: 1px solid orange;
+  padding: 25px;
   height: 150px;
+}
+
+.job-view .title {
+  margin-top: 20px;
+  font-size: 35px;
+}
+.job-view .date {
+  text-transform: uppercase;
+  color: gray;
+  margin-bottom: 15px;
+}
+.job-view .website {
+  text-decoration: none;
+  color: #57ad68;
+}
+.job-view .name, .job-view .location, .job-view .website {
+  font-weight: bold;
 }
