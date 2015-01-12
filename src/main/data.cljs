@@ -61,3 +61,9 @@
   (get-in @app-state ["jobs-list" uid]))
 
 
+;; Get current post data
+(defn new-post []
+  (println (get-in @app-state ["post"])))
+
+
+
