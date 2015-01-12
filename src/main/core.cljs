@@ -28,8 +28,8 @@
     (let [value     (aget event "target" "innerHTML")
           className (aget event "target" "className")]
        (data/setter className value))
-
-    (data/printAtom))
+    (println "blurred out of job description")
+    )
 
   [:div
     [:input.hostel_name     {:type "text"     :placeholder "Hostel Name"     :on-change #(handle-input-update %)}]
@@ -38,10 +38,13 @@
     [:input.email           {:type "text"     :placeholder "Email"           :on-change #(handle-input-update %)}]
     [:input.website         {:type "text"     :placeholder "website"         :on-change #(handle-input-update %)}]
     [:div.text-control
-     [:a {:data-role "bold"                } "Bold"]
-     [:a {:data-role "italic"              } "Italics"]
-     [:a {:data-role "insertOrderedList"   } "Ordered List"]
-     [:a {:data-role "insertUnorderedList" } "Unordered List"]]
+
+     ;document.execCommand(cmd, false, null);
+
+     [:a {:href "#" :data-role "bold"                } "Bold"]
+     [:a {:href "#" :data-role "italic"              } "Italics"]
+     [:a {:href "#" :data-role "insertOrderedList"   } "Ordered List"]
+     [:a {:href "#" :data-role "insertUnorderedList" } "Unordered List"]]
     [:div.job_description   {:contentEditable true
                              :placeholder "Job description"
                              :on-blur #(handle-contenteditable-update %)}]

@@ -36,6 +36,30 @@
 <script src="dev/goog/base.js" type="text/javascript"></script>
 <script src="dev/app.js" type="text/javascript"></script>
 <script type="text/javascript">goog.require("main.core");</script>
+
+<script>
+//    var onclick = function (e) {
+//        e.preventDefault();
+//        var cmd = this.getAttribute('data-role');
+//        console.log(cmd + " pressed");
+//        document.execCommand(cmd, false, null);
+//    };
+//
+//    var els = document.querySelectorAll('.text-control a');
+//    console.log("zz")
+//    console.log(els)
+//
+//    Array.prototype.forEach.call(els, function(el) {
+//        console.log(el)
+//        el.addEventListener('click', onclick);
+//    });
+    $(".text-control a").on("click", function(e) {
+        e.preventDefault();
+        var cmd = this.getAttribute("data-role")
+        document.execCommand(cmd, false, null);
+    });
+
+</script>
 </body>
 </html>
 
