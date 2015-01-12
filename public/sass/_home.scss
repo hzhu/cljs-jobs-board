@@ -1,25 +1,27 @@
-ul {
-  padding: 0;
+.home {
+  ul {
+    padding: 0;
 
-  li {
-    list-style: none;
+    li {
+      list-style: none;
 
-    a {
-      display: block;
-      padding: 10px 0;
-      text-decoration: none;
+      a {
+        display: block;
+        padding: 10px 0;
+        text-decoration: none;
+      }
     }
-  }
-  .name {
-    margin-right: 10px;
-    font-weight: bold;
-  }
+    .name {
+      margin-right: 10px;
+      font-weight: bold;
+    }
 
-  .title {
+    .title {
 
-  }
+    }
 
-  .date {
-    float: right;
+    .date {
+      float: right;
+    }
   }
 }

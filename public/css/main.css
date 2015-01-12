@@ -183,22 +183,22 @@ td, th {
   padding: 0;
 }
 
-ul {
+.home ul {
   padding: 0;
 }
-ul li {
+.home ul li {
   list-style: none;
 }
-ul li a {
+.home ul li a {
   display: block;
   padding: 10px 0;
   text-decoration: none;
 }
-ul .name {
+.home ul .name {
   margin-right: 10px;
   font-weight: bold;
 }
-ul .date {
+.home ul .date {
   float: right;
 }
 
