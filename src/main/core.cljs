@@ -78,7 +78,7 @@
 
 ;; PREVIEW VIEW
 (defn preview-view []
-  [:div.preview-view.hidden "PREVIEW VIEW"
+  [:div.preview-view.hidden
    [:a.routes {:on-click #(doseq [todo  (sel :#forms)
                                   todo2 (sel :div.preview-view)]
                             (dommy/add-class! todo2 :hidden)
@@ -99,10 +99,11 @@
 
          [:div.apply
            [:h3 "APPLY FOR THIS HOSTEL JOB"]
-           [:p.how (previewData "how")]
-           (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
-             [:a {:href "#" :on-click #(data/post2fb fb)} "submit"])
-         ]])])
+           [:p.how (previewData "how")]]
+
+         (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
+           [:a {:href "#" :on-click #(data/post2fb fb)} "submit"])
+       ])])
 
 ;; JOB VIEW
 (defn job-view [uid]
@@ -185,7 +186,7 @@
 ;; RENDER VIEW
 (defn app-view []
   [:div.container
-    [:h1 {:on-click #(data/printAtom)} "show atom"]
+    [:h1.hidden {:on-click #(data/printAtom)} "show atom"]
     (@data/current-view)
    ]
  )

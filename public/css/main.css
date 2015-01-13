@@ -203,6 +203,10 @@ td, th {
 }
 
 /* Responsive General Sass Mixing function */
+.job-view ol {
+  padding-left: 25px;
+}
+
 body {
   font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
   background-color: #FFF;
