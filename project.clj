@@ -6,6 +6,7 @@
                  [reagent "0.4.2"]
                  [secretary "1.2.1"]
                  [hickory "0.5.4"]
+                 [prismatic/dommy "1.0.0"]
                  [cljs-ajax "0.2.6"]]
 
   :plugins [[lein-environ "0.5.0"]

@@ -4,9 +4,15 @@
             [hickory.core :refer [as-hiccup parse parse-fragment]]
             [secretary.core :as secretary :include-macros true :refer [defroute]]
             [main.post :as post]
+
+            [dommy.utils :as utils]
+            [dommy.core :as dommy]
+            [dommy.core :refer-macros [sel sel1]]
+
             [goog.events :as events]
             [goog.history.EventType :as EventType]
             [ajax.core :as ajax])
+  ;(:use-macros [dommy.macros :only [node deftemplate]]) // breaks
   (:import goog.History))
 
 ;; grab collection from fb and set-list!
@@ -37,34 +43,45 @@
     (let [cmd (aget event "target" "dataset" "role")]
       (.execCommand js/document cmd false null)))
 
-  [:div
-    [:input.hostel_name     {:type "text"     :placeholder "Hostel Name"     :on-change #(handle-input-update %)}]
-    [:input.job_title       {:type "text"     :placeholder "Job title"       :on-change #(handle-input-update %)}]
-    [:input.location        {:type "text"     :placeholder "Location"        :on-change #(handle-input-update %)}]
-    [:input.email           {:type "text"     :placeholder "Email"           :on-change #(handle-input-update %)}]
-    [:input.website         {:type "text"     :placeholder "website"         :on-change #(handle-input-update %)}]
-    [:div.text-control
-      [:a {:href "#" :on-click #(text-ctrl %) :data-role "bold"                } "Bold"]
-      [:a {:href "#" :on-click #(text-ctrl %) :data-role "italic"              } "Italics"]
-      [:a {:href "#" :on-click #(text-ctrl %) :data-role "insertOrderedList"   } "Ordered List"]
-      [:a {:href "#" :on-click #(text-ctrl %) :data-role "insertUnorderedList" } "Unordered List"]]
-    [:div.job_description   {:contentEditable true
-                             :placeholder "Job description"
-                             :on-blur #(handle-contenteditable-update %)}]
+  [:div#new-job-view
+     [:div#forms
+       [:input.hostel_name     {:type "text"     :placeholder "Hostel Name"     :on-change #(handle-input-update %)}]
+       [:input.job_title       {:type "text"     :placeholder "Job title"       :on-change #(handle-input-update %)}]
+       [:input.location        {:type "text"     :placeholder "Location"        :on-change #(handle-input-update %)}]
+       [:input.email           {:type "text"     :placeholder "Email"           :on-change #(handle-input-update %)}]
+       [:input.website         {:type "text"     :placeholder "website"         :on-change #(handle-input-update %)}]
+       [:div.text-control
+         [:a {:href "#" :on-click #(text-ctrl %) :data-role "bold"                } "Bold"]
+         [:a {:href "#" :on-click #(text-ctrl %) :data-role "italic"              } "Italics"]
+         [:a {:href "#" :on-click #(text-ctrl %) :data-role "insertOrderedList"   } "Ordered List"]
+         [:a {:href "#" :on-click #(text-ctrl %) :data-role "insertUnorderedList" } "Unordered List"]]
+       [:div.job_description   {:contentEditable true
+                              :placeholder "Job description"
+                              :on-blur #(handle-contenteditable-update %)}]
 
-    [:input.how {:type "text" :on-change #(handle-input-update %)}]
+       [:input.how {:type "text" :on-change #(handle-input-update %)}]
 
-    (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
-      [:a {:href "#" :on-click #(data/post2fb fb)} "submit"])
+       (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
+         [:a {:href "#" :on-click #(data/post2fb fb)} "submit"])
 
-    [:a.routes {:href "#/preview"} "preview"]
-    [:a.routes {:href "#/"} "home page"]
+       [:a.routes {:on-click
+                 #(doseq [todo (sel :#forms)]
+                    (dommy/add-class! todo :hidden))
+                 } "PREVIEW"]
+
+       [:a.routes {:href "#/"} "home page"]
+     ]
+
+
+    [:div (preview-view)]
   ])
 
 ;; PREVIEW VIEW
 (defn preview-view []
   [:div.preview-view "PREVIEW VIEW"
-   [:a.routes {:href "#/new/job"} "Edit job"]
+   [:a.routes {:on-click #(doseq [todo (sel :#forms)]
+                            (dommy/remove-class! todo :hidden))
+               } "Go Back and Edit job"]
    [:h1 {:on-click #(println (data/new-post))} "CLICK HERE!"]
      (let [previewData (data/new-post)]
        [:div
@@ -143,10 +160,6 @@
   (println "setting view to /new/job")
   (data/set-view! new-post-view))
 
-(defroute "/preview" {}
-  (println "preview clicked")
-  (data/set-view! preview-view)
-  )
 
 (defroute "/" {}
   (println "setting view to /..")
@@ -167,7 +180,7 @@
 ;; RENDER VIEW
 (defn app-view []
   [:div.container
-    [:h1.hidden {:on-click #(data/printAtom)} "show atom"]
+    [:h1 {:on-click #(data/printAtom)} "show atom"]
     (@data/current-view)
    ]
  )

@@ -3,7 +3,8 @@
 
 (enable-console-print!)
 
-(def app-state (atom {"post" { "hostel_name" "Pacific Tradewinds Backpackers"
+(def app-state (atom { "numbers" "12345"
+                       "post" { "hostel_name" "Pacific Tradewinds Backpackers"
                                "job_title" "Front Desk Receptionist"
                                "job_description" "As a front desk receptionist at the Tradewinds hostel you will be responsible for everything in the hostel! From checking in guests to doing laundry to cooking staff meals. It's an amazing place to connect with guests!"
                                "location" "San Francisco, CA"
@@ -29,8 +30,9 @@
 
 (defn printAtom []
   (println "::::::::::ATOM::::::::::")
-  (println "::::::::::::::::::::::::")
-  (println @app-state ["post"])
+  (println ":::::::::::::::x:::::::::")
+  ;(println @app-state ["post"])
+  (println (get-in @app-state ["post"]))
   (println "::::::::::::::::::::::::")
   (println "::::::::::::::::::::::::"))
 
