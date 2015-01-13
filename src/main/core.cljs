@@ -86,14 +86,16 @@
      (let [previewData (data/new-post)]
        [:div
          [:div.title (previewData "job_title")]
+         [:div.date "POSTED " (.slice (.toDateString (js/Date.)) 4 10)]
+
          [:div.name (previewData "hostel_name")]
          [:div.location (previewData "location")]
+         [:div.website (previewData "website")]
 
-         [:div.date "POSTED " (.slice (.toDateString (js/Date.)) 4 10)]
+
 
          [:div#job-description (map as-hiccup (parse-fragment (previewData "job_description")))]
 
-         [:div.website (previewData "website")]
 
          [:div.apply
            [:h3 "APPLY FOR THIS HOSTEL JOB"]

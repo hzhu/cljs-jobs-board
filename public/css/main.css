@@ -210,6 +210,13 @@ td, th {
 #new-job-view #forms {
   margin: 10px 0;
 }
+#new-job-view input {
+  border: 1px solid gray;
+  border-radius: 2px;
+  padding: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
 #new-job-view .text-control {
   margin-top: 5px;
   padding: 10px 0;
