@@ -65,7 +65,9 @@
          [:a {:href "#" :on-click #(data/post2fb fb)} "submit"])
 
        [:a.routes {:on-click
-                 #(doseq [todo (sel :#forms)]
+                 #(doseq [todo  (sel :#forms)
+                          todo2 (sel :.preview-view)]
+                    (dommy/remove-class! todo2 :hidden)
                     (dommy/add-class! todo :hidden))
                  } "PREVIEW"]
 
@@ -78,8 +80,10 @@
 
 ;; PREVIEW VIEW
 (defn preview-view []
-  [:div.preview-view "PREVIEW VIEW"
-   [:a.routes {:on-click #(doseq [todo (sel :#forms)]
+  [:div.preview-view.hidden "PREVIEW VIEW"
+   [:a.routes {:on-click #(doseq [todo  (sel :#forms)
+                                  todo2 (sel :div.preview-view)]
+                            (dommy/add-class! todo2 :hidden)
                             (dommy/remove-class! todo :hidden))
                } "Go Back and Edit job"]
    [:h1 {:on-click #(println (data/new-post))} "CLICK HERE!"]
