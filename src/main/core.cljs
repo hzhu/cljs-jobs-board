@@ -61,8 +61,6 @@
 
        [:input.how {:type "text" :on-change #(handle-input-update %)}]
 
-       (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
-         [:a {:href "#" :on-click #(data/post2fb fb)} "submit"])
 
        [:a.routes {:on-click
                  #(doseq [todo  (sel :#forms)
@@ -101,7 +99,10 @@
 
          [:div.apply
            [:h3 "APPLY FOR THIS HOSTEL JOB"]
-           [:p.how (previewData "how")]]])])
+           [:p.how (previewData "how")]
+           (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
+             [:a {:href "#" :on-click #(data/post2fb fb)} "submit"])
+         ]])])
 
 ;; JOB VIEW
 (defn job-view [uid]
