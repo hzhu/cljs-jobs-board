@@ -56,22 +56,19 @@
          [:a {:href "#" :on-click #(text-ctrl %) :data-role "insertOrderedList"   } "Ordered List"]
          [:a {:href "#" :on-click #(text-ctrl %) :data-role "insertUnorderedList" } "Unordered List"]]
        [:div.job_description   {:contentEditable true
-                              :placeholder "Job description"
-                              :on-blur #(handle-contenteditable-update %)}]
+                                :on-blur #(handle-contenteditable-update %)}]
 
        [:input.how {:type "text" :on-change #(handle-input-update %)}]
 
 
        [:a.routes {:on-click
-                 #(doseq [todo  (sel :#forms)
-                          todo2 (sel :.preview-view)]
-                    (dommy/remove-class! todo2 :hidden)
-                    (dommy/add-class! todo :hidden))
-                 } "PREVIEW"]
-
+                #(doseq [todo  (sel :#forms)
+                         todo2 (sel :.preview-view)]
+                         (dommy/remove-class! todo2 :hidden)
+                         (dommy/add-class! todo :hidden))
+                } "PREVIEW"]
        [:a.routes {:href "#/"} "home page"]
      ]
-
 
     [:div (preview-view)]
   ])
