@@ -3,6 +3,7 @@
 @import "common";
 @import "mixins";
 @import "job";
+@import "new-job";
 
 body {
   font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
@@ -26,13 +27,6 @@ body {
   border-top: 1px solid #e8e8e8;
   padding: 30px 0;
   margin-top: 30px;
-}
-
-.job_description {
-  margin-top: 15px;
-  border: 1px solid orange;
-  padding: 25px;
-  height: 150px;
 }
 
 
