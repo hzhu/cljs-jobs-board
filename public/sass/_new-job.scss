@@ -1,4 +1,30 @@
 #new-job-view {
+  #forms {
+    margin: 10px 0
+  };
+
+  .text-control {
+    margin-top: 5px;
+    padding: 10px 0;
+    font-size: 12px;
+
+    a {
+      text-decoration: none;
+      margin-right: 5px;
+      background-color: #87ceeb;
+      padding: 5px;
+      border-radius: 2px;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .italic {
+      font-style: italic;
+    }
+  }
+
   .job_description {
     max-height: 500px;
     overflow: auto;

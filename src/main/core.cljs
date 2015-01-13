@@ -44,7 +44,9 @@
       (.execCommand js/document cmd false null)))
 
   [:div#new-job-view
-     [:div#forms
+   [:a.routes {:href "#/"} "Back to Home Page"]
+
+   [:div#forms
        [:input.hostel_name     {:type "text"     :placeholder "Hostel Name"     :on-change #(handle-input-update %)}]
        [:input.job_title       {:type "text"     :placeholder "Job title"       :on-change #(handle-input-update %)}]
        [:input.location        {:type "text"     :placeholder "Location"        :on-change #(handle-input-update %)}]
@@ -52,7 +54,7 @@
        [:input.website         {:type "text"     :placeholder "website"         :on-change #(handle-input-update %)}]
        [:div.text-control
          [:a.bold       {:href "#" :on-click #(text-ctrl %) :data-role "bold"                } "Bold"]
-         [:a.italic     {:href "#" :on-click #(text-ctrl %) :data-role "italic"              } "Italics"]
+         [:a.italic     {:href "#" :on-click #(text-ctrl %) :data-role "italic"              } "Italic"]
          [:a.bulletlist {:href "#" :on-click #(text-ctrl %) :data-role "insertOrderedList"   } "Ordered List"]
          [:a.numberlist {:href "#" :on-click #(text-ctrl %) :data-role "insertUnorderedList" } "Unordered List"]]
        [:div.job_description   {:contentEditable true
@@ -67,7 +69,6 @@
                          (dommy/remove-class! todo2 :hidden)
                          (dommy/add-class! todo :hidden))
                 } "PREVIEW"]
-       [:a.routes {:href "#/"} "home page"]
      ]
 
     [:div (preview-view)]
