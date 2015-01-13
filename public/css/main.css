@@ -215,6 +215,9 @@ td, th {
   padding: 25px;
   height: 250px;
 }
+#new-job-view .job_description ol, #new-job-view .job_description ul {
+  padding-left: 25px;
+}
 
 body {
   font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;

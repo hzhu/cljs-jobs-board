@@ -6,5 +6,9 @@
     border: 1px solid orange;
     padding: 25px;
     height: 250px;
+
+    ol, ul {
+      padding-left: 25px;
+    }
   }
 }
