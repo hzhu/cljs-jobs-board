@@ -256,6 +256,7 @@ body {
 .apply {
   background-color: #efefef;
   padding: 15px 20px;
+  margin: 30px 0;
 }
 .apply h3, .apply p {
   margin: 5px 0;
