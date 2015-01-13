@@ -51,10 +51,10 @@
        [:input.email           {:type "text"     :placeholder "Email"           :on-change #(handle-input-update %)}]
        [:input.website         {:type "text"     :placeholder "website"         :on-change #(handle-input-update %)}]
        [:div.text-control
-         [:a {:href "#" :on-click #(text-ctrl %) :data-role "bold"                } "Bold"]
-         [:a {:href "#" :on-click #(text-ctrl %) :data-role "italic"              } "Italics"]
-         [:a {:href "#" :on-click #(text-ctrl %) :data-role "insertOrderedList"   } "Ordered List"]
-         [:a {:href "#" :on-click #(text-ctrl %) :data-role "insertUnorderedList" } "Unordered List"]]
+         [:a.bold       {:href "#" :on-click #(text-ctrl %) :data-role "bold"                } "Bold"]
+         [:a.italic     {:href "#" :on-click #(text-ctrl %) :data-role "italic"              } "Italics"]
+         [:a.bulletlist {:href "#" :on-click #(text-ctrl %) :data-role "insertOrderedList"   } "Ordered List"]
+         [:a.numberlist {:href "#" :on-click #(text-ctrl %) :data-role "insertUnorderedList" } "Unordered List"]]
        [:div.job_description   {:contentEditable true
                                 :on-blur #(handle-contenteditable-update %)}]
 
