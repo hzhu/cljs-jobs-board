@@ -63,19 +63,24 @@
 
 ;; PREVIEW VIEW
 (defn preview-view []
-  [:div "PREVIEW VIEW"
+  [:div.preview-view "PREVIEW VIEW"
+   [:a.routes {:href "#/new/job"} "Edit job"]
    [:h1 {:on-click #(println (data/new-post))} "CLICK HERE!"]
      (let [previewData (data/new-post)]
        [:div
-        [:div (previewData "job_title")]
-        [:div "POSTED " (.slice (.toDateString (js/Date.)) 4 10)]
-        [:div (previewData "website")]
+         [:div.title (previewData "job_title")]
+         [:div.name (previewData "hostel_name")]
+         [:div.location (previewData "location")]
 
+         [:div.date "POSTED " (.slice (.toDateString (js/Date.)) 4 10)]
 
-        ]
-     )
-   ]
-  )
+         [:div#job-description (map as-hiccup (parse-fragment (previewData "job_description")))]
+
+         [:div.website (previewData "website")]
+
+         [:div.apply
+           [:h3 "APPLY FOR THIS HOSTEL JOB"]
+           [:p.how (previewData "how")]]])])
 
 ;; JOB VIEW
 (defn job-view [uid]
@@ -87,7 +92,6 @@
       (render-jobs-list uid))])
 
 (defn make-date [epoch]
-  (println epoch)
   (subs (.toDateString (js/Date. epoch)) 4 10))
 
 (defn render-jobs-list [uid]

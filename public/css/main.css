@@ -232,23 +232,23 @@ body {
   height: 150px;
 }
 
-.job-view .title {
+.job-view .title, .preview-view .title {
   margin-top: 20px;
   font-size: 35px;
 }
-.job-view .date {
+.job-view .date, .preview-view .date {
   text-transform: uppercase;
   color: gray;
   margin-bottom: 15px;
 }
-.job-view .website {
+.job-view .website, .preview-view .website {
   text-decoration: none;
   color: #57ad68;
 }
-.job-view .website:hover {
+.job-view .website:hover, .preview-view .website:hover {
   text-decoration: underline;
 }
-.job-view .name, .job-view .location, .job-view .website {
+.job-view .name, .job-view .location, .job-view .website, .preview-view .name, .preview-view .location, .preview-view .website {
   font-weight: bold;
   margin-bottom: 5px;
 }
