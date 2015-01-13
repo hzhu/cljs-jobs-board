@@ -17,7 +17,7 @@
 (defn to-html [content]
   (as-hiccup (parse content)))
 
-;; VIEWS
+;; NEW JOB POST VIEW
 (defn new-post-view []
   (defn handle-input-update [event]
     (let [value     (aget event "target" "value")
@@ -61,12 +61,23 @@
     [:a.routes {:href "#/"} "home page"]
   ])
 
-;; Preview Job
+;; PREVIEW VIEW
 (defn preview-view []
-  [:div "PREVIEW VIEW"]
+  [:div "PREVIEW VIEW"
+   [:h1 {:on-click #(println (data/new-post))} "CLICK HERE!"]
+     (let [previewData (data/new-post)]
+       [:div
+        [:div (previewData "job_title")]
+        [:div "POSTED " (.slice (.toDateString (js/Date.)) 4 10)]
+        [:div (previewData "website")]
+
+
+        ]
+     )
+   ]
   )
 
-
+;; JOB VIEW
 (defn job-view [uid]
   [:div#job-view
     [:a.routes {:href "#/"} "Back to all jobs"]
@@ -76,6 +87,7 @@
       (render-jobs-list uid))])
 
 (defn make-date [epoch]
+  (println epoch)
   (subs (.toDateString (js/Date. epoch)) 4 10))
 
 (defn render-jobs-list [uid]
@@ -106,7 +118,7 @@
         [:span.date (make-date (hostelData "create_date"))]]]
  ))
 
-
+;; HOME VIEW
 (defn home-view []
   [:div.home
    [:h1 "WELCOME TO THE JOBS BOARD"]
