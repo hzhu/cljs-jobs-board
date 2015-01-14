@@ -45,26 +45,30 @@
 
   [:div#new-job-view
    [:div#forms
-    [:a.routes {:href "#/"} "Back to Home Page"]
-       [:div.box
-       [:label "Hostel name"]
-       [:input.hostel_name     {:type "text"     :placeholder "Hostel name"     :on-change #(handle-input-update %)}]]
+       [:a.routes {:href "#/"} "Back to Home Page"]
+       [:div.input-infos
+          [:div.box
+            [:label "Hostel name"]
+            [:input.hostel_name     {:type "text"     :placeholder "Hostel name"     :on-change #(handle-input-update %)}]]
 
-       [:div.box
-       [:label "Job title"]
-       [:input.job_title       {:type "text"     :placeholder "Job title"       :on-change #(handle-input-update %)}]]
 
-       [:div.box
-       [:label "Location"]
-       [:input.location        {:type "text"     :placeholder "Location"        :on-change #(handle-input-update %)}]]
+          [:div.box-extra
+            [:label "Job title"]
+            [:input.job_title       {:type "text"     :placeholder "Job title"       :on-change #(handle-input-update %)}]
+            [:br]
+            [:p.example "Front desk receptionist"]]
 
-       [:div.box
-       [:label "Email"]
-       [:input.email           {:type "text"     :placeholder "Email"           :on-change #(handle-input-update %)}]]
+          [:div.box
+            [:label "Location"]
+            [:input.location        {:type "text"     :placeholder "Location"        :on-change #(handle-input-update %)}]]
 
-       [:div.box
-       [:label "Website"]
-       [:input.website         {:type "text"     :placeholder "Website"         :on-change #(handle-input-update %)}]]
+          [:div.box
+            [:label "Email"]
+            [:input.email           {:type "text"     :placeholder "Email"           :on-change #(handle-input-update %)}]]
+
+          [:div.box
+            [:label "Website"]
+            [:input.website         {:type "text"     :placeholder "Website"         :on-change #(handle-input-update %)}]]]
 
        [:div.text-control
          [:a.bold       {:href "#" :on-click #(text-ctrl %) :data-role "bold"                } "Bold"]
