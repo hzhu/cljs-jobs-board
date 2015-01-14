@@ -3,12 +3,28 @@
     margin: 10px 0
   };
 
+  .box {
+    margin: 15px;
+    height: 37px;
+    line-height: 38px;
+  }
+
+  label {
+    font-size: 18px;
+  }
+
   input {
     border: 1px solid gray;
     border-radius: 2px;
     padding: 5px;
-    margin-top: 5px;
     margin-right: 5px;
+    float: right;
+    height: 25px;
+  }
+
+  .routes {
+    display: block;
+    margin: 15px 0;
   }
 
 
@@ -23,6 +39,7 @@
       background-color: #87ceeb;
       padding: 5px;
       border-radius: 2px;
+      color: #222;
     }
 
     .bold {

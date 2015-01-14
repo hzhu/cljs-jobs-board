@@ -44,19 +44,33 @@
       (.execCommand js/document cmd false null)))
 
   [:div#new-job-view
-   [:a.routes {:href "#/"} "Back to Home Page"]
-
    [:div#forms
-       [:input.hostel_name     {:type "text"     :placeholder "Hostel Name"     :on-change #(handle-input-update %)}]
-       [:input.job_title       {:type "text"     :placeholder "Job title"       :on-change #(handle-input-update %)}]
-       [:input.location        {:type "text"     :placeholder "Location"        :on-change #(handle-input-update %)}]
-       [:input.email           {:type "text"     :placeholder "Email"           :on-change #(handle-input-update %)}]
-       [:input.website         {:type "text"     :placeholder "website"         :on-change #(handle-input-update %)}]
+    [:a.routes {:href "#/"} "Back to Home Page"]
+       [:div.box
+       [:label "Hostel name"]
+       [:input.hostel_name     {:type "text"     :placeholder "Hostel name"     :on-change #(handle-input-update %)}]]
+
+       [:div.box
+       [:label "Job title"]
+       [:input.job_title       {:type "text"     :placeholder "Job title"       :on-change #(handle-input-update %)}]]
+
+       [:div.box
+       [:label "Location"]
+       [:input.location        {:type "text"     :placeholder "Location"        :on-change #(handle-input-update %)}]]
+
+       [:div.box
+       [:label "Email"]
+       [:input.email           {:type "text"     :placeholder "Email"           :on-change #(handle-input-update %)}]]
+
+       [:div.box
+       [:label "Website"]
+       [:input.website         {:type "text"     :placeholder "Website"         :on-change #(handle-input-update %)}]]
+
        [:div.text-control
          [:a.bold       {:href "#" :on-click #(text-ctrl %) :data-role "bold"                } "Bold"]
          [:a.italic     {:href "#" :on-click #(text-ctrl %) :data-role "italic"              } "Italic"]
-         [:a.bulletlist {:href "#" :on-click #(text-ctrl %) :data-role "insertOrderedList"   } "Ordered List"]
-         [:a.numberlist {:href "#" :on-click #(text-ctrl %) :data-role "insertUnorderedList" } "Unordered List"]]
+         [:a.bulletlist {:href "#" :on-click #(text-ctrl %) :data-role "insertOrderedList"   } "Numbers"]
+         [:a.numberlist {:href "#" :on-click #(text-ctrl %) :data-role "insertUnorderedList" } "Bullets"]]
        [:div.job_description   {:contentEditable true
                                 :on-blur #(handle-contenteditable-update %)}]
 
@@ -82,7 +96,6 @@
                             (dommy/add-class! todo2 :hidden)
                             (dommy/remove-class! todo :hidden))
                } "Go Back and Edit job"]
-   [:h1 {:on-click #(println (data/new-post))} "CLICK HERE!"]
      (let [previewData (data/new-post)]
        [:div
          [:div.title (previewData "job_title")]
