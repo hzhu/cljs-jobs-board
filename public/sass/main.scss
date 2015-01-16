@@ -21,6 +21,9 @@ body {
 .container {
   width: 75%;
   margin: 0 auto;
+  @include chosenDevice(tablet) {
+    width: 90%;
+  }
 }
 
 #job-description {

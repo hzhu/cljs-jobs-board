@@ -28,7 +28,7 @@
       color: #CCC;
       @include chosenDevice(tablet) {
         margin-left: 0;
-        margin-top: 1px;
+        margin-top: 2px;
       }
     }
   }
@@ -87,10 +87,16 @@
 
 
 
-  .text-control {
+  .description-container {
     margin-top: 10px;
     padding: 10px 0;
     font-size: 12px;
+
+    .text-controls {
+      @include chosenDevice(tablet) {
+        margin-top: 7px;
+      }
+    }
 
     a {
       text-decoration: none;

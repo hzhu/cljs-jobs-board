@@ -74,12 +74,14 @@
 
 
 
-       [:div.text-control
-        [:label "Job description:"]
-         [:a.bold       {:href "#" :on-click #(text-ctrl %) :data-role "bold"                } "Bold"]
-         [:a.italic     {:href "#" :on-click #(text-ctrl %) :data-role "italic"              } "Italic"]
-         [:a.bulletlist {:href "#" :on-click #(text-ctrl %) :data-role "insertOrderedList"   } "Numbers"]
-         [:a.numberlist {:href "#" :on-click #(text-ctrl %) :data-role "insertUnorderedList" } "Bullets"]]
+       [:div.description-container
+         [:label "Job description:"]
+         [:div.text-controls
+          [:a.bold       {:href "#" :on-click #(text-ctrl %) :data-role "bold"                } "Bold"]
+          [:a.italic     {:href "#" :on-click #(text-ctrl %) :data-role "italic"              } "Italic"]
+          [:a.bulletlist {:href "#" :on-click #(text-ctrl %) :data-role "insertOrderedList"   } "Numbers"]
+          [:a.numberlist {:href "#" :on-click #(text-ctrl %) :data-role "insertUnorderedList" } "Bullets"]
+         ]]
 
        [:div.job_description   {:contentEditable true
                                 :on-blur #(handle-contenteditable-update %)}]

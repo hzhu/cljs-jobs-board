@@ -232,7 +232,7 @@ td, th {
 @media (max-width: 608px) {
   #new-job-view .box-extra .example {
     margin-left: 0;
-    margin-top: 1px;
+    margin-top: 2px;
   }
 }
 #new-job-view label {
@@ -284,12 +284,17 @@ td, th {
   width: 230px;
   cursor: pointer;
 }
-#new-job-view .text-control {
+#new-job-view .description-container {
   margin-top: 10px;
   padding: 10px 0;
   font-size: 12px;
 }
-#new-job-view .text-control a {
+@media (max-width: 608px) {
+  #new-job-view .description-container .text-controls {
+    margin-top: 7px;
+  }
+}
+#new-job-view .description-container a {
   text-decoration: none;
   margin-right: 5px;
   background-color: #87ceeb;
@@ -297,10 +302,10 @@ td, th {
   border-radius: 2px;
   color: #222;
 }
-#new-job-view .text-control .bold {
+#new-job-view .description-container .bold {
   font-weight: bold;
 }
-#new-job-view .text-control .italic {
+#new-job-view .description-container .italic {
   font-style: italic;
 }
 #new-job-view .job_description {
@@ -329,6 +334,11 @@ body {
 .container {
   width: 75%;
   margin: 0 auto;
+}
+@media (max-width: 608px) {
+  .container {
+    width: 90%;
+  }
 }
 
 #job-description {
