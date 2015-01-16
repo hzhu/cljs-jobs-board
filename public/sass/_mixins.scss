@@ -7,7 +7,7 @@
   }
 
   @if $device == tablet {
-    @media (max-width: 600px) {
+    @media (max-width: 608px) {
       @content;
     }
   }

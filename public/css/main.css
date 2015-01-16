@@ -213,18 +213,18 @@ td, th {
 }
 #new-job-view .box-extra {
   margin: 10px 0;
-  height: 60px;
+  height: 76px;
   width: 540px;
 }
-@media (max-width: 600px) {
+@media (max-width: 608px) {
   #new-job-view .box-extra {
-    background-color: blue !important;
+    width: 100%;
   }
 }
 #new-job-view .box-extra .example {
   margin-bottom: 0;
   margin-top: 0;
-  margin-left: 120px;
+  margin-left: 140px;
   font-size: 12px;
   font-style: italic;
   color: #CCC;
@@ -235,20 +235,26 @@ td, th {
   cursor: pointer;
 }
 #new-job-view input {
+  box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 2px;
   padding: 5px;
-  margin-right: 5px;
   float: right;
-  height: 25px;
+  height: 37px;
   width: 400px;
+}
+@media (max-width: 608px) {
+  #new-job-view input {
+    width: 100%;
+    float: none;
+  }
 }
 #new-job-view .routes {
   display: block;
   margin: 15px 0;
 }
 #new-job-view .text-control {
-  margin-top: 5px;
+  margin-top: 65px;
   padding: 10px 0;
   font-size: 12px;
 }

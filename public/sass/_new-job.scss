@@ -12,17 +12,17 @@
 
   .box-extra {
     margin: 10px 0;
-    height: 60px;
+    height: 76px;
     width: 540px;
 
     @include chosenDevice(tablet) {
-      background-color: blue !important;
+      width: 100%;
     }
 
     .example {
       margin-bottom: 0;
       margin-top: 0;
-      margin-left: 120px;
+      margin-left: 140px;
       font-size: 12px;
       font-style: italic;
       color: #CCC;
@@ -36,13 +36,17 @@
   }
 
   input {
+    box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 2px;
     padding: 5px;
-    margin-right: 5px;
     float: right;
-    height: 25px;
+    height: 37px;
     width: 400px;
+    @include chosenDevice(tablet) {
+      width: 100%;
+      float: none;
+    }
   }
 
   .routes {
@@ -51,8 +55,9 @@
   }
 
 
+
   .text-control {
-    margin-top: 5px;
+    margin-top: 65px;
     padding: 10px 0;
     font-size: 12px;
 
@@ -80,6 +85,7 @@
     border: 1px solid #CCC;
     padding: 25px;
     height: 250px;
+
 
     ol, ul {
       padding-left: 25px;
