@@ -215,11 +215,13 @@ td, th {
   height: 37px;
 }
 #new-job-view .box-extra {
-  margin: 15px;
+  margin: 10px 0;
   height: 60px;
+  width: 540px;
 }
 #new-job-view .box-extra .example {
-  margin: 0 0 0 165px;
+  margin-bottom: 0;
+  margin-top: 0;
   font-size: 12px;
   font-style: italic;
   color: #CCC;
@@ -227,6 +229,7 @@ td, th {
 #new-job-view label {
   font-size: 18px;
   line-height: 38px;
+  cursor: pointer;
 }
 #new-job-view input {
   border: 1px solid #ccc;
@@ -235,7 +238,7 @@ td, th {
   margin-right: 5px;
   float: right;
   height: 25px;
-  width: 540px;
+  width: 400px;
 }
 #new-job-view .routes {
   display: block;
@@ -263,7 +266,6 @@ td, th {
 #new-job-view .job_description {
   max-height: 500px;
   overflow: auto;
-  margin-top: 15px;
   border: 1px solid #CCC;
   padding: 25px;
   height: 250px;
