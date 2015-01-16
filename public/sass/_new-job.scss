@@ -11,12 +11,12 @@
 
 
   .box-extra {
-    margin: 10px 0;
     height: 76px;
     width: 540px;
 
     @include chosenDevice(tablet) {
       width: 100%;
+      margin-bottom: 10px;
     }
 
     .example {
@@ -26,13 +26,23 @@
       font-size: 12px;
       font-style: italic;
       color: #CCC;
+      @include chosenDevice(tablet) {
+        margin-left: 0;
+        margin-top: 1px;
+      }
     }
   }
 
   label {
     font-size: 18px;
-    line-height: 38px;
+    line-height: 40px;
     cursor: pointer;
+    @include chosenDevice(tablet) {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: bold;
+      color: rgba(0, 0, 0, 0.7);
+    }
   }
 
   input {
