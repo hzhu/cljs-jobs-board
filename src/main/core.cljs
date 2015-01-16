@@ -72,15 +72,19 @@
               [:input.website  {:type "text" :on-change #(handle-input-update %)}]]
               [:p.example "Example: http://www.pactradewinds.com"]]]
 
+
        [:div.text-control
          [:a.bold       {:href "#" :on-click #(text-ctrl %) :data-role "bold"                } "Bold"]
          [:a.italic     {:href "#" :on-click #(text-ctrl %) :data-role "italic"              } "Italic"]
          [:a.bulletlist {:href "#" :on-click #(text-ctrl %) :data-role "insertOrderedList"   } "Numbers"]
          [:a.numberlist {:href "#" :on-click #(text-ctrl %) :data-role "insertUnorderedList" } "Bullets"]]
+
        [:div.job_description   {:contentEditable true
                                 :on-blur #(handle-contenteditable-update %)}]
 
-       [:input.how {:type "text" :on-change #(handle-input-update %)}]
+       [:label "How to apply:"
+        [:input.how {:type "textarea" :on-change #(handle-input-update %)}]
+       ]
 
 
        [:a.routes {:on-click
