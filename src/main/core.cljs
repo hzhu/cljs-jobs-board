@@ -46,35 +46,31 @@
   [:div#new-job-view
    [:div#forms
        [:a.routes {:href "#/"} "Back to Home Page"]
+
        [:div.input-infos
+          [:div.box-extra
+            [:label "Hostel name:"
+            [:input.hostel_name {:type "text" :on-change #(handle-input-update %)}]]
+            [:p.example "Enter your hostel's name."]]
 
           [:div.box-extra
-            [:label "Hostel name:"]
-              [:input.hostel_name     {:type "text"      :on-change #(handle-input-update %)}]
-              [:p.example "Enter your hostel's name."]
-          ]
+            [:label "Job title:"
+            [:input.job_title   {:type "text" :on-change #(handle-input-update %)}]]
+            [:p.example "'Front desk receptionist' or 'Cleaner'"]]
 
           [:div.box-extra
-            [:label "Job title:"]
-              [:input.job_title       {:type "text"        :on-change #(handle-input-update %)}]
-              [:p.example "'Front desk receptionist' or 'Cleaner'"]
-          ]
+            [:label "Location:"
+            [:input.location    {:type "text" :on-change #(handle-input-update %)}]]
+            [:p.example "\"San Francisco, CA\"", " or  \"Berlin, Germany\""]]
 
           [:div.box-extra
-            [:label "Location:"]
-            [:input.location        {:type "text"          :on-change #(handle-input-update %)}]
-            [:p.example "\"San Francisco, CA\"", " or  \"Berlin, Germany\""]
-          ]
+            [:label "Email:"
+            [:input.email      {:type "text" :on-change #(handle-input-update %)}]]]
 
           [:div.box-extra
-            [:label "Email:"]
-            [:input.email           {:type "text"             :on-change #(handle-input-update %)}]]
-
-          [:div.box-extra
-            [:label "Website:"]
-              [:input.website         {:type "text"          :on-change #(handle-input-update %)}]
-              [:p.example "Example: http://www.pactradewinds.com"]
-          ]]
+            [:label "Website:"
+              [:input.website  {:type "text" :on-change #(handle-input-update %)}]]
+              [:p.example "Example: http://www.pactradewinds.com"]]]
 
        [:div.text-control
          [:a.bold       {:href "#" :on-click #(text-ctrl %) :data-role "bold"                } "Bold"]
