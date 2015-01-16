@@ -1,3 +1,5 @@
+@import "mixins";
+
 #new-job-view {
   #forms {
     margin: 10px 0;
@@ -7,19 +9,20 @@
     }
   }
 
-  .box {
-    margin: 15px;
-    height: 37px;
-    //line-height: 38px;
-  }
 
   .box-extra {
     margin: 10px 0;
     height: 60px;
     width: 540px;
+
+    @include chosenDevice(tablet) {
+      background-color: blue !important;
+    }
+
     .example {
       margin-bottom: 0;
       margin-top: 0;
+      margin-left: 120px;
       font-size: 12px;
       font-style: italic;
       color: #CCC;

@@ -51,9 +51,9 @@
           [:div.box-extra
             [:label "Hostel name"
               [:input.hostel_name     {:type "text"     :placeholder "Hostel name"     :on-change #(handle-input-update %)}]
-              [:p.example "Enter your hostel's name."]
             ]
-          ]
+            [:p.example "Enter your hostel's name."]
+            ]
 
           [:div.box-extra
             [:label "Job title"

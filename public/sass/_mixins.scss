@@ -6,6 +6,11 @@
     }
   }
 
+  @if $device == tablet {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
 
   @if $device == largeDesktop {
     @media (min-width: 1200px) {
