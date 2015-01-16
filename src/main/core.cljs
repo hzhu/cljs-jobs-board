@@ -73,7 +73,9 @@
               [:p.example "Example: http://www.pactradewinds.com"]]]
 
 
+
        [:div.text-control
+        [:label "Job description:"]
          [:a.bold       {:href "#" :on-click #(text-ctrl %) :data-role "bold"                } "Bold"]
          [:a.italic     {:href "#" :on-click #(text-ctrl %) :data-role "italic"              } "Italic"]
          [:a.bulletlist {:href "#" :on-click #(text-ctrl %) :data-role "insertOrderedList"   } "Numbers"]
@@ -83,8 +85,11 @@
                                 :on-blur #(handle-contenteditable-update %)}]
 
        [:label "How to apply:"
-        [:input.how {:type "textarea" :on-change #(handle-input-update %)}]
-       ]
+         [:br]
+        ;[:input.how {:type "textarea" :on-change #(handle-input-update %)}]
+        [:textarea.how {:on-change #(handle-input-update %)}]
+
+        ]
 
 
        [:a.routes {:on-click
@@ -125,7 +130,7 @@
            [:p.how (previewData "how")]]
 
          (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
-           [:a {:href "#" :on-click #(data/post2fb fb)} "submit"])
+           [:a#submit {:href "#" :on-click #(data/post2fb fb)} "submit"])
        ])])
 
 ;; JOB VIEW
@@ -156,6 +161,11 @@
      [:div.apply
         [:h3 "APPLY FOR THIS HOSTEL JOB"]
         [:p.how (job "how")]
+
+
+        ;[:br ]
+        ;[:p.how (map as-hiccup (parse-fragment (job "how")))]
+
         ]]))
 
 (defn home-view-item [data]

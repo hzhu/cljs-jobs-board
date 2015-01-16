@@ -36,6 +36,7 @@
   label {
     font-size: 18px;
     line-height: 40px;
+    display: block;
     cursor: pointer;
     @include chosenDevice(tablet) {
       font-size: 14px;
@@ -43,6 +44,16 @@
       font-weight: bold;
       color: rgba(0, 0, 0, 0.7);
     }
+  }
+
+  textarea {
+    display: block;
+    width: 99.3%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    resize: none;
+    max-width: 800px;
+
   }
 
   input {
@@ -59,15 +70,25 @@
     }
   }
 
-  .routes {
+  #submit, .routes {
     display: block;
-    margin: 15px 0;
+    margin: 35px 0;
+    text-decoration: none;
+    margin-right: 5px;
+    background-color: #e9967a;
+    padding: 10px;
+    border-radius: 2px;
+    color: #222;
+    width: 230px;
+    cursor: pointer;
   }
 
 
 
+
+
   .text-control {
-    margin-top: 65px;
+    margin-top: 10px;
     padding: 10px 0;
     font-size: 12px;
 
@@ -91,6 +112,7 @@
 
   .job_description {
     max-height: 500px;
+    max-width: 753px;
     overflow: auto;
     border: 1px solid #CCC;
     padding: 25px;
@@ -98,7 +120,7 @@
 
 
     ol, ul {
-      padding-left: 25px;
+      padding-left: 20px;
     }
   }
 }
