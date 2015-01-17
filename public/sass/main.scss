@@ -4,6 +4,7 @@
 @import "mixins";
 @import "job";
 @import "new-job";
+@import "preview";
 
 body {
   font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
@@ -22,7 +23,7 @@ body {
   width: 75%;
   margin: 0 auto;
   @include chosenDevice(tablet) {
-    width: 90%;
+    width: 94%;
   }
 }
 
@@ -58,15 +59,5 @@ body {
   .name, .location, .website {
     font-weight: bold;
     margin-bottom: 5px;
-  }
-}
-
-.apply {
-  background-color: #efefef;
-  padding: 15px 20px;
-  margin: 30px 0;
-
-  h3, p {
-    margin: 5px 0;
   }
 }

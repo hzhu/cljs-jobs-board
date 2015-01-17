@@ -1,7 +1,7 @@
 /* Responsive General Sass Mixing function */
 @mixin chosenDevice($device) {
   @if $device == mobile {
-    @media (max-width: 480px) {
+    @media (max-width: 375px) {// iPhone width is 375px portrait
       @content;
     }
   }

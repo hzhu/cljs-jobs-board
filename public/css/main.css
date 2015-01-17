@@ -199,28 +199,33 @@ td, th {
   box-sizing: border-box;
 }
 
+input, textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .home ul {
   padding: 0;
 }
-@media (max-width: 608px) {
-  .home ul {
-    background: orange;
-  }
-}
 .home ul li {
   list-style: none;
-  border-bottom: 1px solid #CCC;
+  border-bottom: 1px solid #EBF2F6;
 }
 .home ul li a {
   display: block;
-  padding: 15px 0;
+  padding: 20px 0;
   text-decoration: none;
 }
 .home ul .name {
-  margin-right: 10px;
   font-size: 18px;
   font-weight: bold;
   color: #333;
+}
+@media (max-width: 375px) {
+  .home ul .name {
+    font-size: 16px;
+  }
 }
 .home ul .title {
   color: #1e90ff;
@@ -234,9 +239,16 @@ td, th {
 }
 .home ul .date {
   float: right;
+  text-transform: uppercase;
   position: relative;
-  top: -30px;
+  top: -35px;
   color: #222;
+  font-size: 15px;
+}
+@media (max-width: 608px) {
+  .home ul .date {
+    font-size: 12px;
+  }
 }
 
 /* Responsive General Sass Mixing function */
@@ -357,6 +369,20 @@ td, th {
   padding-left: 20px;
 }
 
+.apply {
+  background-color: #efefef;
+  padding: 15px 20px;
+  margin: 30px 0;
+}
+.apply h3, .apply p {
+  margin: 5px 0;
+}
+@media (max-width: 375px) {
+  .apply {
+    font-size: 15px;
+  }
+}
+
 body {
   font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
   background-color: #FFF;
@@ -374,7 +400,7 @@ body {
 }
 @media (max-width: 608px) {
   .container {
-    width: 90%;
+    width: 94%;
   }
 }
 
@@ -403,13 +429,4 @@ body {
 .job-view .name, .job-view .location, .job-view .website, .preview-view .name, .preview-view .location, .preview-view .website {
   font-weight: bold;
   margin-bottom: 5px;
-}
-
-.apply {
-  background-color: #efefef;
-  padding: 15px 20px;
-  margin: 30px 0;
-}
-.apply h3, .apply p {
-  margin: 5px 0;
 }

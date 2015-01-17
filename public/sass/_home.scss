@@ -2,24 +2,31 @@
   ul {
     padding: 0;
     @include chosenDevice(tablet) {
-      background: orange;
+      //background: orange;
+    }
+
+    @include chosenDevice(mobile) {
+      //background: yellow;
     }
 
     li {
       list-style: none;
-      border-bottom: 1px solid #CCC;
+      //border-bottom: 1px solid #CCC;
+      border-bottom: 1px solid #EBF2F6;
 
       a {
         display: block;
-        padding: 15px 0;
+        padding: 20px 0;
         text-decoration: none;
       }
     }
     .name {
-      margin-right: 10px;
       font-size: 18px;
       font-weight: bold;
       color: #333;
+      @include chosenDevice(mobile) {
+        font-size: 16px;
+      }
     }
 
     .title {
@@ -36,9 +43,14 @@
 
     .date {
       float: right;
+      text-transform: uppercase;
       position: relative;
-      top: -30px;
+      top: -35px;
       color: #222;
+      font-size: 15px;
+      @include chosenDevice(tablet) {
+        font-size: 12px;
+      }
     }
   }
 }
