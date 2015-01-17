@@ -175,10 +175,10 @@
         target (str "/jobs/" uid)]
     [:li
       [:a {:href (str "#" target)}
-        [:span.name (hostelData "hostel_name")]
-        [:span.location [:b"@ "] (hostelData "location")]
+        [:div.name (hostelData "hostel_name")]
+        [:div.location [:b"@ "] (hostelData "location")]
         [:div.title (hostelData "job_title")]
-        [:span.date (make-date (hostelData "create_date"))]]]
+        [:div.date (make-date (hostelData "create_date"))]]]
  ))
 
 ;; HOME VIEW
