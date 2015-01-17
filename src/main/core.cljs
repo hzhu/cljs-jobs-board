@@ -94,12 +94,12 @@
         ]
 
 
-       [:a.routes {:on-click
+       [:a.next-step.routes {:on-click
                 #(doseq [todo  (sel :#forms)
                          todo2 (sel :.preview-view)]
                          (dommy/remove-class! todo2 :hidden)
                          (dommy/add-class! todo :hidden))
-                } "PREVIEW YOUR JOB POST!"]
+                } "PREVIEW MY JOB POST!"]
      ]
 
     [:div (preview-view)]
