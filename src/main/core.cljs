@@ -176,7 +176,8 @@
     [:li
       [:a {:href (str "#" target)}
         [:span.name (hostelData "hostel_name")]
-        [:span.title (hostelData "job_title")]
+        [:span.location [:b"@ "] (hostelData "location")]
+        [:div.title (hostelData "job_title")]
         [:span.date (make-date (hostelData "create_date"))]]]
  ))
 

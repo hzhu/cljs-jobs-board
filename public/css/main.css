@@ -202,20 +202,41 @@ td, th {
 .home ul {
   padding: 0;
 }
+@media (max-width: 608px) {
+  .home ul {
+    background: orange;
+  }
+}
 .home ul li {
   list-style: none;
+  border-bottom: 1px solid #CCC;
 }
 .home ul li a {
   display: block;
-  padding: 10px 0;
+  padding: 15px 0;
   text-decoration: none;
 }
 .home ul .name {
   margin-right: 10px;
+  font-size: 18px;
   font-weight: bold;
+  color: #333;
+}
+.home ul .title {
+  color: #1e90ff;
+  text-decoration: underline;
+}
+.home ul .location {
+  font-size: 14px;
+  position: relative;
+  top: -1px;
+  color: #222;
 }
 .home ul .date {
   float: right;
+  position: relative;
+  top: -30px;
+  color: #222;
 }
 
 /* Responsive General Sass Mixing function */
