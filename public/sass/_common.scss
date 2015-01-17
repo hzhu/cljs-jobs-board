@@ -1,5 +1,6 @@
 @import "mixins";
 
+/* Custom Styling */
 .next-step {
   text-align: center;
   @include chosenDevice(tablet) {
@@ -7,6 +8,13 @@
   }
 }
 
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+
+/* Default Styling */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -17,4 +25,10 @@ input, textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+// Removes 300ms delay on Windows mobile devices.
+html {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
 }

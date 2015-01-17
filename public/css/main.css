@@ -184,6 +184,7 @@ td, th {
 }
 
 /* Responsive General Sass Mixing function */
+/* Custom Styling */
 .next-step {
   text-align: center;
 }
@@ -193,6 +194,12 @@ td, th {
   }
 }
 
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+/* Default Styling */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -203,6 +210,11 @@ input, textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+html {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
 }
 
 .home ul {
@@ -387,11 +399,6 @@ body {
   font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
   background-color: #FFF;
   color: rgba(0, 0, 0, 0.8);
-}
-
-.hidden {
-  display: none;
-  visibility: hidden;
 }
 
 .container {
