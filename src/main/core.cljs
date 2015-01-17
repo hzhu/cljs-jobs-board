@@ -99,7 +99,7 @@
                          todo2 (sel :.preview-view)]
                          (dommy/remove-class! todo2 :hidden)
                          (dommy/add-class! todo :hidden))
-                } "PREVIEW"]
+                } "PREVIEW YOUR JOB POST!"]
      ]
 
     [:div (preview-view)]

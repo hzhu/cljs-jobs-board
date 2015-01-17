@@ -285,9 +285,8 @@ td, th {
   cursor: pointer;
 }
 #new-job-view .description-container {
-  margin-top: 10px;
-  padding: 10px 0;
   font-size: 12px;
+  height: 70px;
 }
 @media (max-width: 608px) {
   #new-job-view .description-container .text-controls {
@@ -297,9 +296,9 @@ td, th {
 #new-job-view .description-container a {
   text-decoration: none;
   margin-right: 5px;
-  background-color: #87ceeb;
   padding: 5px;
   border-radius: 2px;
+  border: 1px solid #CCC;
   color: #222;
 }
 #new-job-view .description-container .bold {
@@ -315,6 +314,7 @@ td, th {
   border: 1px solid #CCC;
   padding: 25px;
   height: 250px;
+  margin-bottom: 25px;
 }
 #new-job-view .job_description ol, #new-job-view .job_description ul {
   padding-left: 20px;

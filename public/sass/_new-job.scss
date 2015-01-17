@@ -3,12 +3,7 @@
 #new-job-view {
   #forms {
     margin: 10px 0;
-
-    .input-infos {
-
-    }
   }
-
 
   .box-extra {
     height: 76px;
@@ -83,14 +78,9 @@
     cursor: pointer;
   }
 
-
-
-
-
   .description-container {
-    margin-top: 10px;
-    padding: 10px 0;
     font-size: 12px;
+    height: 70px;
 
     .text-controls {
       @include chosenDevice(tablet) {
@@ -101,9 +91,9 @@
     a {
       text-decoration: none;
       margin-right: 5px;
-      background-color: #87ceeb;
       padding: 5px;
       border-radius: 2px;
+      border: 1px solid #CCC;
       color: #222;
     }
 
@@ -123,6 +113,7 @@
     border: 1px solid #CCC;
     padding: 25px;
     height: 250px;
+    margin-bottom: 25px;
 
 
     ol, ul {
