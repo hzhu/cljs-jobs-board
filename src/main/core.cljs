@@ -132,7 +132,7 @@
            [:p.how (previewData "how")]]
 
          (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
-           [:a#submit {:href "#" :on-click #(data/post2fb fb)} "submit"])
+           [:a#submit {:href "#/" :on-click #(data/post2fb fb)} "submit"])
        ])])
 
 ;; JOB VIEW
