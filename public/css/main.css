@@ -312,16 +312,18 @@ html {
 }
 #new-job-view textarea {
   display: block;
-  width: 99.3%;
+  width: 100%;
   border: 1px solid #ccc;
   border-radius: 3px;
   resize: none;
-  max-width: 800px;
+  max-width: 755px;
+  line-height: 20px;
+  height: 100px;
 }
 #new-job-view input {
   box-sizing: border-box;
   border: 1px solid #ccc;
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 5px;
   float: right;
   height: 37px;
@@ -376,6 +378,7 @@ html {
   padding: 25px;
   height: 250px;
   margin-bottom: 25px;
+  border-radius: 3px;
 }
 #new-job-view .job_description ol, #new-job-view .job_description ul {
   padding-left: 20px;
