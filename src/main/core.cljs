@@ -15,9 +15,9 @@
   ;(:use-macros [dommy.macros :only [node deftemplate]]) // breaks
   (:import goog.History))
 
-;; grab collection from fb and set-list!
+;; grab collection from fb and set-list!  (listens to Firebase for changes in data)
 (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
-  (.on fb "value" #(data/set-list! (js->clj (.val %)))))
+  (.on fb "value" #(data/set-list! (.val %))))
 
 ;; helper, parse html into hiccup
 (defn to-html [content]
@@ -184,7 +184,7 @@
 ;; HOME VIEW
 (defn home-view []
   [:div.home
-   [:h1 "WELCOME TO THE JOBS BOARD"]
+   [:h1 "HOSTEL JOBS BOARD"]
 
    [:a.routes {:href "#/new/job"} "POST A NEW JOB"]
 
@@ -222,7 +222,7 @@
 ;; RENDER VIEW
 (defn app-view []
   [:div.container
-    [:h1.hidden {:on-click #(data/printAtom)} "show atom"]
+    [:h1 {:on-click #(data/printAtom)} "show atom"]
     (@data/current-view)
    ]
  )

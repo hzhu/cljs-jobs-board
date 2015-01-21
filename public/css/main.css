@@ -210,6 +210,7 @@ input, textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  font-weight: normal;
 }
 
 html {
