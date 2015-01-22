@@ -32,9 +32,7 @@
   (println "::::::::::ATOM::::::::::")
   (println ":::::::::::::::x:::::::::")
   ;(println @app-state ["post"])
-  ;(println (get-in @app-state ["post"]))
-  (println (get-in @app-state ["jobs-list"]))
-
+  (println (get-in @app-state ["post"]))
   (println "::::::::::::::::::::::::")
   (println "::::::::::::::::::::::::"))
 
@@ -60,7 +58,14 @@
 
 ;; To render individual job post
 (defn clicked-job [uid]
-  (get-in @app-state ["jobs-list" uid]))
+
+
+(def lis (get-in @app-state ["jobs-list"]))
+  ;(println (second (first (filter #(= (% 0) uid)  lis))))
+  (println (second(first(filter (fn [el] (if (= (el 0) uid) (el 1)) ) lis))))
+  ;(get-in @app-state ["jobs-list" uid])
+  (second(first(filter (fn [el] (if (= (el 0) uid) (el 1)) ) lis)))
+  )
 
 ;; Get current new-job-post data
 (defn new-post []
