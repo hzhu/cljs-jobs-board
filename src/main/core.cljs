@@ -3,12 +3,12 @@
             [main.data :as data]
             [hickory.core :refer [as-hiccup parse parse-fragment]]
             [secretary.core :as secretary :include-macros true :refer [defroute]]
-            [main.post :as post]
 
             [dommy.utils :as utils]
             [dommy.core :as dommy]
             [dommy.core :refer-macros [sel sel1]]
 
+            [main.domready :as domready]
             [goog.events :as events]
             [goog.history.EventType :as EventType]
             [ajax.core :as ajax])
@@ -186,7 +186,8 @@
   [:div.home
    [:h1 "HOSTEL JOBS BOARD"]
 
-   [:a.routes {:href "#/new/job"} "POST A NEW JOB"]
+   [:div#post-new-job
+     [:a.routes {:href "#/new/job"} "POST A NEW JOB"]]
 
    [:ul (map home-view-item (data/get-list!))]])
 
