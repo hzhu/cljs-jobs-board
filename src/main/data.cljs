@@ -3,19 +3,33 @@
 
 (enable-console-print!)
 
-(def app-state (atom { "numbers" "12345"
-                       "post" { "hostel_name" "Pacific Tradewinds Backpackers"
-                               "job_title" "Front Desk Receptionist"
-                               "job_description" "As a front desk receptionist at the Tradewinds hostel you will be responsible for everything in the hostel! From checking in guests to doing laundry to cooking staff meals. It's an amazing place to connect with guests!"
-                               "location" "San Francisco, CA"
-                               "email" "ptdubs@gmail.com"
-                               "website" "www.sfhostel.com"
-                               "how" "To apply simply send an email to me@example.com"
-                               "create_date" (.-TIMESTAMP (.-ServerValue js/Firebase))
-                               "sponsored" false
-                              },
-                      "clicked-job" {},
-                      "jobs-list" {}}))
+;(def app-state (atom {
+;                       "post" { "hostel_name" "Pacific Tradewinds Backpackers"
+;                               "job_title" "Front Desk Receptionist"
+;                               "job_description" "As a front desk receptionist at the Tradewinds hostel you will be responsible for everything in the hostel! From checking in guests to doing laundry to cooking staff meals. It's an amazing place to connect with guests!"
+;                               "location" "San Francisco, CA"
+;                               "email" "ptdubs@gmail.com"
+;                               "website" "www.sfhostel.com"
+;                               "how" "To apply simply send an email to me@example.com"
+;                               "create_date" (.-TIMESTAMP (.-ServerValue js/Firebase))
+;                               "sponsored" false
+;                              },
+;                      "clicked-job" {},
+;                      "jobs-list" {}}))
+
+(def app-state (atom {
+                       "post" { "hostel_name" ""
+                                "job_title" ""
+                                "job_description" ""
+                                "location" ""
+                                "email" ""
+                                "website" ""
+                                "how" ""
+                                "create_date" (.-TIMESTAMP (.-ServerValue js/Firebase))
+                                "sponsored" false
+                                },
+                       "clicked-job" {},
+                       "jobs-list" {}}))
 
 (def current-view (atom {}))
 
