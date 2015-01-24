@@ -16,9 +16,9 @@
     (if (= uAstring nil)
       (println "browser is supported")
       (if (> (.-length uAstring) 0)
-        (doseq [todo  (sel :#post-new-job)]
+        (doseq [new-job  (sel :#post-new-job)]
           (js/alert "Your browser is not fully supported. Use Safari :)")
-          (dommy/add-class! todo :hidden))
+          (dommy/add-class! new-job :hidden))
       )
     )
    )
