@@ -1,10 +1,8 @@
 (ns main.domready
   (:require [reagent.core :as reagent :refer [atom]]
-
             [dommy.utils :as utils]
             [dommy.core :as dommy]
             [dommy.core :refer-macros [sel sel1]]
-
             [ajax.core :as ajax]))
 
 (enable-console-print!)
@@ -18,11 +16,7 @@
       (if (> (.-length uAstring) 0)
         (doseq [new-job  (sel :#post-new-job)]
           (js/alert "Your browser is not fully supported. Use Safari :)")
-          (dommy/add-class! new-job :hidden))
-      )
-    )
-   )
-  )
+          (dommy/add-class! new-job :hidden))))))
 
 ;; Add functions to be run onready
 (defn doc-ready-handler []
