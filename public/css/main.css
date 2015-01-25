@@ -424,12 +424,19 @@ body {
 
 .job-view .title, .preview-view .title {
   margin-top: 20px;
+  line-height: 35px;
   font-size: 35px;
+}
+@media (max-width: 375px) {
+  .job-view .title, .preview-view .title {
+    line-height: 35px;
+  }
 }
 .job-view .date, .preview-view .date {
   text-transform: uppercase;
   color: gray;
   margin-bottom: 15px;
+  margin-top: 5px;
 }
 .job-view .website, .preview-view .website {
   text-decoration: none;

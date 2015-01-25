@@ -34,13 +34,19 @@ body {
 .job-view, .preview-view {
   .title {
     margin-top: 20px;
+    line-height: 35px;
+
     font-size: 35px;
+    @include chosenDevice(mobile) {
+      line-height: 35px;
+    }
   }
 
   .date {
     text-transform: uppercase;
     color: gray;
     margin-bottom: 15px;
+    margin-top: 5px;
   }
 
   .website {

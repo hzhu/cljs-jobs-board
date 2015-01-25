@@ -8,12 +8,29 @@
             [dommy.core :as dommy]
             [dommy.core :refer-macros [sel sel1]]
 
+            [clojure.string :as str]
+
             [main.domready :as domready]
             [goog.events :as events]
             [goog.history.EventType :as EventType]
             [ajax.core :as ajax])
   ;(:use-macros [dommy.macros :only [node deftemplate]]) // breaks
   (:import goog.History))
+
+(def sentence (str/split "Please send an email to hz@zzhenryzhu.me" #" "))
+
+
+(defn transform-email-string [string]
+  (let [hasAt  (.indexOf string "@")
+        hasDot (.indexOf string ".")]
+
+    (if (and (> hasAt  0)  (> hasDot 0))
+      (str "<a href=\"mailto:" string "\">" string "</a>")
+      (str string))))
+
+
+(println (str/join " " (vec (map transform-email-string sentence))))
+
 
 ;; grab collection from fb and set-list!  (listens to Firebase for changes in data)
 (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
@@ -123,6 +140,9 @@
          [:div.website (previewData "website")]
 
 
+         (println (type (previewData "how")))
+         (println (previewData "job_description"))
+
 
          [:div#job-description (map as-hiccup (parse-fragment (previewData "job_description")))]
 
@@ -223,7 +243,7 @@
 ;; RENDER VIEW
 (defn app-view []
   [:div.container
-    [:h1 {:on-click #(data/printAtom)} "show atom"]
+    [:h1.hidden {:on-click #(data/printAtom)} "show atom"]
     (@data/current-view)
    ]
  )

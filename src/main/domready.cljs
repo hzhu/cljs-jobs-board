@@ -24,6 +24,7 @@
     (if (= "complete" ready-state)
       (do
         (do-not-support "CriOS")
+        (do-not-support "Mercury")
         ))))
 
 ;; Add handler to onreadystatechange
