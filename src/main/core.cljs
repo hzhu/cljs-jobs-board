@@ -17,10 +17,9 @@
   ;(:use-macros [dommy.macros :only [node deftemplate]]) // breaks
   (:import goog.History))
 
-(def sentence (str/split "Please send an email to hz@zzhenryzhu.me" #" "))
 
 
-(defn transform-email-string [string]
+(defn is-email? [string]
   (let [hasAt  (.indexOf string "@")
         hasDot (.indexOf string ".")]
 
@@ -28,8 +27,16 @@
       (str "<a href=\"mailto:" string "\">" string "</a>")
       (str string))))
 
+(defn transform-email [string]
+   (let [splitted (str/split string #" ")]
+     (str/join " " (vec (map is-email? splitted)))
+   ))
 
-(println (str/join " " (vec (map transform-email-string sentence))))
+(def sentence "Please send an email to hz@zzhenxxxryzhu.me")
+(println (transform-email sentence))
+
+
+
 
 
 ;; grab collection from fb and set-list!  (listens to Firebase for changes in data)
