@@ -399,6 +399,11 @@ html {
   }
 }
 
+.preview-view .how {
+  color: red;
+  word-wrap: break-word;
+}
+
 body {
   font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
   background-color: #FFF;

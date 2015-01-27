@@ -17,23 +17,20 @@
   ;(:use-macros [dommy.macros :only [node deftemplate]]) // breaks
   (:import goog.History))
 
-
+(defn regex-email? [value]
+  (re-matches #"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" value))
 
 (defn is-email? [string]
-  (let [hasAt  (.indexOf string "@")
-        hasDot (.indexOf string ".")]
-
-    (if (and (> hasAt  0)  (> hasDot 0))
-      (str "<a href=\"mailto:" string "\">" string "</a>")
-      (str string))))
+    (if (nil? (regex-email? string))
+      (str string)
+      (str "<a href=\"mailto:" string "\">" string "</a>")))
 
 (defn transform-email [string]
    (let [splitted (str/split string #" ")]
+     (println splitted)
      (str/join " " (vec (map is-email? splitted)))
    ))
 
-(def sentence "Please send an email to hz@zzhenxxxryzhu.me")
-(println (transform-email sentence))
 
 
 
@@ -51,9 +48,9 @@
 (defn new-post-view []
   (defn handle-input-update [event]
     (let [value     (aget event "target" "value")
-          className (aget event "target" "className")]
-      (data/printAtom)
-      (data/setter className value)))
+          className (aget event "target" "className")
+          output    (transform-email value)]
+          (data/setter className output)))
 
   (defn handle-contenteditable-update [event]
     (let [value     (aget event "target" "innerHTML")
@@ -113,7 +110,7 @@
        [:label "How to apply:"
          [:br]
         ;[:input.how {:type "textarea" :on-change #(handle-input-update %)}]
-        [:textarea.how {:on-change #(handle-input-update %)}]
+        [:textarea.how {:cols 4 :rows 3 :on-change #(handle-input-update %)}]
 
         ]
 
@@ -131,7 +128,7 @@
 
 ;; PREVIEW VIEW
 (defn preview-view []
-  [:div.preview-view.hidden
+  [:div.preview-view;.hidden
    [:a.routes {:on-click #(doseq [todo  (sel :#forms)
                                   todo2 (sel :div.preview-view)]
                             (dommy/add-class! todo2 :hidden)
@@ -156,7 +153,7 @@
 
          [:div.apply
            [:h3 "APPLY FOR THIS HOSTEL JOB"]
-           [:p.how (previewData "how")]]
+           [:p.how (map as-hiccup (parse-fragment (previewData "how")))]]
 
          (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
            [:a#submit {:href "#/" :on-click #(data/post2fb fb)} "submit"])
@@ -189,12 +186,7 @@
 
      [:div.apply
         [:h3 "APPLY FOR THIS HOSTEL JOB"]
-        [:p.how (job "how")]
-
-
-        ;[:br ]
-        ;[:p.how (map as-hiccup (parse-fragment (job "how")))]
-
+        [:p.how (map as-hiccup (parse-fragment (transform-email (job "how"))))]
         ]]))
 
 (defn home-view-item [data]
