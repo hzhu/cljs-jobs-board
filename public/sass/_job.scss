@@ -1,5 +1,29 @@
-.job-view {
+#job-view {
+  padding-top: 15px;
+
   ol {
     padding-left: 25px;
+  }
+
+
+
+  .header-container {
+    height: 140px;
+    background: aliceblue;
+    a {
+      display: block;
+      padding: 70px 152px;
+    }
+  }
+
+  .info-container {
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 15px;
+  }
+
+  #job-description {
+    width: 75%;
+    padding: 30px 0;
+    margin-top: 30px;
   }
 }

@@ -281,8 +281,28 @@ html {
 }
 
 /* Responsive General Sass Mixing function */
-.job-view ol {
+#job-view {
+  padding-top: 15px;
+}
+#job-view ol {
   padding-left: 25px;
+}
+#job-view .header-container {
+  height: 140px;
+  background: aliceblue;
+}
+#job-view .header-container a {
+  display: block;
+  padding: 70px 152px;
+}
+#job-view .info-container {
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 15px;
+}
+#job-view #job-description {
+  width: 75%;
+  padding: 30px 0;
+  margin-top: 30px;
 }
 
 /* Responsive General Sass Mixing function */
@@ -361,12 +381,27 @@ html {
   margin: 35px 0;
   text-decoration: none;
   margin-right: 5px;
-  background-color: #e9967a;
   padding: 10px;
   border-radius: 2px;
   color: #222;
   width: 230px;
   cursor: pointer;
+  background-color: #00a5d9;
+  border: 1px solid #07a5d8;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 14px;
+  line-height: normal;
+  height: 50px;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+  box-sizing: border-box;
+  text-shadow: none;
+  box-shadow: none;
+  background-image: none;
+  text-decoration: none;
 }
 #new-job-view .description-container {
   font-size: 12px;
@@ -430,7 +465,7 @@ body {
 }
 
 .container {
-  width: 75%;
+  width: 82%;
   max-width: 960px;
   margin: 0 auto;
 }
@@ -438,12 +473,6 @@ body {
   .container {
     width: 100%;
   }
-}
-
-#job-description {
-  border-top: 1px solid #e8e8e8;
-  padding: 30px 0;
-  margin-top: 30px;
 }
 
 .job-view .title, .preview-view .title {

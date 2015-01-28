@@ -131,7 +131,7 @@
 
 ;; PREVIEW VIEW
 (defn preview-view []
-  [:div.preview-view;.hidden
+  [:div.preview-view.hidden
    [:a.routes {:on-click #(doseq [todo  (sel :#forms)
                                   todo2 (sel :div.preview-view)]
                             (dommy/add-class! todo2 :hidden)
@@ -168,7 +168,9 @@
 ;; JOB VIEW
 (defn job-view [uid]
   [:div#job-view
-    [:a.routes {:href "#/"} "Back to all jobs"]
+    [:div.header-container
+     [:a.routes {:href "#/"}]
+    ]
 
     (if (empty? (data/get-list!))
       (println "True. Atom is empty. Do not start rendering.")
@@ -180,13 +182,12 @@
 (defn render-jobs-list [uid]
   (let [job (data/clicked-job uid)]
     [:div.job-view
-     [:div.title (job "job_title")]
-     [:div.date "POSTED " (make-date (job "create_date"))]
-     [:div.name (job "hostel_name")]
-     [:div.location (job "location")]
-     [:a.website {:href (job "website")} (job "website")]
-
-
+     [:div.info-container
+      [:div.title (job "job_title")]
+      [:div.date "POSTED " (make-date (job "create_date"))]
+      [:div.name (job "hostel_name")]
+      [:div.location (job "location")]
+      [:a.website {:href (job "website")} (job "website")]]
 
      [:div#job-description (map as-hiccup (parse-fragment (job "job_description")))]
 

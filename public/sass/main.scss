@@ -15,7 +15,7 @@ body {
 
 
 .container {
-  width: 75%;
+  width: 82%;
   max-width: 960px;
   margin: 0 auto;
   @include chosenDevice(tablet) {
@@ -23,11 +23,7 @@ body {
   }
 }
 
-#job-description {
-  border-top: 1px solid #e8e8e8;
-  padding: 30px 0;
-  margin-top: 30px;
-}
+
 
 
 //JOB VIEW
