@@ -1,4 +1,15 @@
 .home {
+  h1 {
+    width: 95%;
+    margin: 25px auto;
+    text-align: center;
+  }
+
+  #post-new-job {
+    text-align: center;
+
+  }
+
   ul {
     padding: 0;
     @include chosenDevice(tablet) {
@@ -11,15 +22,24 @@
 
     li {
       list-style: none;
-      //border-bottom: 1px solid #CCC;
-      border-bottom: 1px solid #EBF2F6;
+      border-bottom: 1px solid #40beff;
+      //border-bottom: 1px solid #EBF2F6;
 
       a {
         display: block;
-        padding: 20px 0;
+        padding: 20px;
         text-decoration: none;
+
+        @include chosenDevice(tablet) {
+          padding: 20px 15px;
+        }
       }
     }
+
+    li:hover {
+      background-color: #F2FBFF;
+    }
+
     .name {
       font-size: 18px;
       font-weight: bold;

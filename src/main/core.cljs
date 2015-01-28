@@ -40,6 +40,9 @@
 (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
   (.on fb "value" #(data/set-list! (.val %))))
 
+;(let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings-dev")]
+;  (.on fb "value" #(data/set-list! (.val %))))
+
 ;; helper, parse html into hiccup
 (defn to-html [content]
   (as-hiccup (parse content)))
@@ -157,6 +160,9 @@
 
          (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
            [:a#submit {:href "#/" :on-click #(data/post2fb fb)} "submit"])
+
+;          (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings-dev")]
+;            [:a#submit {:href "#/" :on-click #(data/post2fb fb)} "submit"])
        ])])
 
 ;; JOB VIEW

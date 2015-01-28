@@ -218,17 +218,33 @@ html {
   touch-action: manipulation;
 }
 
+.home h1 {
+  width: 95%;
+  margin: 25px auto;
+  text-align: center;
+}
+.home #post-new-job {
+  text-align: center;
+}
 .home ul {
   padding: 0;
 }
 .home ul li {
   list-style: none;
-  border-bottom: 1px solid #EBF2F6;
+  border-bottom: 1px solid #40beff;
 }
 .home ul li a {
   display: block;
-  padding: 20px 0;
+  padding: 20px;
   text-decoration: none;
+}
+@media (max-width: 608px) {
+  .home ul li a {
+    padding: 20px 15px;
+  }
+}
+.home ul li:hover {
+  background-color: #F2FBFF;
 }
 .home ul .name {
   font-size: 18px;
@@ -270,6 +286,10 @@ html {
 }
 
 /* Responsive General Sass Mixing function */
+#new-job-view {
+  width: 95%;
+  margin: 0 auto;
+}
 #new-job-view #forms {
   margin: 10px 0;
 }
@@ -416,7 +436,7 @@ body {
 }
 @media (max-width: 608px) {
   .container {
-    width: 94%;
+    width: 100%;
   }
 }
 
