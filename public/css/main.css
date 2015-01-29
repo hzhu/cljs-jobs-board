@@ -218,6 +218,34 @@ html {
   touch-action: manipulation;
 }
 
+.btn {
+  display: block;
+  margin: 35px 0 0px 0;
+  text-decoration: none;
+  margin-right: 5px;
+  padding: 10px;
+  border-radius: 2px;
+  color: #222;
+  width: 230px;
+  cursor: pointer;
+  background-color: #00a5d9;
+  border: 1px solid #07a5d8;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 14px;
+  line-height: normal;
+  height: 50px;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+  box-sizing: border-box;
+  text-shadow: none;
+  box-shadow: none;
+  background-image: none;
+  text-decoration: none;
+}
+
 .home h1 {
   width: 95%;
   margin: 25px auto;
@@ -281,37 +309,89 @@ html {
 }
 
 /* Responsive General Sass Mixing function */
-#job-view {
-  padding-top: 15px;
+#job-view, .preview-view {
+  padding-bottom: 25px;
 }
-#job-view ol {
-  padding-left: 25px;
+#job-view .back, .preview-view .back {
+  padding: 0px 15px;
 }
-#job-view .header-container {
-  height: 140px;
-  background: aliceblue;
+@media (max-width: 375px) {
+  #job-view .back, .preview-view .back {
+    padding: 0;
+    width: 100%;
+  }
 }
-#job-view .header-container a {
-  display: block;
-  padding: 70px 152px;
+@media (max-width: 375px) {
+  #job-view .back a, .preview-view .back a {
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+    padding-top: 46px;
+    padding-bottom: 59px;
+  }
 }
-#job-view .info-container {
-  border-bottom: 1px solid #e8e8e8;
-  padding-bottom: 15px;
+#job-view .info-container, .preview-view .info-container {
+  padding: 10px 15px;
+  border-bottom: 1px solid #CCC;
 }
-#job-view #job-description {
-  width: 75%;
-  padding: 30px 0;
-  margin-top: 30px;
+#job-view .info-container .title, .preview-view .info-container .title {
+  margin-top: 20px;
+  line-height: 35px;
+  font-size: 35px;
+}
+@media (max-width: 608px) {
+  #job-view .info-container .title, .preview-view .info-container .title {
+    font-size: 25px;
+  }
+}
+#job-view .info-container .date, .preview-view .info-container .date {
+  text-transform: uppercase;
+  color: gray;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+#job-view .info-container .website, .preview-view .info-container .website {
+  text-decoration: none;
+  color: #57ad68;
+}
+#job-view .info-container .website:hover, .preview-view .info-container .website:hover {
+  text-decoration: underline;
+}
+#job-view .info-container .name, #job-view .info-container .location, #job-view .info-container .website, .preview-view .info-container .name, .preview-view .info-container .location, .preview-view .info-container .website {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+#job-view #job-description, .preview-view #job-description {
+  padding: 30px 15px;
+}
+#job-view .apply, .preview-view .apply {
+  background-color: #efefef;
+  padding: 15px 20px;
+}
+#job-view .apply h3, #job-view .apply p, .preview-view .apply h3, .preview-view .apply p {
+  margin: 5px 0;
+}
+@media (max-width: 375px) {
+  #job-view .apply, .preview-view .apply {
+    font-size: 15px;
+  }
 }
 
 /* Responsive General Sass Mixing function */
-#new-job-view {
-  width: 95%;
-  margin: 0 auto;
+#new-job-view .header-container {
+  height: 140px;
+  background: aliceblue;
+  margin: 23px 0 48px;
+}
+#new-job-view .header-container a {
+  display: block;
+  padding: 70px 152px;
 }
 #new-job-view #forms {
   margin: 10px 0;
+}
+#new-job-view #forms .input-infos {
+  padding: 0px 15px;
 }
 #new-job-view .box-extra {
   height: 76px;
@@ -376,34 +456,8 @@ html {
     float: none;
   }
 }
-#new-job-view #submit, #new-job-view .routes {
-  display: block;
-  margin: 35px 0;
-  text-decoration: none;
-  margin-right: 5px;
-  padding: 10px;
-  border-radius: 2px;
-  color: #222;
-  width: 230px;
-  cursor: pointer;
-  background-color: #00a5d9;
-  border: 1px solid #07a5d8;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  padding: 14px;
-  line-height: normal;
-  height: 50px;
-  font-size: 15px;
-  font-weight: 400;
-  text-align: center;
-  box-sizing: border-box;
-  text-shadow: none;
-  box-shadow: none;
-  background-image: none;
-  text-decoration: none;
-}
 #new-job-view .description-container {
+  padding: 0px 15px;
   font-size: 12px;
   height: 70px;
 }
@@ -432,30 +486,18 @@ html {
   overflow: auto;
   border: 1px solid #CCC;
   padding: 25px;
+  padding: 0px 15px;
   height: 250px;
   margin-bottom: 25px;
   border-radius: 3px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 #new-job-view .job_description ol, #new-job-view .job_description ul {
   padding-left: 20px;
 }
-
-.apply {
-  background-color: #efefef;
-  padding: 15px 20px;
-  margin: 30px 0;
-}
-.apply h3, .apply p {
-  margin: 5px 0;
-}
-@media (max-width: 375px) {
-  .apply {
-    font-size: 15px;
-  }
-}
-
-.preview-view .how {
-  word-wrap: break-word;
+#new-job-view .how-input {
+  padding: 0 15px;
 }
 
 body {
@@ -473,32 +515,4 @@ body {
   .container {
     width: 100%;
   }
-}
-
-.job-view .title, .preview-view .title {
-  margin-top: 20px;
-  line-height: 35px;
-  font-size: 35px;
-}
-@media (max-width: 375px) {
-  .job-view .title, .preview-view .title {
-    line-height: 35px;
-  }
-}
-.job-view .date, .preview-view .date {
-  text-transform: uppercase;
-  color: gray;
-  margin-bottom: 15px;
-  margin-top: 5px;
-}
-.job-view .website, .preview-view .website {
-  text-decoration: none;
-  color: #57ad68;
-}
-.job-view .website:hover, .preview-view .website:hover {
-  text-decoration: underline;
-}
-.job-view .name, .job-view .location, .job-view .website, .preview-view .name, .preview-view .location, .preview-view .website {
-  font-weight: bold;
-  margin-bottom: 5px;
 }

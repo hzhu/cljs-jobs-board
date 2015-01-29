@@ -1,29 +1,122 @@
-#job-view {
-  padding-top: 15px;
+//
+////JOB VIEW  + PREVIEW-VIEW
+//.preview-view {
+//  .title {
+//    margin-top: 20px;
+//    line-height: 35px;
+//    font-size: 35px;
+//    @include chosenDevice(mobile) {
+//      line-height: 35px;
+//    }
+//  }
+//
+//  .date {
+//    text-transform: uppercase;
+//    color: gray;
+//    margin-bottom: 15px;
+//    margin-top: 5px;
+//  }
+//
+//  .website {
+//    text-decoration: none;
+//    color: #57ad68;
+//  }
+//
+//  .website:hover {
+//    text-decoration: underline;
+//  }
+//
+//  .name, .location, .website {
+//    font-weight: bold;
+//    margin-bottom: 5px;
+//  }
+//}
+//
+//
 
-  ol {
-    padding-left: 25px;
-  }
+//
+//.preview-view {
+//
+//  .how {
+//    word-wrap: break-word;
+//  }
+//}
 
 
 
-  .header-container {
-    height: 140px;
-    background: aliceblue;
+#job-view, .preview-view {
+  padding-bottom: 25px;
+
+  .back {
+    padding: 0px 15px;
+    @include chosenDevice(mobile) {
+      padding: 0;
+      width: 100%;
+    }
+
     a {
-      display: block;
-      padding: 70px 152px;
+      @include chosenDevice(mobile) {
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+        padding-top: 46px;
+        padding-bottom: 59px;
+      }
     }
   }
 
   .info-container {
-    border-bottom: 1px solid #e8e8e8;
-    padding-bottom: 15px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #CCC;
+
+    .title {
+      margin-top: 20px;
+      line-height: 35px;
+      font-size: 35px;
+      @include chosenDevice(tablet) {
+        font-size: 25px;
+      }
+    }
+
+    .date {
+      text-transform: uppercase;
+      color: gray;
+      margin-bottom: 15px;
+      margin-top: 5px;
+    }
+
+    .website {
+      text-decoration: none;
+      color: #57ad68;
+    }
+
+    .website:hover {
+      text-decoration: underline;
+    }
+
+    .name, .location, .website {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
   }
 
+
   #job-description {
-    width: 75%;
-    padding: 30px 0;
-    margin-top: 30px;
+    padding: 30px 15px;
   }
+
+  .apply {
+    background-color: #efefef;
+    padding: 15px 20px;
+
+    h3, p {
+      margin: 5px 0;
+    }
+
+    @include chosenDevice(mobile) {
+      font-size: 15px;
+    }
+  }
+
+
 }

@@ -33,3 +33,33 @@ html {
   -ms-touch-action: manipulation;
   touch-action: manipulation;
 }
+
+.btn {
+  display: block;
+  margin: 35px 0 0px 0;
+  text-decoration: none;
+  margin-right: 5px;
+  padding: 10px;
+  border-radius: 2px;
+  color: #222;
+  width: 230px;
+  cursor: pointer;
+
+  background-color: #00a5d9;
+  border: 1px solid #07a5d8;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 14px;
+  line-height: normal;
+  height: 50px;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+  box-sizing: border-box;
+
+  text-shadow: none;
+  box-shadow: none;
+  background-image: none;
+  text-decoration: none;
+}

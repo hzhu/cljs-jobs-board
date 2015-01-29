@@ -1,11 +1,22 @@
 @import "mixins";
 
 #new-job-view {
-  width: 95%;
-  margin: 0 auto;
+  .header-container {
+    height: 140px;
+    background: aliceblue;
+    margin: 23px 0 48px;
+    a {
+      display: block;
+      padding: 70px 152px;
+    }
+  }
 
   #forms {
     margin: 10px 0;
+
+    .input-infos {
+      padding: 0px 15px;
+    }
   }
 
   .box-extra {
@@ -69,37 +80,8 @@
     }
   }
 
-  #submit, .routes {
-    display: block;
-    margin: 35px 0;
-    text-decoration: none;
-    margin-right: 5px;
-    padding: 10px;
-    border-radius: 2px;
-    color: #222;
-    width: 230px;
-    cursor: pointer;
-
-    background-color: #00a5d9;
-    border: 1px solid #07a5d8;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-    padding: 14px;
-    line-height: normal;
-    height: 50px;
-    font-size: 15px;
-    font-weight: 400;
-    text-align: center;
-    box-sizing: border-box;
-
-    text-shadow: none;
-    box-shadow: none;
-    background-image: none;
-    text-decoration: none;
-  }
-
   .description-container {
+    padding: 0px 15px;
     font-size: 12px;
     height: 70px;
 
@@ -133,14 +115,22 @@
     overflow: auto;
     border: 1px solid #CCC;
     padding: 25px;
+    padding: 0px 15px;
     height: 250px;
     margin-bottom: 25px;
     border-radius: 3px;
+
+    margin-left: 15px;
+    margin-right: 15px;
 
 
     ol, ul {
       padding-left: 20px;
     }
+  }
+
+  .how-input {
+    padding: 0 15px;
   }
 }
 

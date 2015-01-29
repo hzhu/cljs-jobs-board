@@ -23,39 +23,3 @@ body {
   }
 }
 
-
-
-
-//JOB VIEW
-.job-view, .preview-view {
-  .title {
-    margin-top: 20px;
-    line-height: 35px;
-
-    font-size: 35px;
-    @include chosenDevice(mobile) {
-      line-height: 35px;
-    }
-  }
-
-  .date {
-    text-transform: uppercase;
-    color: gray;
-    margin-bottom: 15px;
-    margin-top: 5px;
-  }
-
-  .website {
-    text-decoration: none;
-    color: #57ad68;
-  }
-
-  .website:hover {
-    text-decoration: underline;
-  }
-
-  .name, .location, .website {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-}

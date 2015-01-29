@@ -69,7 +69,11 @@
 
   [:div#new-job-view
    [:div#forms
-       [:a.routes {:href "#/"} "Back to Home Page"]
+
+       [:div.header-container
+        [:a.routes {:href "#/"}]
+
+        ]
 
        [:div.input-infos
           [:div.box-extra
@@ -110,15 +114,16 @@
        [:div.job_description   {:contentEditable true
                                 :on-blur #(handle-contenteditable-update %)}]
 
-       [:label "How to apply:"
+       [:div.how-input
+        [:label "How to apply:"
          [:br]
-        ;[:input.how {:type "textarea" :on-change #(handle-input-update %)}]
-        [:textarea.how {:cols 4 :rows 3 :on-change #(handle-input-update %)}]
+         [:textarea.how {:cols 4 :rows 3 :on-change #(handle-input-update %)}]]
 
         ]
 
 
-       [:a.next-step.routes {:on-click
+
+       [:a.next-step.btn {:on-click
                 #(doseq [todo  (sel :#forms)
                          todo2 (sel :.preview-view)]
                          (dommy/remove-class! todo2 :hidden)
@@ -132,23 +137,20 @@
 ;; PREVIEW VIEW
 (defn preview-view []
   [:div.preview-view.hidden
-   [:a.routes {:on-click #(doseq [todo  (sel :#forms)
+   [:a.btn {:on-click #(doseq [todo  (sel :#forms)
                                   todo2 (sel :div.preview-view)]
                             (dommy/add-class! todo2 :hidden)
                             (dommy/remove-class! todo :hidden))
                } "Go Back and Edit job"]
      (let [previewData (data/new-post)]
        [:div
-         [:div.title (previewData "job_title")]
-         [:div.date "POSTED " (.slice (.toDateString (js/Date.)) 4 10)]
+         [:div.info-container
+          [:div.title (previewData "job_title")]
+          [:div.date "POSTED " (.slice (.toDateString (js/Date.)) 4 10)]
+          [:div.name (previewData "hostel_name")]
+          [:div.location (previewData "location")]
+          [:div.website (previewData "website")]]
 
-         [:div.name (previewData "hostel_name")]
-         [:div.location (previewData "location")]
-         [:div.website (previewData "website")]
-
-
-         (println (type (previewData "how")))
-         (println (previewData "job_description"))
 
 
          [:div#job-description (map as-hiccup (parse-fragment (previewData "job_description")))]
@@ -159,18 +161,20 @@
            [:p.how (map as-hiccup (parse-fragment (previewData "how")))]]
 
          (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
-           [:a#submit {:href "#/" :on-click #(data/post2fb fb)} "submit"])
+           [:a#submit.btn {:href "#/" :on-click #(data/post2fb fb)} "submit"])
 
 ;          (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings-dev")]
-;            [:a#submit {:href "#/" :on-click #(data/post2fb fb)} "submit"])
+;            [:a#submit.btn {:href "#/" :on-click #(data/post2fb fb)} "submit"])
        ])])
 
 ;; JOB VIEW
 (defn job-view [uid]
   [:div#job-view
-    [:div.header-container
-     [:a.routes {:href "#/"}]
-    ]
+    [:div.back
+     [:a.btn {:href "#/"} (map as-hiccup (parse-fragment "&lArr; Back to All Jobs"))]
+     ;[:a.btn {:href "#/"} "Back to All Jobs"]
+
+     ]
 
     (if (empty? (data/get-list!))
       (println "True. Atom is empty. Do not start rendering.")
