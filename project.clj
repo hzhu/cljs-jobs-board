@@ -12,6 +12,9 @@
   :plugins [[lein-environ "0.5.0"]
             [lein-cljsbuild "1.0.3"]]
 
+  :profiles {:uberjar {:aot :all}}
+
+
   :cljsbuild {:builds [{:id "dev"
                         :source-paths ["src"]
                         :compiler {:optimizations :none
