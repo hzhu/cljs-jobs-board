@@ -391,7 +391,7 @@ html {
   margin: 10px 0;
 }
 #new-job-view #forms .input-infos {
-  padding: 0px 15px;
+  padding: 15px 15px;
 }
 #new-job-view .box-extra {
   height: 76px;
@@ -432,6 +432,7 @@ html {
   }
 }
 #new-job-view textarea {
+  padding: 10px 15px;
   display: block;
   width: 100%;
   border: 1px solid #ccc;
