@@ -11,3 +11,16 @@ lein
 /public/fpo/js
 /.lein-env
 */.sass-cache
+
+
+pom.xml
+*jar
+/classes/
+/.lein-deps-sum
+/.lein-failures
+/.lein-env
+/checkouts
+/.env
+/target
+/.lein-repl-history
+/.nrepl-port
