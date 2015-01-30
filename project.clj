@@ -15,7 +15,7 @@
   
   :hooks [environ.leiningen.hooks]
   :uberjar-name "reagent-firebase.jar"
-  :profiles {:production {:env {:production true}}})
+  :profiles {:production {:env {:production true}}}
 
 
   :cljsbuild {:builds [{:id "dev"
