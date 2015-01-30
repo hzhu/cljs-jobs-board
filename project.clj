@@ -1,6 +1,6 @@
-(defproject CHANGE-ME-ME "0.1.0-SNAPSHOT"
+(defproject reagent-firebase "0.1.0-SNAPSHOT"
   :description "CHANGE-ME"
-  :url "https://CHANGE-ME"
+  :url "http://henryzhu.me"
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/clojurescript "0.0-2280"]
                  [reagent "0.4.2"]
@@ -10,9 +10,12 @@
                  [cljs-ajax "0.2.6"]]
 
   :plugins [[lein-environ "0.5.0"]
-            [lein-cljsbuild "1.0.3"]]
-
-  :profiles {:uberjar {:aot :all}}
+            [lein-cljsbuild "1.0.3"]
+            [environ/environ.lein "0.2.1"]]
+  
+  :hooks [environ.leiningen.hooks]
+  :uberjar-name "reagent-firebase.jar"
+  :profiles {:production {:env {:production true}}})
 
 
   :cljsbuild {:builds [{:id "dev"
