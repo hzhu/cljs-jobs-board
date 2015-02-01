@@ -1,4 +1,4 @@
-(ns main.views.home-view
+(ns main.views.home
   (:require [reagent.core :as reagent :refer [atom]]
                         [main.data :as data]
                         [main.helper-functions :as helpers]))

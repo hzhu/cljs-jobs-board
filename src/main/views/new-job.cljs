@@ -6,7 +6,7 @@
                         [dommy.core :as dommy]
                         [dommy.core :refer-macros [sel sel1]]
                         
-                        [main.views.preview-view :refer [dooop]]
+                        [main.views.preview :refer [dooop]]
 
                         [hickory.core :refer [as-hiccup parse parse-fragment]]
                         [main.helper-functions :as helpers]))

@@ -1,4 +1,4 @@
-(ns main.views.job-view
+(ns main.views.job
   (:require [reagent.core :as reagent :refer [atom]]
                         [main.data :as data]
                         [main.helper-functions :as helpers]

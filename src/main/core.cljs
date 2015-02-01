@@ -3,8 +3,8 @@
                         
             [secretary.core :as secretary :include-macros true :refer [defroute]]      
             [main.data :as data]
-            [main.views.home-view :refer [home-view]]
-            [main.views.job-view :refer [job-view]]
+            [main.views.home :refer [home-view]]
+            [main.views.job :refer [job-view]]
             [main.views.new-job :refer [new-job-view]]        
             [main.domready :as domready]
             

@@ -1,4 +1,4 @@
-(ns main.views.preview-view
+(ns main.views.preview
   (:require [reagent.core :as reagent :refer [atom]]
                         [main.data :as data]
                         
