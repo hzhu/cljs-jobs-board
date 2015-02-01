@@ -1,4 +1,4 @@
-(ns main.views.some-view
+(ns main.views.new-job
   (:require [reagent.core :as reagent :refer [atom]]
                         [main.data :as data]
                         
@@ -35,7 +35,7 @@
       (.execCommand js/document cmd false null)))
   
   
-(defn some-func []
+(defn new-job-view []
   [:div#new-job-view
    [:div#forms
 

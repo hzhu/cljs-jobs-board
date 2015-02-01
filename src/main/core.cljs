@@ -5,7 +5,7 @@
             [main.data :as data]
             [main.views.home-view :refer [home-view]]
             [main.views.job-view :refer [job-view]]
-            [main.views.some-view :refer [some-func]]        
+            [main.views.new-job :refer [new-job-view]]        
             [main.domready :as domready]
             
             [goog.events :as events]
@@ -37,7 +37,7 @@
 
 (defroute "/new/job" {}
   (println "setting view to /new/job")
-  (data/set-view! some-func))
+  (data/set-view! new-job-view))
 
 
 (defroute "/" {}
