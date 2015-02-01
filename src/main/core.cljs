@@ -9,13 +9,21 @@
             [dommy.core :refer-macros [sel sel1]]
 
             [clojure.string :as str]
+            
+            [main.views.home-view :refer [foo-bar]]
 
             [main.domready :as domready]
             [goog.events :as events]
             [goog.history.EventType :as EventType]
-            [ajax.core :as ajax])
+            [ajax.core :as ajax]
+            
+            [main.helper-functions :as helpers])
   ;(:use-macros [dommy.macros :only [node deftemplate]]) // breaks
   (:import goog.History))
+
+
+;; Common UIs
+
 
 (defn regex-email? [value]
   (re-matches #"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" value))
@@ -180,15 +188,12 @@
       (println "True. Atom is empty. Do not start rendering.")
       (render-jobs-list uid))])
 
-(defn make-date [epoch]
-  (subs (.toDateString (js/Date. epoch)) 4 10))
-
 (defn render-jobs-list [uid]
   (let [job (data/clicked-job uid)]
     [:div.job-view
      [:div.info-container
       [:div.title (job "job_title")]
-      [:div.date "POSTED " (make-date (job "create_date"))]
+      [:div.date "POSTED " (helpers/make-date (job "create_date"))]
       [:div.name (job "hostel_name")]
       [:div.location (job "location")]
       [:a.website {:href (job "website")} (job "website")]]
@@ -200,26 +205,11 @@
         [:p.how (map as-hiccup (parse-fragment (transform-email (job "how"))))]
         ]]))
 
-(defn home-view-item [data]
-  (let [[uid hostelData] data
-        target (str "/jobs/" uid)]
-    [:li
-      [:a {:href (str "#" target)}
-        [:div.name (hostelData "hostel_name")]
-        [:div.location [:b"@ "] (hostelData "location")]
-        [:div.title (hostelData "job_title")]
-        [:div.date (make-date (hostelData "create_date"))]]]
- ))
+
 
 ;; HOME VIEW
-(defn home-view []
-  [:div.home
-   [:h1 "HOSTEL JOBS BOARD"]
+(foo-bar)
 
-   [:div#post-new-job
-     [:a.routes {:href "#/new/job"} "POST A NEW JOB"]]
-
-   [:ul (map home-view-item (data/get-list!))]])
 
 ;; ---------------------------------------------------------------------------------------
 ;; ROUTING ------------------------------------------------------------------------------
@@ -237,7 +227,7 @@
 (defroute "/" {}
   (println "setting view to /..")
   ;; think about clearing post atom here.
-  (data/set-view! home-view))
+  (data/set-view! foo-bar))
 
 (doto (History.)
   (events/listen
