@@ -2,19 +2,15 @@
   (:require [reagent.core :as reagent :refer [atom]]
                         [main.data :as data]
                         [main.helper-functions :as helpers]
-                        [hickory.core :refer [as-hiccup parse parse-fragment]]
-))
+                        [hickory.core :refer [as-hiccup parse parse-fragment]]))
 
 (enable-console-print!)
-
 
 ;; JOB VIEW
 (defn job-view [uid]
   [:div#job-view
     [:div.back
-     [:a.btn {:href "#/"} (map as-hiccup (parse-fragment "&lArr; Back to All Jobs"))]
-
-     ]
+     [:a.btn {:href "#/"} (map as-hiccup (parse-fragment "&lArr; Back to All Jobs"))]]
 
     (if (empty? (data/get-list!))
       (println "True. Atom is empty. Do not start rendering.")

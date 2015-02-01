@@ -2,8 +2,7 @@
   (:require [reagent.core :as reagent :refer [atom]]
             [dommy.utils :as utils]
             [dommy.core :as dommy]
-            [dommy.core :refer-macros [sel sel1]]
-            [ajax.core :as ajax]))
+            [dommy.core :refer-macros [sel sel1]]))
 
 (enable-console-print!)
 
@@ -12,10 +11,10 @@
   (let [uAstring (.match(.-userAgent (.-navigator js/window)) browser)]
     (println uAstring)
     (if (= uAstring nil)
-      (println "browser is supported")
+      (println "This browser is supported.")
       (if (> (.-length uAstring) 0)
         (doseq [new-job  (sel :#post-new-job)]
-          (js/alert "Your browser is not fully supported. Use Safari :)")
+          ;(js/alert "Your browser is not fully supported. Use Safari :)")
           (dommy/add-class! new-job :hidden))))))
 
 ;; Add functions to be run onready

@@ -33,14 +33,11 @@
 
 (def current-view (atom {}))
 
-
-
 (defn get-view []
   @current-view)
 
 (defn set-view! [view]
   (reset! current-view view))
-
 
 (defn printAtom []
   (println "::::::::::ATOM::::::::::")
@@ -72,18 +69,15 @@
 
 ;; To render individual job post
 (defn clicked-job [uid]
-
-
-(def lis (get-in @app-state ["jobs-list"]))
-  ;(println (second (first (filter #(= (% 0) uid)  lis))))
-  (println (second(first(filter (fn [el] (if (= (el 0) uid) (el 1)) ) lis))))
-  ;(get-in @app-state ["jobs-list" uid])
-  (second(first(filter (fn [el] (if (= (el 0) uid) (el 1)) ) lis)))
-  )
+  (def lis (get-in @app-state ["jobs-list"]))
+    ;(println (second (first (filter #(= (% 0) uid)  lis))))
+    (println (second(first(filter (fn [el] (if (= (el 0) uid) (el 1)) ) lis))))
+    ;(get-in @app-state ["jobs-list" uid])
+    (second(first(filter (fn [el] (if (= (el 0) uid) (el 1)) ) lis)))
+    )
 
 ;; Get current new-job-post data
 (defn new-post []
   (get-in @app-state ["post"]))
-
 
 

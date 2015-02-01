@@ -16,16 +16,12 @@
   (:import goog.History))
 
 
-;; grab collection from fb and set-list!  (listens to Firebase for changes in data)
+;; Grab collection from fb and set-list!  (Listens to Firebase for changes in data)
 (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
   (.on fb "value" #(data/set-list! (.val %))))
 
 ;(let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings-dev")]
 ;  (.on fb "value" #(data/set-list! (.val %))))
-
-
-
-
 
 ;; ---------------------------------------------------------------------------------------
 ;; ROUTING ------------------------------------------------------------------------------
@@ -38,7 +34,6 @@
 (defroute "/new/job" {}
   (println "setting view to /new/job")
   (data/set-view! new-job-view))
-
 
 (defroute "/" {}
   (println "setting view to /..")
@@ -56,16 +51,10 @@
 ;; END OF ROUTING ------------------------------------------------------------------------
 ;; ---------------------------------------------------------------------------------------
 
-
 ;; RENDER VIEW
 (defn app-view []
   [:div.container
     [:h1.hidden {:on-click #(data/printAtom)} "show atom"]
-    (@data/current-view)
-   ]
- )
+    (@data/current-view)])
 
 (reagent/render-component [app-view] (.getElementById js/document "app"))
-
-
-
