@@ -38,6 +38,9 @@
 
     li:hover {
       background-color: #F2FBFF;
+      @include chosenDevice(mobile) {
+        background: none;
+      }
     }
 
     .name {
@@ -51,7 +54,6 @@
 
     .title {
       color: #1e90ff;
-      text-decoration: underline;
     }
 
     .location {
