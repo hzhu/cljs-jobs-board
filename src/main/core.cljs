@@ -27,28 +27,6 @@
   (:import goog.History))
 
 
-;; Common UIs
-
-
-(defn regex-email? [value]
-  (re-matches #"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" value))
-
-(defn is-email? [string]
-    (if (nil? (regex-email? string))
-      (str string)
-      (str "<a href=\"mailto:" string "\">" string "</a>")))
-
-(defn transform-email [string]
-   (let [splitted (str/split string #" ")]
-     (println splitted)
-     (str/join " " (vec (map is-email? splitted)))
-   ))
-
-
-
-
-
-
 ;; grab collection from fb and set-list!  (listens to Firebase for changes in data)
 (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
   (.on fb "value" #(data/set-list! (.val %))))

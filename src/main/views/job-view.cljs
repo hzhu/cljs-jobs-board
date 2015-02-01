@@ -2,27 +2,10 @@
   (:require [reagent.core :as reagent :refer [atom]]
                         [main.data :as data]
                         [main.helper-functions :as helpers]
-                        [clojure.string :as str]
                         [hickory.core :refer [as-hiccup parse parse-fragment]]
 ))
 
 (enable-console-print!)
-
-(defn regex-email? [value]
-  (re-matches #"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" value))
-
-       
-(defn is-email? [string]
-    (if (nil? (regex-email? string))
-      (str string)
-      (str "<a href=\"mailto:" string "\">" string "</a>")))
-
-(defn transform-email [string]
-   (let [splitted (str/split string #" ")]
-     (println splitted)
-     (str/join " " (vec (map is-email? splitted)))
-   ))
-
 
 
 ;; JOB VIEW
@@ -51,7 +34,7 @@
 
      [:div.apply
         [:h3 "APPLY FOR THIS HOSTEL JOB"]
-        [:p.how (map as-hiccup (parse-fragment (transform-email (job "how"))))]
+        [:p.how (map as-hiccup (parse-fragment (helpers/transform-email (job "how"))))]
         ]]))
 
 
