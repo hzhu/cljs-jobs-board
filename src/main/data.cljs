@@ -39,7 +39,6 @@
   @current-view)
 
 (defn set-view! [view]
-  (println view)
   (reset! current-view view))
 
 

@@ -9,15 +9,20 @@
                         [hickory.core :refer [as-hiccup parse parse-fragment]]
                         [main.helper-functions :as helpers]))
 
-(enable-console-print!)
+  (enable-console-print!)
 
-(defn dooop []
-  [:div.preview-view.hidden
-   [:a.btn {:on-click #(doseq [todo  (sel :#forms)
-                                  todo2 (sel :div.preview-view)]
-                            (dommy/add-class! todo2 :hidden)
-                            (dommy/remove-class! todo :hidden))
-               } "Go Back and Edit job"]
+  ;; Transforms string HTML into Hiccup.
+  (defn to-html [content]
+    (as-hiccup (parse content)))
+
+  (defn preview-view []
+    [:div.preview-view.hidden
+     [:a.btn {:on-click #(doseq [todo  (sel :#forms)
+                                 todo2 (sel :div.preview-view)]
+                                (dommy/add-class! todo2 :hidden)
+                                (dommy/remove-class! todo :hidden))
+              } "Go Back and Edit job"]
+     
      (let [previewData (data/new-post)]
        [:div
          [:div.info-container
@@ -25,13 +30,9 @@
           [:div.date "POSTED " (.slice (.toDateString (js/Date.)) 4 10)]
           [:div.name (previewData "hostel_name")]
           [:div.location (previewData "location")]
-          [:div.website (previewData "website")]]
-
-
-
-         [:div#job-description (map as-hiccup (parse-fragment (previewData "job_description")))]
-
-
+          [:div.website (previewData "website")]]           
+          [:div#job-description (map as-hiccup (parse-fragment (previewData "job_description")))]
+         
          [:div.apply
            [:h3 "APPLY FOR THIS HOSTEL JOB"]
            [:p.how (map as-hiccup (parse-fragment (previewData "how")))]]
@@ -39,6 +40,6 @@
          (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
            [:a#submit.btn {:href "#/" :on-click #(data/post2fb fb)} "submit"])
 
-;          (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings-dev")]
-;            [:a#submit.btn {:href "#/" :on-click #(data/post2fb fb)} "submit"])
+          ;(let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings-dev")]
+          ;  [:a#submit.btn {:href "#/" :on-click #(data/post2fb fb)} "submit"])
        ])])
