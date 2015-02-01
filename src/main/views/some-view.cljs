@@ -5,6 +5,8 @@
                         [dommy.utils :as utils]
                         [dommy.core :as dommy]
                         [dommy.core :refer-macros [sel sel1]]
+                        
+                        [main.views.preview-view :refer [dooop]]
 
                         [hickory.core :refer [as-hiccup parse parse-fragment]]
                         [main.helper-functions :as helpers]))
@@ -17,7 +19,7 @@
   (defn handle-input-update [event]
     (let [value     (aget event "target" "value")
           className (aget event "target" "className")
-          output    (transform-email value)]
+          output    (helpers/transform-email value)]
           (data/setter className output)))
 
   (defn handle-contenteditable-update [event]
@@ -99,5 +101,6 @@
      ]
 
     ;[:div (preview-view)]
+     (dooop)
   ]
   )
