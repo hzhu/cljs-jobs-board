@@ -10,7 +10,10 @@
 
             [clojure.string :as str]
             
-            [main.views.home-view :refer [foo-bar]]
+            
+            
+            [main.views.home-view :refer [home-view]]
+           
 
             [main.domready :as domready]
             [goog.events :as events]
@@ -207,8 +210,6 @@
 
 
 
-;; HOME VIEW
-(foo-bar)
 
 
 ;; ---------------------------------------------------------------------------------------
@@ -227,7 +228,8 @@
 (defroute "/" {}
   (println "setting view to /..")
   ;; think about clearing post atom here.
-  (data/set-view! foo-bar))
+  ;; set view to home-view
+  (data/set-view! home-view))
 
 (doto (History.)
   (events/listen

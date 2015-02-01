@@ -17,7 +17,7 @@
         [:div.date (helpers/make-date (hostelData "create_date"))]]]
  ))
 
-(defn foo-bar[] 
+(defn home-view[] 
   [:div.home
    [:h1 "HOSTEL JOBS BOARD"]
 
