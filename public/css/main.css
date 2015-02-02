@@ -490,8 +490,7 @@ html {
   max-width: 753px;
   overflow: auto;
   border: 1px solid #CCC;
-  padding: 25px;
-  padding: 0px 15px;
+  padding: 15px;
   height: 250px;
   margin-bottom: 25px;
   border-radius: 3px;

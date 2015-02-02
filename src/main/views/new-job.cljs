@@ -21,8 +21,9 @@
 
   (defn handle-contenteditable-update [event]
     (let [value     (aget event "target" "innerHTML")
-          className (aget event "target" "className")]
-       (data/setter className value))
+          className (aget event "target" "className")
+          output    (helpers/transform-email value)]
+       (data/setter className output))
        (println "blurred out of job description")
     )
 

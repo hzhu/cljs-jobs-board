@@ -15,7 +15,6 @@
   ;(:use-macros [dommy.macros :only [node deftemplate]]) // breaks
   (:import goog.History))
 
-
 ;; Grab collection from fb and set-list!  (Listens to Firebase for changes in data)
 (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
   (.on fb "value" #(data/set-list! (.val %))))
