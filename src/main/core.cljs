@@ -16,11 +16,16 @@
   (:import goog.History))
 
 ;; Grab collection from fb and set-list!  (Listens to Firebase for changes in data)
-(let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
-  (.on fb "value" #(data/set-list! (.val %))))
+(if (= js/production true)
+  ;; Load production Firebase
+  (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
+    (.on fb "value" #(data/set-list! (.val %))))
+  ;; Load development Firebase
+  (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings-dev")]
+  (.on fb "value" #(data/set-list! (.val %)))))
 
-;(let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings-dev")]
-;  (.on fb "value" #(data/set-list! (.val %))))
+
+
 
 ;; ---------------------------------------------------------------------------------------
 ;; ROUTING ------------------------------------------------------------------------------

@@ -37,9 +37,11 @@
            [:h3 "APPLY FOR THIS HOSTEL JOB"]
            [:p.how (map as-hiccup (parse-fragment (previewData "how")))]]
 
-         (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
-           [:a#submit.btn {:href "#/" :on-click #(data/post2fb fb)} "submit"])
-
-          ;(let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings-dev")]
-          ;  [:a#submit.btn {:href "#/" :on-click #(data/post2fb fb)} "submit"])
+         (if (= js/production true)
+           ;; Post job to production Firebase.
+           (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings")]
+           [:a#submit.btn {:href "#/" :on-click #(data/post2fb fb)} "submit"])          
+           ;; Post job to development Firebase.
+           (let [fb (js/Firebase. "https://jobs-board.firebaseio.com/job-listings-dev")]
+            [:a#submit.btn {:href "#/" :on-click #(data/post2fb fb)} "submit"]))  
        ])])
