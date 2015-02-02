@@ -1,6 +1,9 @@
-reagent-project + Firebase
+Hostel Jobs Board 
 =======================
-Messing around. Learning cljs + Firebase.
+Built in Clojurescript using Reagent. Firebase for data store.
+
+[Demo: https://s3-us-west-1.amazonaws.com/hostel-jobs/index.html](https://s3-us-west-1.amazonaws.com/hostel-jobs/index.html)
+
 ```
 ./lein cljsbuild auto dev
 open public/index.html
