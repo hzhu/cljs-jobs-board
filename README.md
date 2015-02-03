@@ -1,8 +1,8 @@
-Hostel Jobs Board 
+We Work Hostels
 =======================
-Built in Clojurescript using Reagent. Firebase for data store.
+A hostel jobs board project. Built in Clojurescript using Reagent. Firebase for data store.
 
-[Demo: https://s3-us-west-1.amazonaws.com/hostel-jobs/index.html](https://s3-us-west-1.amazonaws.com/hostel-jobs/index.html)
+[See Demo: https://s3-us-west-1.amazonaws.com/hostel-jobs/index.html](https://s3-us-west-1.amazonaws.com/hostel-jobs/index.html)
 
 ```
 ./lein cljsbuild auto dev
