@@ -15,9 +15,14 @@
   
   (defn handle-input-update [event]
     (let [value     (aget event "target" "value")
-          className (aget event "target" "className")
-          output    (helpers/transform-email value)]
-          (data/setter className output)))
+          className (aget event "target" "className")]
+          (data/setter className value)))
+  
+  (defn handle-textarea-update [event]
+  (let [value     (aget event "target" "value")
+        className (aget event "target" "className")
+        output    (helpers/transform-email value)]
+        (data/setter className output)))
 
   (defn handle-contenteditable-update [event]
     (let [value     (aget event "target" "innerHTML")
@@ -79,7 +84,7 @@
        [:div.how-input
         [:label "How to apply:"
          [:br]
-         [:textarea.how {:cols 4 :rows 3 :on-change #(handle-input-update %)}]]]
+         [:textarea.how {:cols 4 :rows 3 :on-change #(handle-textarea-update %)}]]]
 
        [:a.next-step.btn {:on-click
                 #(doseq [todo  (sel :#forms)
