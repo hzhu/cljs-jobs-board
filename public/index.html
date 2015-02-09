@@ -28,6 +28,8 @@
 
 
   <body>
+    <a href="#" id="login" onclick="login();">Login</a>
+    <a href="#" id="logout" onclick="logout();">logout</a>
     <div id="app"></div>
 
     <!-- local files for dev -->
@@ -40,6 +42,47 @@
     <script src="dev/goog/base.js" type="text/javascript"></script>
     <script src="dev/app.js" type="text/javascript"></script>
     <script type="text/javascript">goog.require("main.core");</script>
+
+
+
+    <script type="text/javascript">
+    // Create a callback which logs the current auth state
+    function authDataCallback(authData) {
+      if (authData) {
+        console.log("User " + authData.uid + " is logged in with " + authData.provider);
+      } else {
+        console.log("User is logged out");
+      }
+    }
+    // Register the callback to be fired every time auth state changes
+    var ref = new Firebase("https://jobs-board.firebaseio.com");
+    ref.onAuth(authDataCallback);
+    </script>
+
+
+
+    <script type="text/javascript">
+    function login () {
+        // Create a callback to handle the result of the authentication
+        function authHandler(error, authData) {
+          if (error) {
+            console.log("Login Failed!", error);
+          } else {
+            console.log("Authenticated successfully with payload:", authData);
+            x = authData;
+          }
+        }
+
+        // Or via popular OAuth providers ("facebook", "github", "google", or "twitter")
+        ref.authWithOAuthPopup("facebook", authHandler);
+        //ref.authWithOAuthRedirect("facebook", authHandler);      
+    }
+
+    function logout() {
+      ref.unauth();
+    };
+
+    </script>
 
   </body>
 </html>
