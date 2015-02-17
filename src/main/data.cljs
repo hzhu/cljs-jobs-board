@@ -33,6 +33,8 @@
 
 (def current-view (atom {}))
 
+;(println (type app-state))
+
 (defn get-view []
   @current-view)
 
@@ -60,6 +62,9 @@
 
 ;; Stick entire Firebase into atom
 (defn set-list! [value]
+  (println (type value))
+  ;; get native js object
+  ;; then (js->clj) transform for persistent vector
   (swap! app-state assoc-in ["jobs-list"]
     (sort-by last (js->clj value))))
 
